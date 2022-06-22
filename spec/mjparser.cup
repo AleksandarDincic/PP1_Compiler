@@ -1,0 +1,355 @@
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+parser code {:
+	
+	boolean errorDetected = false;
+	
+	Logger log = Logger.getLogger(getClass());
+   
+   
+    // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
+     
+    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+      done_parsing();
+      report_error(message, info);
+    }
+  
+    public void syntax_error(Symbol cur_token) {
+        report_error("Sintaksna greska", cur_token);
+    }
+  
+    public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
+        report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
+    }
+
+    public void report_error(String message, Object info) {
+    	errorDetected = true;
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.error(msg.toString());
+    }
+    
+    public void report_info(String message, Object info) {
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.info(msg.toString());
+    }
+:}
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if (s != null && s.value != null) 
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+terminal PROG, BREAK, CLASS, ENUM, ELSE, CONST, IF, DO, WHILE, NEW, PRINT, READ, RETURN, VOID, EXTENDS;
+terminal CONTINUE, THIS, SUPER, RECORD, INSTANCEOF;
+terminal PLUS, MINUS, MUL, DIV, MOD;
+terminal EQ, NE, GT, GE, LT, LE, AND, OR;
+terminal EQUALS, INC, DEC;
+terminal SEMI, COLON, COMMA, DOT;
+terminal LPAREN, RPAREN, LSQUARE, RSQUARE, LCURLY, RCURLY;
+
+terminal Character CHAR;
+terminal Integer NUMBER;
+terminal String IDENT;
+terminal Boolean BOOL;
+
+nonterminal Program, ProgDeclList, ProgDecl, ConstDecl, VarDecl, ClassDecl, RecordDecl, ConstNameValList, ConstNameVal;
+nonterminal VarNameList, VarName, VarDeclList, ClassExtends, ClassBody, ClassMethods, MethodDeclList, MethodDecl, MethodReturnType;
+nonterminal ClassMethodDecls, ClassFirstMethod, ConstructorDecl, FormPars, FormalParamsList, FormalParam;
+nonterminal Assignop, Relop, Addop, Mulop, Expr, Expression, Term, Factor, Designator, AddressingList, Addressing;
+nonterminal ActPars, ActualParamsList, StatementList, Statement, SingleStatement, Statements, DesignatorStatement, AssignStatement;
+nonterminal Condition, CondTerm, CondFact, IfCon, GlobalVarDecl, GlobalVarNameList, GlobalVarName;
+nonterminal FieldDeclList, FieldDecl, FieldNameList, FieldName, DesignatorName, ConstType, VarType;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Const;
+ 
+precedence left ELSE;
+
+Program ::= (Program) PROG ProgramName ProgDeclList LCURLY MethodDeclList RCURLY;
+
+ProgramName ::= (ProgramName) IDENT:progName;
+
+ProgDeclList ::= (ProgDeclarations) ProgDeclList ProgDecl
+			 |
+			 (NoProgDecl)
+			 ;
+
+ProgDecl ::= (ProgConstDecl) ConstDecl
+		 |
+		 (ProgVarDecl) GlobalVarDecl
+		 |
+		 (ProgClassDecl) ClassDecl
+		 |
+		 (ProgRecordDecl) RecordDecl
+		 ;
+		 
+ConstDecl ::= (ConstDecl) CONST ConstType ConstNameValList SEMI;
+		 
+ConstType ::= (ConstType) Type:constType;
+		 
+ConstNameValList ::= (ConstNameVals) ConstNameValList COMMA ConstNameVal
+			     |
+			     (SingleConstNameVal) ConstNameVal;
+			  
+ConstNameVal ::= (ConstNameVal) IDENT:constName EQUALS Const:c;
+
+GlobalVarDecl ::= (GlobalVarDeclaration) VarType GlobalVarNameList SEMI
+			  |
+			  (GlobalValDeclError) error:l {: parser.report_error("Sintaksna greska pri definisanju globalne promenljive na liniji " + lleft,null); :};
+			  
+VarType ::= (VarType) Type:varType;
+
+GlobalVarNameList ::= (GlobalVarNames) GlobalVarNameList COMMA GlobalVarName
+				  |
+				  (SingleGlobalVarName) GlobalVarName
+				  |
+				  (GlobalVarNameListError) error:l {: parser.report_error("Sintaksna greska pri definisanju globalne promenljive na liniji " + lleft,null); :};
+
+GlobalVarName ::= (GlobalVarNameOfSingle) IDENT:varName
+			  |
+			  (GlobalVarNameOfArray) IDENT:varName LSQUARE RSQUARE;
+
+VarDeclList ::= (VarDeclarations) VarDeclList VarDecl
+			|
+			(NoVarDecl)
+			;
+
+VarDecl ::= (VarDecl) Type VarNameList SEMI;
+
+VarNameList ::= (VarNames) VarNameList COMMA VarName
+			|
+			(SingleVarName) VarName;
+			   
+VarName ::= (VarNameOfSingle) IDENT:varName
+		|
+		(VarNameOfArray) IDENT:varName LSQUARE RSQUARE;
+
+ClassDecl ::= (ClassDecl) CLASS IDENT:ovounovo ClassExtends ClassBody;
+
+ClassExtends ::= (DoesExtend) EXTENDS Type:superCLass
+			 |
+			 (DoesNotExtend)
+			 |
+			 (ExtendsError) error:l {: parser.report_error("Sintaksna greska pri definisanju prosirenja klase na liniji " + lleft,null); :}
+			 ; 
+
+ClassBody ::= (ClassBody) LCURLY FieldDeclList ClassMethods RCURLY;
+
+FieldDeclList ::= (FieldDeclarations) FieldDeclList FieldDecl
+			  |
+			  (NoFieldDecl)
+			  ;
+
+FieldDecl ::= (FieldDeclaration) Type FieldNameList SEMI
+		  |
+		  (FieldDeclError) error:l {: parser.report_error("Sintaksna greska pri definisanju polja klase na liniji " + lleft,null); :};
+
+FieldNameList ::= (FieldNames) FieldNameList COMMA FieldName
+			|
+			(SingleFieldName) FieldName;
+			   
+FieldName ::= (FieldNameOfSingle) IDENT:varName
+		  |
+		  (FieldNameOfArray) IDENT:varName LSQUARE RSQUARE;
+
+ClassMethods ::= (ClassHasMethods) LCURLY ClassMethodDecls RCURLY
+			 |
+			 (ClassNoMethods)
+			 ;
+
+ClassMethodDecls ::= (ClassMethodDeclarations) ClassFirstMethod MethodDeclList
+			     |
+			     (ClassNoMethodDecl)
+			     ;
+
+ClassFirstMethod ::= (ClassFirstMethodConstr) ConstructorDecl
+				 |
+				 (ClassFirstMethodNotConstr) MethodDecl;
+
+ConstructorDecl ::= (ConstructorDecl) IDENT:neznamgdeovo LPAREN RPAREN VarDeclList LCURLY StatementList RCURLY;
+
+RecordDecl ::= (RecordDecl) RECORD RecordName LCURLY VarDeclList RCURLY;
+
+RecordName ::= (RecordName) IDENT:recordName;
+
+MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
+			   |
+			   (NoMethodDecl)
+			   ;
+
+MethodDecl ::= (MethodDecl) MethodReturnType IDENT:ovounovo LPAREN FormPars RPAREN VarDeclList LCURLY StatementList RCURLY;
+
+MethodReturnType ::= (MethodReturnsValue) Type:retType
+				 |
+				 (MethodReturnsVoid) VOID;
+
+FormPars ::= (HasFormalParams) FormalParamsList
+		 |
+		 (NoFormalParams)
+		 ;
+
+FormalParamsList ::= (FormalParameters) FormalParamsList COMMA FormalParam
+				 |
+				 (SingleFormalParam) FormalParam
+				 |
+	    		 (FormParamError) error:l {: parser.report_error("Sintaksna greska pri definisanju formalnog parametra metode na liniji " + lleft,null); :};
+				 
+FormalParam ::= (FormalParamOfSingle) Type IDENT
+			|
+			(FormalParamOfArray) Type IDENT LSQUARE RSQUARE;
+
+ActPars ::= (HasActualParams) ActualParamsList
+		|
+		(NoActualParams)
+		;
+		
+StatementList ::= (ManyStatements) StatementList Statement
+			  |
+			  (NoStatement)
+			  ;
+
+Statement ::= (OneStatement) SingleStatement
+		  |
+		  (BlockStatement) Statements;
+		  
+SingleStatement ::= (DesignStatement) DesignatorStatement SEMI
+				|
+				(IfStatement) IF LPAREN IfCon RPAREN Statement
+				|
+				(IfElseStatement) IF LPAREN IfCon RPAREN Statement ELSE Statement
+				|
+				(DoWhileStatement) DO Statement WHILE LPAREN Condition RPAREN SEMI
+				|
+				(BreakStatement) BREAK SEMI
+				|
+				(ContinueStatement) CONTINUE SEMI
+				|
+				(ReturnVoidStatement) RETURN SEMI
+				|
+				(ReturnValStatement) RETURN Expr SEMI
+				|
+				(ReadStatement) READ LPAREN Designator RPAREN SEMI
+				|
+				(PrintStatement) PRINT LPAREN Expr RPAREN SEMI
+				|
+				(PrintWithPadStatement) PRINT LPAREN Expr COMMA Const RPAREN SEMI;
+
+IfCon ::= (IfCondition) Condition
+	  |
+	  (IfConError) error:l {: parser.report_error("Sintaksna greska pri definisanju uslova u if konstrukciji na liniji " + lleft, null); :};
+
+Statements ::= (Statements) LCURLY StatementList RCURLY;
+		
+DesignatorStatement ::= (DesignAssign) AssignStatement
+					|
+					(MethodCall) Designator LPAREN ActPars RPAREN
+					|
+					(IncStatement) Designator INC
+					|
+					(DecStatement) Designator DEC;
+					
+AssignStatement ::= (AssStatement) Designator Assignop Expr
+				|
+	    		(AssignError) error:l {: parser.report_error("Sintaksna greska pri dodeli na liniji " + lleft,null); :};
+		
+ActualParamsList ::= (ActualParameters) ActualParamsList COMMA Expr
+				 |
+				 (SingleActualParam) Expr;
+
+Condition ::= (OrCondition) Condition OR CondTerm
+		  |
+		  (ConditionTerm) CondTerm;
+
+CondTerm ::= (AndCondTerm) CondTerm AND CondFact
+		 |
+		 (CondTermFact) CondFact;
+
+CondFact ::= (RelopCondFact) CondFact Relop Expr
+		 |
+		 (InstanceofCondFact) Designator INSTANCEOF Type
+		 |
+		 (CondFactExpr) Expr;
+		 
+
+Expr ::= (PositiveExpr) Expression
+	 |
+	 (NegativeExpr) MINUS Expression;
+
+Expression ::= (ExprWithAddop) Expression Addop Term
+		   |
+		   (ExprTerm) Term;
+		   
+Term ::= (TermWithMulop) Term Mulop Factor
+	 |
+	 (TermFactor) Factor;
+
+Factor ::= (DesignOfVarFactor) Designator
+	   |
+	   (DesignOfMethodFactor) Designator LPAREN ActPars RPAREN
+	   |
+	   (ConstFactor) Const
+	   |
+	   (NewObjectFactor) NEW Type
+	   |
+	   (NewArrayFactor) NEW Type LSQUARE Expr RSQUARE
+	   |
+	   (ParenFactor) LPAREN Expr RPAREN;
+	   
+Designator ::= (Designator) DesignatorName AddressingList;
+
+DesignatorName ::= (NamedDesignator) IDENT:designName
+			   |
+			   (ThisDesignator) THIS
+			   |
+			   (SuperDesignator) SUPER;
+
+AddressingList ::= (Addressings) AddressingList Addressing
+			   |
+			   (NoAddressing)
+			   ;
+
+Addressing ::= (AddressingMember) DOT IDENT:mozdanovo
+		   |
+		   (AddressingElem) LSQUARE Expr RSQUARE;
+
+Assignop ::= (Assignop) EQUALS;
+
+Relop ::= (RelopEq) EQ
+	  |
+	  (RelopNeq) NE
+	  |
+	  (RelopGt) GT
+	  |
+	  (RelopGe) GE
+	  |
+	  (RelopLt) LT
+	  |
+	  (Relople) LE;
+
+Addop ::= (AddopPlus) PLUS
+	  |
+	  (AddopMinus) MINUS;
+
+Mulop ::= (MulopMul) MUL
+	  |
+	  (MulopDiv) DIV
+	  |
+	  (MulopMod) MOD;
+
+Const ::= (IntConst) NUMBER:val
+	  |
+	  (CharConst) CHAR:val
+	  |
+	  (BoolConst) BOOL:val;
+
+Type ::= (Type) IDENT:typeName;
