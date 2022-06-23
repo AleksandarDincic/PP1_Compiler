@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/5/2022 13:46:21
+// 23/5/2022 21:21:5
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -137,11 +137,13 @@ public interface Visitor {
     public void visit(MethodDeclarations MethodDeclarations);
     public void visit(RecordName RecordName);
     public void visit(RecordDecl RecordDecl);
+    public void visit(ConstructorName ConstructorName);
     public void visit(ConstructorDecl ConstructorDecl);
     public void visit(ClassFirstMethodNotConstr ClassFirstMethodNotConstr);
     public void visit(ClassFirstMethodConstr ClassFirstMethodConstr);
     public void visit(ClassNoMethodDecl ClassNoMethodDecl);
     public void visit(ClassMethodDeclarations ClassMethodDeclarations);
+    public void visit(ClassMethodsStart ClassMethodsStart);
     public void visit(ClassNoMethods ClassNoMethods);
     public void visit(ClassHasMethods ClassHasMethods);
     public void visit(FieldNameOfArray FieldNameOfArray);
@@ -153,6 +155,7 @@ public interface Visitor {
     public void visit(FieldDeclaration FieldDeclaration);
     public void visit(NoFieldDecl NoFieldDecl);
     public void visit(FieldDeclarations FieldDeclarations);
+    public void visit(ClassBodyStart ClassBodyStart);
     public void visit(ClassBody ClassBody);
     public void visit(ExtendsError ExtendsError);
     public void visit(DoesNotExtend DoesNotExtend);

@@ -63,14 +63,15 @@ terminal String IDENT;
 terminal Boolean BOOL;
 
 nonterminal Program, ProgDeclList, ProgDecl, ConstDecl, VarDecl, ClassDecl, RecordDecl, ConstNameValList, ConstNameVal;
-nonterminal VarNameList, VarName, VarDeclList, ClassExtends, ClassBody, ClassMethods, MethodDeclList, MethodDecl, MethodReturnType;
+nonterminal VarNameList, VarName, VarDeclList, ClassExtends, ClassBody, ClassMethods, MethodDeclList, MethodDecl;
 nonterminal ClassMethodDecls, ClassFirstMethod, ConstructorDecl, FormPars, FormalParamsList, FormalParam;
 nonterminal Assignop, Relop, Addop, Mulop, Expr, Expression, Term, Factor, Designator, AddressingList, Addressing;
 nonterminal ActPars, ActualParamsList, StatementList, Statement, SingleStatement, Statements, DesignatorStatement, AssignStatement;
-nonterminal Condition, CondTerm, CondFact, IfCon, GlobalVarDecl, GlobalVarNameList, GlobalVarName;
-nonterminal FieldDeclList, FieldDecl, FieldNameList, FieldName, DesignatorName, ConstType, VarType, FieldType;
+nonterminal Condition, CondTerm, CondFact, IfCon, GlobalVarDecl, GlobalVarNameList, GlobalVarName, MethodReturnType;
+nonterminal FieldDeclList, FieldDecl, FieldNameList, DesignatorName, ConstType, VarType, FieldType;
+nonterminal ClassBodyStart, ClassMethodsStart;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodName, FieldName, ConstructorName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Const;
  
 precedence left ELSE;
@@ -145,7 +146,9 @@ ClassExtends ::= (DoesExtend) EXTENDS Type:superCLass
 			 (ExtendsError) error:l {: parser.report_error("Sintaksna greska pri definisanju prosirenja klase na liniji " + lleft,null); :}
 			 ; 
 
-ClassBody ::= (ClassBody) LCURLY FieldDeclList ClassMethods RCURLY;
+ClassBody ::= (ClassBody) ClassBodyStart FieldDeclList ClassMethods RCURLY;
+
+ClassBodyStart ::= (ClassBodyStart) LCURLY;
 
 FieldDeclList ::= (FieldDeclarations) FieldDeclList FieldDecl
 			  |
@@ -159,17 +162,19 @@ FieldDecl ::= (FieldDeclaration) FieldType FieldNameList SEMI
 FieldType ::= (FieldType) Type:fieldType;
 
 FieldNameList ::= (FieldNames) FieldNameList COMMA FieldName
-			|
-			(SingleFieldName) FieldName;
+			  |
+			  (SingleFieldName) FieldName;
 			   
 FieldName ::= (FieldNameOfSingle) IDENT:varName
 		  |
 		  (FieldNameOfArray) IDENT:varName LSQUARE RSQUARE;
 
-ClassMethods ::= (ClassHasMethods) LCURLY ClassMethodDecls RCURLY
+ClassMethods ::= (ClassHasMethods) ClassMethodsStart ClassMethodDecls RCURLY
 			 |
 			 (ClassNoMethods)
 			 ;
+
+ClassMethodsStart ::= (ClassMethodsStart) LCURLY;
 
 ClassMethodDecls ::= (ClassMethodDeclarations) ClassFirstMethod MethodDeclList
 			     |
@@ -180,7 +185,9 @@ ClassFirstMethod ::= (ClassFirstMethodConstr) ConstructorDecl
 				 |
 				 (ClassFirstMethodNotConstr) MethodDecl;
 
-ConstructorDecl ::= (ConstructorDecl) IDENT:neznamgdeovo LPAREN RPAREN VarDeclList LCURLY StatementList RCURLY;
+ConstructorDecl ::= (ConstructorDecl) ConstructorName LPAREN RPAREN VarDeclList LCURLY StatementList RCURLY;
+
+ConstructorName ::= (ConstructorName) IDENT:constName;
 
 RecordDecl ::= (RecordDecl) RECORD RecordName LCURLY FieldDeclList RCURLY;
 
@@ -210,9 +217,9 @@ FormalParamsList ::= (FormalParameters) FormalParamsList COMMA FormalParam
 				 |
 	    		 (FormParamError) error:l {: parser.report_error("Sintaksna greska pri definisanju formalnog parametra metode na liniji " + lleft,null); :};
 				 
-FormalParam ::= (FormalParamOfSingle) Type IDENT
+FormalParam ::= (FormalParamOfSingle) Type IDENT:parName
 			|
-			(FormalParamOfArray) Type IDENT LSQUARE RSQUARE;
+			(FormalParamOfArray) Type IDENT:parName LSQUARE RSQUARE;
 
 ActPars ::= (HasActualParams) ActualParamsList
 		|

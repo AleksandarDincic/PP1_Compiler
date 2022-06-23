@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/5/2022 13:46:21
+// 23/5/2022 21:21:5
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -137,11 +137,13 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(MethodDeclarations MethodDeclarations) { visit(); }
     public void visit(RecordName RecordName) { visit(); }
     public void visit(RecordDecl RecordDecl) { visit(); }
+    public void visit(ConstructorName ConstructorName) { visit(); }
     public void visit(ConstructorDecl ConstructorDecl) { visit(); }
     public void visit(ClassFirstMethodNotConstr ClassFirstMethodNotConstr) { visit(); }
     public void visit(ClassFirstMethodConstr ClassFirstMethodConstr) { visit(); }
     public void visit(ClassNoMethodDecl ClassNoMethodDecl) { visit(); }
     public void visit(ClassMethodDeclarations ClassMethodDeclarations) { visit(); }
+    public void visit(ClassMethodsStart ClassMethodsStart) { visit(); }
     public void visit(ClassNoMethods ClassNoMethods) { visit(); }
     public void visit(ClassHasMethods ClassHasMethods) { visit(); }
     public void visit(FieldNameOfArray FieldNameOfArray) { visit(); }
@@ -153,6 +155,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FieldDeclaration FieldDeclaration) { visit(); }
     public void visit(NoFieldDecl NoFieldDecl) { visit(); }
     public void visit(FieldDeclarations FieldDeclarations) { visit(); }
+    public void visit(ClassBodyStart ClassBodyStart) { visit(); }
     public void visit(ClassBody ClassBody) { visit(); }
     public void visit(ExtendsError ExtendsError) { visit(); }
     public void visit(DoesNotExtend DoesNotExtend) { visit(); }

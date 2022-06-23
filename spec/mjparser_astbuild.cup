@@ -79,7 +79,6 @@ nonterminal ClassBody ClassBody;
 nonterminal ClassMethods ClassMethods;
 nonterminal MethodDeclList MethodDeclList;
 nonterminal MethodDecl MethodDecl;
-nonterminal MethodReturnType MethodReturnType;
 nonterminal ClassMethodDecls ClassMethodDecls;
 nonterminal ClassFirstMethod ClassFirstMethod;
 nonterminal ConstructorDecl ConstructorDecl;
@@ -112,16 +111,18 @@ nonterminal IfCon IfCon;
 nonterminal GlobalVarDecl GlobalVarDecl;
 nonterminal GlobalVarNameList GlobalVarNameList;
 nonterminal GlobalVarName GlobalVarName;
+nonterminal MethodReturnType MethodReturnType;
 nonterminal FieldDeclList FieldDeclList;
 nonterminal FieldDecl FieldDecl;
 nonterminal FieldNameList FieldNameList;
-nonterminal FieldName FieldName;
 nonterminal DesignatorName DesignatorName;
 nonterminal ConstType ConstType;
 nonterminal VarType VarType;
 nonterminal FieldType FieldType;
+nonterminal ClassBodyStart ClassBodyStart;
+nonterminal ClassMethodsStart ClassMethodsStart;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodName, FieldName, ConstructorName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Const;
  
 precedence left ELSE;
@@ -196,7 +197,9 @@ ClassExtends ::= (DoesExtend) EXTENDS Type:superCLass {: RESULT=new DoesExtend(s
 			 (ExtendsError) error:l {: parser.report_error("Sintaksna greska pri definisanju prosirenja klase na liniji " + lleft,null); :} {: RESULT=new ExtendsError(); :}
 			 ; 
 
-ClassBody ::= (ClassBody) LCURLY FieldDeclList:F1 ClassMethods:C2 RCURLY {: RESULT=new ClassBody(F1, C2); RESULT.setLine(F1left); :};
+ClassBody ::= (ClassBody) ClassBodyStart:C1 FieldDeclList:F2 ClassMethods:C3 RCURLY {: RESULT=new ClassBody(C1, F2, C3); RESULT.setLine(C1left); :};
+
+ClassBodyStart ::= (ClassBodyStart) LCURLY {: RESULT=new ClassBodyStart(); :};
 
 FieldDeclList ::= (FieldDeclarations) FieldDeclList:F1 FieldDecl:F2 {: RESULT=new FieldDeclarations(F1, F2); RESULT.setLine(F1left); :}
 			  |
@@ -210,17 +213,19 @@ FieldDecl ::= (FieldDeclaration) FieldType:F1 FieldNameList:F2 SEMI {: RESULT=ne
 FieldType ::= (FieldType) Type:fieldType {: RESULT=new FieldType(fieldType); RESULT.setLine(fieldTypeleft); :};
 
 FieldNameList ::= (FieldNames) FieldNameList:F1 COMMA FieldName:F2 {: RESULT=new FieldNames(F1, F2); RESULT.setLine(F1left); :}
-			|
-			(SingleFieldName) FieldName:F1 {: RESULT=new SingleFieldName(F1); RESULT.setLine(F1left); :};
+			  |
+			  (SingleFieldName) FieldName:F1 {: RESULT=new SingleFieldName(F1); RESULT.setLine(F1left); :};
 			   
 FieldName ::= (FieldNameOfSingle) IDENT:varName {: RESULT=new FieldNameOfSingle(varName); RESULT.setLine(varNameleft); :}
 		  |
 		  (FieldNameOfArray) IDENT:varName LSQUARE RSQUARE {: RESULT=new FieldNameOfArray(varName); RESULT.setLine(varNameleft); :};
 
-ClassMethods ::= (ClassHasMethods) LCURLY ClassMethodDecls:C1 RCURLY {: RESULT=new ClassHasMethods(C1); RESULT.setLine(C1left); :}
+ClassMethods ::= (ClassHasMethods) ClassMethodsStart:C1 ClassMethodDecls:C2 RCURLY {: RESULT=new ClassHasMethods(C1, C2); RESULT.setLine(C1left); :}
 			 |
 			 (ClassNoMethods) {: RESULT=new ClassNoMethods(); :}
 			 ;
+
+ClassMethodsStart ::= (ClassMethodsStart) LCURLY {: RESULT=new ClassMethodsStart(); :};
 
 ClassMethodDecls ::= (ClassMethodDeclarations) ClassFirstMethod:C1 MethodDeclList:M2 {: RESULT=new ClassMethodDeclarations(C1, M2); RESULT.setLine(C1left); :}
 			     |
@@ -231,7 +236,9 @@ ClassFirstMethod ::= (ClassFirstMethodConstr) ConstructorDecl:C1 {: RESULT=new C
 				 |
 				 (ClassFirstMethodNotConstr) MethodDecl:M1 {: RESULT=new ClassFirstMethodNotConstr(M1); RESULT.setLine(M1left); :};
 
-ConstructorDecl ::= (ConstructorDecl) IDENT:neznamgdeovo LPAREN RPAREN VarDeclList:V1 LCURLY StatementList:S2 RCURLY {: RESULT=new ConstructorDecl(neznamgdeovo, V1, S2); RESULT.setLine(neznamgdeovoleft); :};
+ConstructorDecl ::= (ConstructorDecl) ConstructorName:C1 LPAREN RPAREN VarDeclList:V2 LCURLY StatementList:S3 RCURLY {: RESULT=new ConstructorDecl(C1, V2, S3); RESULT.setLine(C1left); :};
+
+ConstructorName ::= (ConstructorName) IDENT:constName {: RESULT=new ConstructorName(constName); RESULT.setLine(constNameleft); :};
 
 RecordDecl ::= (RecordDecl) RECORD RecordName:R1 LCURLY FieldDeclList:F2 RCURLY {: RESULT=new RecordDecl(R1, F2); RESULT.setLine(R1left); :};
 
@@ -261,9 +268,9 @@ FormalParamsList ::= (FormalParameters) FormalParamsList:F1 COMMA FormalParam:F2
 				 |
 	    		 (FormParamError) error:l {: parser.report_error("Sintaksna greska pri definisanju formalnog parametra metode na liniji " + lleft,null); :} {: RESULT=new FormParamError(); :};
 				 
-FormalParam ::= (FormalParamOfSingle) Type:T1 IDENT:I2 {: RESULT=new FormalParamOfSingle(T1, I2); RESULT.setLine(T1left); :}
+FormalParam ::= (FormalParamOfSingle) Type:T1 IDENT:parName {: RESULT=new FormalParamOfSingle(T1, parName); RESULT.setLine(T1left); :}
 			|
-			(FormalParamOfArray) Type:T1 IDENT:I2 LSQUARE RSQUARE {: RESULT=new FormalParamOfArray(T1, I2); RESULT.setLine(T1left); :};
+			(FormalParamOfArray) Type:T1 IDENT:parName LSQUARE RSQUARE {: RESULT=new FormalParamOfArray(T1, parName); RESULT.setLine(T1left); :};
 
 ActPars ::= (HasActualParams) ActualParamsList:A1 {: RESULT=new HasActualParams(A1); RESULT.setLine(A1left); :}
 		|
