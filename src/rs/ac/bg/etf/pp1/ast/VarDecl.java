@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 19:17:48
+// 23/5/2022 13:46:21
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,22 +9,22 @@ public class VarDecl implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    private Type Type;
+    private VarType VarType;
     private VarNameList VarNameList;
 
-    public VarDecl (Type Type, VarNameList VarNameList) {
-        this.Type=Type;
-        if(Type!=null) Type.setParent(this);
+    public VarDecl (VarType VarType, VarNameList VarNameList) {
+        this.VarType=VarType;
+        if(VarType!=null) VarType.setParent(this);
         this.VarNameList=VarNameList;
         if(VarNameList!=null) VarNameList.setParent(this);
     }
 
-    public Type getType() {
-        return Type;
+    public VarType getVarType() {
+        return VarType;
     }
 
-    public void setType(Type Type) {
-        this.Type=Type;
+    public void setVarType(VarType VarType) {
+        this.VarType=VarType;
     }
 
     public VarNameList getVarNameList() {
@@ -56,18 +56,18 @@ public class VarDecl implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Type!=null) Type.accept(visitor);
+        if(VarType!=null) VarType.accept(visitor);
         if(VarNameList!=null) VarNameList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Type!=null) Type.traverseTopDown(visitor);
+        if(VarType!=null) VarType.traverseTopDown(visitor);
         if(VarNameList!=null) VarNameList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Type!=null) Type.traverseBottomUp(visitor);
+        if(VarType!=null) VarType.traverseBottomUp(visitor);
         if(VarNameList!=null) VarNameList.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -77,8 +77,8 @@ public class VarDecl implements SyntaxNode {
         buffer.append(tab);
         buffer.append("VarDecl(\n");
 
-        if(Type!=null)
-            buffer.append(Type.toString("  "+tab));
+        if(VarType!=null)
+            buffer.append(VarType.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

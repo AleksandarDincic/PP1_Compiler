@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 19:17:48
+// 23/5/2022 13:46:21
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -10,13 +10,13 @@ public class RecordDecl implements SyntaxNode {
     private SyntaxNode parent;
     private int line;
     private RecordName RecordName;
-    private VarDeclList VarDeclList;
+    private FieldDeclList FieldDeclList;
 
-    public RecordDecl (RecordName RecordName, VarDeclList VarDeclList) {
+    public RecordDecl (RecordName RecordName, FieldDeclList FieldDeclList) {
         this.RecordName=RecordName;
         if(RecordName!=null) RecordName.setParent(this);
-        this.VarDeclList=VarDeclList;
-        if(VarDeclList!=null) VarDeclList.setParent(this);
+        this.FieldDeclList=FieldDeclList;
+        if(FieldDeclList!=null) FieldDeclList.setParent(this);
     }
 
     public RecordName getRecordName() {
@@ -27,12 +27,12 @@ public class RecordDecl implements SyntaxNode {
         this.RecordName=RecordName;
     }
 
-    public VarDeclList getVarDeclList() {
-        return VarDeclList;
+    public FieldDeclList getFieldDeclList() {
+        return FieldDeclList;
     }
 
-    public void setVarDeclList(VarDeclList VarDeclList) {
-        this.VarDeclList=VarDeclList;
+    public void setFieldDeclList(FieldDeclList FieldDeclList) {
+        this.FieldDeclList=FieldDeclList;
     }
 
     public SyntaxNode getParent() {
@@ -57,18 +57,18 @@ public class RecordDecl implements SyntaxNode {
 
     public void childrenAccept(Visitor visitor) {
         if(RecordName!=null) RecordName.accept(visitor);
-        if(VarDeclList!=null) VarDeclList.accept(visitor);
+        if(FieldDeclList!=null) FieldDeclList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(RecordName!=null) RecordName.traverseTopDown(visitor);
-        if(VarDeclList!=null) VarDeclList.traverseTopDown(visitor);
+        if(FieldDeclList!=null) FieldDeclList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(RecordName!=null) RecordName.traverseBottomUp(visitor);
-        if(VarDeclList!=null) VarDeclList.traverseBottomUp(visitor);
+        if(FieldDeclList!=null) FieldDeclList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -83,8 +83,8 @@ public class RecordDecl implements SyntaxNode {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(VarDeclList!=null)
-            buffer.append(VarDeclList.toString("  "+tab));
+        if(FieldDeclList!=null)
+            buffer.append(FieldDeclList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

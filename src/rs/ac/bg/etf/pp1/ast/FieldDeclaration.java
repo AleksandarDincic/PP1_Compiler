@@ -1,28 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 19:17:48
+// 23/5/2022 13:46:21
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class FieldDeclaration extends FieldDecl {
 
-    private Type Type;
+    private FieldType FieldType;
     private FieldNameList FieldNameList;
 
-    public FieldDeclaration (Type Type, FieldNameList FieldNameList) {
-        this.Type=Type;
-        if(Type!=null) Type.setParent(this);
+    public FieldDeclaration (FieldType FieldType, FieldNameList FieldNameList) {
+        this.FieldType=FieldType;
+        if(FieldType!=null) FieldType.setParent(this);
         this.FieldNameList=FieldNameList;
         if(FieldNameList!=null) FieldNameList.setParent(this);
     }
 
-    public Type getType() {
-        return Type;
+    public FieldType getFieldType() {
+        return FieldType;
     }
 
-    public void setType(Type Type) {
-        this.Type=Type;
+    public void setFieldType(FieldType FieldType) {
+        this.FieldType=FieldType;
     }
 
     public FieldNameList getFieldNameList() {
@@ -38,18 +38,18 @@ public class FieldDeclaration extends FieldDecl {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Type!=null) Type.accept(visitor);
+        if(FieldType!=null) FieldType.accept(visitor);
         if(FieldNameList!=null) FieldNameList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Type!=null) Type.traverseTopDown(visitor);
+        if(FieldType!=null) FieldType.traverseTopDown(visitor);
         if(FieldNameList!=null) FieldNameList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Type!=null) Type.traverseBottomUp(visitor);
+        if(FieldType!=null) FieldType.traverseBottomUp(visitor);
         if(FieldNameList!=null) FieldNameList.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,8 +59,8 @@ public class FieldDeclaration extends FieldDecl {
         buffer.append(tab);
         buffer.append("FieldDeclaration(\n");
 
-        if(Type!=null)
-            buffer.append(Type.toString("  "+tab));
+        if(FieldType!=null)
+            buffer.append(FieldType.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 19:17:48
+// 23/5/2022 13:46:21
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -10,15 +10,16 @@ public class MethodDecl implements SyntaxNode {
     private SyntaxNode parent;
     private int line;
     private MethodReturnType MethodReturnType;
-    private String ovounovo;
+    private MethodName MethodName;
     private FormPars FormPars;
     private VarDeclList VarDeclList;
     private StatementList StatementList;
 
-    public MethodDecl (MethodReturnType MethodReturnType, String ovounovo, FormPars FormPars, VarDeclList VarDeclList, StatementList StatementList) {
+    public MethodDecl (MethodReturnType MethodReturnType, MethodName MethodName, FormPars FormPars, VarDeclList VarDeclList, StatementList StatementList) {
         this.MethodReturnType=MethodReturnType;
         if(MethodReturnType!=null) MethodReturnType.setParent(this);
-        this.ovounovo=ovounovo;
+        this.MethodName=MethodName;
+        if(MethodName!=null) MethodName.setParent(this);
         this.FormPars=FormPars;
         if(FormPars!=null) FormPars.setParent(this);
         this.VarDeclList=VarDeclList;
@@ -35,12 +36,12 @@ public class MethodDecl implements SyntaxNode {
         this.MethodReturnType=MethodReturnType;
     }
 
-    public String getOvounovo() {
-        return ovounovo;
+    public MethodName getMethodName() {
+        return MethodName;
     }
 
-    public void setOvounovo(String ovounovo) {
-        this.ovounovo=ovounovo;
+    public void setMethodName(MethodName MethodName) {
+        this.MethodName=MethodName;
     }
 
     public FormPars getFormPars() {
@@ -89,6 +90,7 @@ public class MethodDecl implements SyntaxNode {
 
     public void childrenAccept(Visitor visitor) {
         if(MethodReturnType!=null) MethodReturnType.accept(visitor);
+        if(MethodName!=null) MethodName.accept(visitor);
         if(FormPars!=null) FormPars.accept(visitor);
         if(VarDeclList!=null) VarDeclList.accept(visitor);
         if(StatementList!=null) StatementList.accept(visitor);
@@ -97,6 +99,7 @@ public class MethodDecl implements SyntaxNode {
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(MethodReturnType!=null) MethodReturnType.traverseTopDown(visitor);
+        if(MethodName!=null) MethodName.traverseTopDown(visitor);
         if(FormPars!=null) FormPars.traverseTopDown(visitor);
         if(VarDeclList!=null) VarDeclList.traverseTopDown(visitor);
         if(StatementList!=null) StatementList.traverseTopDown(visitor);
@@ -104,6 +107,7 @@ public class MethodDecl implements SyntaxNode {
 
     public void traverseBottomUp(Visitor visitor) {
         if(MethodReturnType!=null) MethodReturnType.traverseBottomUp(visitor);
+        if(MethodName!=null) MethodName.traverseBottomUp(visitor);
         if(FormPars!=null) FormPars.traverseBottomUp(visitor);
         if(VarDeclList!=null) VarDeclList.traverseBottomUp(visitor);
         if(StatementList!=null) StatementList.traverseBottomUp(visitor);
@@ -121,7 +125,10 @@ public class MethodDecl implements SyntaxNode {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        buffer.append(" "+tab+ovounovo);
+        if(MethodName!=null)
+            buffer.append(MethodName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(FormPars!=null)

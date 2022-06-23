@@ -5,5 +5,20 @@ program test_303
 const int cinilac = 4, delilac = 3;
 int a, b[];
 bool c;
+record Ragnarok{
+	pera mika;
+	int a, b;
+	char a, c, c;
+}
+record c{
+	pera mika;
+	int a, b;
+	char a, c, c;
+}
+record bbb{
+	pera mika;
+	int a, b;
+	char a, c, c;
+}
 {
 }

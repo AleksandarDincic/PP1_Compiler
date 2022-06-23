@@ -119,8 +119,9 @@ nonterminal FieldName FieldName;
 nonterminal DesignatorName DesignatorName;
 nonterminal ConstType ConstType;
 nonterminal VarType VarType;
+nonterminal FieldType FieldType;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Const;
  
 precedence left ELSE;
@@ -174,7 +175,7 @@ VarDeclList ::= (VarDeclarations) VarDeclList:V1 VarDecl:V2 {: RESULT=new VarDec
 			(NoVarDecl) {: RESULT=new NoVarDecl(); :}
 			;
 
-VarDecl ::= (VarDecl) Type:T1 VarNameList:V2 SEMI {: RESULT=new VarDecl(T1, V2); RESULT.setLine(T1left); :};
+VarDecl ::= (VarDecl) VarType:V1 VarNameList:V2 SEMI {: RESULT=new VarDecl(V1, V2); RESULT.setLine(V1left); :};
 
 VarNameList ::= (VarNames) VarNameList:V1 COMMA VarName:V2 {: RESULT=new VarNames(V1, V2); RESULT.setLine(V1left); :}
 			|
@@ -184,7 +185,9 @@ VarName ::= (VarNameOfSingle) IDENT:varName {: RESULT=new VarNameOfSingle(varNam
 		|
 		(VarNameOfArray) IDENT:varName LSQUARE RSQUARE {: RESULT=new VarNameOfArray(varName); RESULT.setLine(varNameleft); :};
 
-ClassDecl ::= (ClassDecl) CLASS IDENT:ovounovo ClassExtends:C1 ClassBody:C2 {: RESULT=new ClassDecl(ovounovo, C1, C2); RESULT.setLine(ovounovoleft); :};
+ClassDecl ::= (ClassDecl) CLASS ClassName:C1 ClassExtends:C2 ClassBody:C3 {: RESULT=new ClassDecl(C1, C2, C3); RESULT.setLine(C1left); :};
+
+ClassName ::= (ClassName) IDENT:className {: RESULT=new ClassName(className); RESULT.setLine(classNameleft); :};
 
 ClassExtends ::= (DoesExtend) EXTENDS Type:superCLass {: RESULT=new DoesExtend(superCLass); RESULT.setLine(superCLassleft); :}
 			 |
@@ -200,9 +203,11 @@ FieldDeclList ::= (FieldDeclarations) FieldDeclList:F1 FieldDecl:F2 {: RESULT=ne
 			  (NoFieldDecl) {: RESULT=new NoFieldDecl(); :}
 			  ;
 
-FieldDecl ::= (FieldDeclaration) Type:T1 FieldNameList:F2 SEMI {: RESULT=new FieldDeclaration(T1, F2); RESULT.setLine(T1left); :}
+FieldDecl ::= (FieldDeclaration) FieldType:F1 FieldNameList:F2 SEMI {: RESULT=new FieldDeclaration(F1, F2); RESULT.setLine(F1left); :}
 		  |
 		  (FieldDeclError) error:l {: parser.report_error("Sintaksna greska pri definisanju polja klase na liniji " + lleft,null); :} {: RESULT=new FieldDeclError(); :};
+
+FieldType ::= (FieldType) Type:fieldType {: RESULT=new FieldType(fieldType); RESULT.setLine(fieldTypeleft); :};
 
 FieldNameList ::= (FieldNames) FieldNameList:F1 COMMA FieldName:F2 {: RESULT=new FieldNames(F1, F2); RESULT.setLine(F1left); :}
 			|
@@ -228,7 +233,7 @@ ClassFirstMethod ::= (ClassFirstMethodConstr) ConstructorDecl:C1 {: RESULT=new C
 
 ConstructorDecl ::= (ConstructorDecl) IDENT:neznamgdeovo LPAREN RPAREN VarDeclList:V1 LCURLY StatementList:S2 RCURLY {: RESULT=new ConstructorDecl(neznamgdeovo, V1, S2); RESULT.setLine(neznamgdeovoleft); :};
 
-RecordDecl ::= (RecordDecl) RECORD RecordName:R1 LCURLY VarDeclList:V2 RCURLY {: RESULT=new RecordDecl(R1, V2); RESULT.setLine(R1left); :};
+RecordDecl ::= (RecordDecl) RECORD RecordName:R1 LCURLY FieldDeclList:F2 RCURLY {: RESULT=new RecordDecl(R1, F2); RESULT.setLine(R1left); :};
 
 RecordName ::= (RecordName) IDENT:recordName {: RESULT=new RecordName(recordName); RESULT.setLine(recordNameleft); :};
 
@@ -237,7 +242,9 @@ MethodDeclList ::= (MethodDeclarations) MethodDeclList:M1 MethodDecl:M2 {: RESUL
 			   (NoMethodDecl) {: RESULT=new NoMethodDecl(); :}
 			   ;
 
-MethodDecl ::= (MethodDecl) MethodReturnType:M1 IDENT:ovounovo LPAREN FormPars:F2 RPAREN VarDeclList:V3 LCURLY StatementList:S4 RCURLY {: RESULT=new MethodDecl(M1, ovounovo, F2, V3, S4); RESULT.setLine(M1left); :};
+MethodDecl ::= (MethodDecl) MethodReturnType:M1 MethodName:M2 LPAREN FormPars:F3 RPAREN VarDeclList:V4 LCURLY StatementList:S5 RCURLY {: RESULT=new MethodDecl(M1, M2, F3, V4, S5); RESULT.setLine(M1left); :};
+
+MethodName ::= (MethodName) IDENT:methodName {: RESULT=new MethodName(methodName); RESULT.setLine(methodNameleft); :};
 
 MethodReturnType ::= (MethodReturnsValue) Type:retType {: RESULT=new MethodReturnsValue(retType); RESULT.setLine(retTypeleft); :}
 				 |

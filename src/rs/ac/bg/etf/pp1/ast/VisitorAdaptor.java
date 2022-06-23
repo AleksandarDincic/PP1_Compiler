@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 19:17:48
+// 23/5/2022 13:46:21
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -131,6 +131,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(HasFormalParams HasFormalParams) { visit(); }
     public void visit(MethodReturnsVoid MethodReturnsVoid) { visit(); }
     public void visit(MethodReturnsValue MethodReturnsValue) { visit(); }
+    public void visit(MethodName MethodName) { visit(); }
     public void visit(MethodDecl MethodDecl) { visit(); }
     public void visit(NoMethodDecl NoMethodDecl) { visit(); }
     public void visit(MethodDeclarations MethodDeclarations) { visit(); }
@@ -147,6 +148,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FieldNameOfSingle FieldNameOfSingle) { visit(); }
     public void visit(SingleFieldName SingleFieldName) { visit(); }
     public void visit(FieldNames FieldNames) { visit(); }
+    public void visit(FieldType FieldType) { visit(); }
     public void visit(FieldDeclError FieldDeclError) { visit(); }
     public void visit(FieldDeclaration FieldDeclaration) { visit(); }
     public void visit(NoFieldDecl NoFieldDecl) { visit(); }
@@ -155,6 +157,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ExtendsError ExtendsError) { visit(); }
     public void visit(DoesNotExtend DoesNotExtend) { visit(); }
     public void visit(DoesExtend DoesExtend) { visit(); }
+    public void visit(ClassName ClassName) { visit(); }
     public void visit(ClassDecl ClassDecl) { visit(); }
     public void visit(VarNameOfArray VarNameOfArray) { visit(); }
     public void visit(VarNameOfSingle VarNameOfSingle) { visit(); }

@@ -68,9 +68,9 @@ nonterminal ClassMethodDecls, ClassFirstMethod, ConstructorDecl, FormPars, Forma
 nonterminal Assignop, Relop, Addop, Mulop, Expr, Expression, Term, Factor, Designator, AddressingList, Addressing;
 nonterminal ActPars, ActualParamsList, StatementList, Statement, SingleStatement, Statements, DesignatorStatement, AssignStatement;
 nonterminal Condition, CondTerm, CondFact, IfCon, GlobalVarDecl, GlobalVarNameList, GlobalVarName;
-nonterminal FieldDeclList, FieldDecl, FieldNameList, FieldName, DesignatorName, ConstType, VarType;
+nonterminal FieldDeclList, FieldDecl, FieldNameList, FieldName, DesignatorName, ConstType, VarType, FieldType;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Const;
  
 precedence left ELSE;
@@ -124,7 +124,7 @@ VarDeclList ::= (VarDeclarations) VarDeclList VarDecl
 			(NoVarDecl)
 			;
 
-VarDecl ::= (VarDecl) Type VarNameList SEMI;
+VarDecl ::= (VarDecl) VarType VarNameList SEMI;
 
 VarNameList ::= (VarNames) VarNameList COMMA VarName
 			|
@@ -134,7 +134,9 @@ VarName ::= (VarNameOfSingle) IDENT:varName
 		|
 		(VarNameOfArray) IDENT:varName LSQUARE RSQUARE;
 
-ClassDecl ::= (ClassDecl) CLASS IDENT:ovounovo ClassExtends ClassBody;
+ClassDecl ::= (ClassDecl) CLASS ClassName ClassExtends ClassBody;
+
+ClassName ::= (ClassName) IDENT:className;
 
 ClassExtends ::= (DoesExtend) EXTENDS Type:superCLass
 			 |
@@ -150,9 +152,11 @@ FieldDeclList ::= (FieldDeclarations) FieldDeclList FieldDecl
 			  (NoFieldDecl)
 			  ;
 
-FieldDecl ::= (FieldDeclaration) Type FieldNameList SEMI
+FieldDecl ::= (FieldDeclaration) FieldType FieldNameList SEMI
 		  |
 		  (FieldDeclError) error:l {: parser.report_error("Sintaksna greska pri definisanju polja klase na liniji " + lleft,null); :};
+
+FieldType ::= (FieldType) Type:fieldType;
 
 FieldNameList ::= (FieldNames) FieldNameList COMMA FieldName
 			|
@@ -178,7 +182,7 @@ ClassFirstMethod ::= (ClassFirstMethodConstr) ConstructorDecl
 
 ConstructorDecl ::= (ConstructorDecl) IDENT:neznamgdeovo LPAREN RPAREN VarDeclList LCURLY StatementList RCURLY;
 
-RecordDecl ::= (RecordDecl) RECORD RecordName LCURLY VarDeclList RCURLY;
+RecordDecl ::= (RecordDecl) RECORD RecordName LCURLY FieldDeclList RCURLY;
 
 RecordName ::= (RecordName) IDENT:recordName;
 
@@ -187,7 +191,9 @@ MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
 			   (NoMethodDecl)
 			   ;
 
-MethodDecl ::= (MethodDecl) MethodReturnType IDENT:ovounovo LPAREN FormPars RPAREN VarDeclList LCURLY StatementList RCURLY;
+MethodDecl ::= (MethodDecl) MethodReturnType MethodName LPAREN FormPars RPAREN VarDeclList LCURLY StatementList RCURLY;
+
+MethodName ::= (MethodName) IDENT:methodName;
 
 MethodReturnType ::= (MethodReturnsValue) Type:retType
 				 |

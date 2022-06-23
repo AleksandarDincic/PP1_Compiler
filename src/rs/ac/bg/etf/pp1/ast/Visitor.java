@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 19:17:48
+// 23/5/2022 13:46:21
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -131,6 +131,7 @@ public interface Visitor {
     public void visit(HasFormalParams HasFormalParams);
     public void visit(MethodReturnsVoid MethodReturnsVoid);
     public void visit(MethodReturnsValue MethodReturnsValue);
+    public void visit(MethodName MethodName);
     public void visit(MethodDecl MethodDecl);
     public void visit(NoMethodDecl NoMethodDecl);
     public void visit(MethodDeclarations MethodDeclarations);
@@ -147,6 +148,7 @@ public interface Visitor {
     public void visit(FieldNameOfSingle FieldNameOfSingle);
     public void visit(SingleFieldName SingleFieldName);
     public void visit(FieldNames FieldNames);
+    public void visit(FieldType FieldType);
     public void visit(FieldDeclError FieldDeclError);
     public void visit(FieldDeclaration FieldDeclaration);
     public void visit(NoFieldDecl NoFieldDecl);
@@ -155,6 +157,7 @@ public interface Visitor {
     public void visit(ExtendsError ExtendsError);
     public void visit(DoesNotExtend DoesNotExtend);
     public void visit(DoesExtend DoesExtend);
+    public void visit(ClassName ClassName);
     public void visit(ClassDecl ClassDecl);
     public void visit(VarNameOfArray VarNameOfArray);
     public void visit(VarNameOfSingle VarNameOfSingle);
