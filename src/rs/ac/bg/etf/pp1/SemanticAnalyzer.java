@@ -12,21 +12,28 @@ import org.apache.log4j.Logger;
 
 import rs.ac.bg.etf.pp1.ast.AddressingElem;
 import rs.ac.bg.etf.pp1.ast.AddressingMember;
+import rs.ac.bg.etf.pp1.ast.AndCondTerm;
 import rs.ac.bg.etf.pp1.ast.BoolConst;
+import rs.ac.bg.etf.pp1.ast.BreakStatement;
 import rs.ac.bg.etf.pp1.ast.CharConst;
 import rs.ac.bg.etf.pp1.ast.ClassBodyStart;
 import rs.ac.bg.etf.pp1.ast.ClassDecl;
 import rs.ac.bg.etf.pp1.ast.ClassMethodsStart;
 import rs.ac.bg.etf.pp1.ast.ClassName;
 import rs.ac.bg.etf.pp1.ast.ClassNoMethods;
+import rs.ac.bg.etf.pp1.ast.CondFactExpr;
+import rs.ac.bg.etf.pp1.ast.CondTermFact;
 import rs.ac.bg.etf.pp1.ast.Const;
 import rs.ac.bg.etf.pp1.ast.ConstFactor;
 import rs.ac.bg.etf.pp1.ast.ConstNameVal;
 import rs.ac.bg.etf.pp1.ast.ConstType;
 import rs.ac.bg.etf.pp1.ast.ConstructorDecl;
 import rs.ac.bg.etf.pp1.ast.ConstructorName;
+import rs.ac.bg.etf.pp1.ast.ContinueStatement;
 import rs.ac.bg.etf.pp1.ast.DesignOfMethodFactor;
 import rs.ac.bg.etf.pp1.ast.DesignOfVarFactor;
+import rs.ac.bg.etf.pp1.ast.DoWhileLoopStart;
+import rs.ac.bg.etf.pp1.ast.DoWhileStatement;
 import rs.ac.bg.etf.pp1.ast.DoesExtend;
 import rs.ac.bg.etf.pp1.ast.DoesNotExtend;
 import rs.ac.bg.etf.pp1.ast.Expr;
@@ -40,6 +47,7 @@ import rs.ac.bg.etf.pp1.ast.FormalParamOfArray;
 import rs.ac.bg.etf.pp1.ast.FormalParamOfSingle;
 import rs.ac.bg.etf.pp1.ast.GlobalVarNameOfArray;
 import rs.ac.bg.etf.pp1.ast.GlobalVarNameOfSingle;
+import rs.ac.bg.etf.pp1.ast.InstanceofCondFact;
 import rs.ac.bg.etf.pp1.ast.IntConst;
 import rs.ac.bg.etf.pp1.ast.MethodDecl;
 import rs.ac.bg.etf.pp1.ast.MethodReturnsValue;
@@ -55,6 +63,9 @@ import rs.ac.bg.etf.pp1.ast.Program;
 import rs.ac.bg.etf.pp1.ast.ProgramName;
 import rs.ac.bg.etf.pp1.ast.RecordDecl;
 import rs.ac.bg.etf.pp1.ast.RecordName;
+import rs.ac.bg.etf.pp1.ast.RelopCondFact;
+import rs.ac.bg.etf.pp1.ast.RelopEq;
+import rs.ac.bg.etf.pp1.ast.RelopNeq;
 import rs.ac.bg.etf.pp1.ast.SingleActualParam;
 import rs.ac.bg.etf.pp1.ast.SuperMethodFactor;
 import rs.ac.bg.etf.pp1.ast.SyntaxNode;
@@ -76,7 +87,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	boolean errorDetected = false;
 	int nVars;
 
-	
 	Struct currentVarType = null;
 
 	Logger log = Logger.getLogger(getClass());
@@ -101,6 +111,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	List<Obj> formPars = new ArrayList<>();
 	List<Struct> actPars = new ArrayList<>();
 
+	int nestedLoops = 0;
+	
 	public void report_error(String message, SyntaxNode info) {
 		errorDetected = true;
 		StringBuilder msg = new StringBuilder(message);
@@ -238,7 +250,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(MethodReturnsVoid retVal) {
-		methRetType = Tab.noType;
+		methRetType = ExtendedTab.voidType;
 	}
 
 	private boolean isOverridingMethod(MethodSignature methodSig) {
@@ -588,7 +600,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		actPars.add(param.getExpr().struct);
 	}
 
-	private boolean equivAssignTypes(Struct to, Struct from) {
+	private boolean compatAssignTypes(Struct to, Struct from) {
 		if (to == from) {
 			return true;
 		}
@@ -608,6 +620,19 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
 		return false;
 	}
+	
+	private boolean compatTypes(Struct to, Struct from) {
+		if (to == from) {
+			return true;
+		}
+		if (to.getKind() == Struct.Array && from.getKind() == Struct.Array && to.getElemType() == from.getElemType()) {
+			return true;
+		}
+		if ((to.isRefType() && from == Tab.nullType) || (to == Tab.nullType && from.isRefType())) {
+			return true;
+		}
+		return false;
+	}
 
 	private boolean checkActParams(Obj meth) {
 		int parIndex = 1;
@@ -616,7 +641,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 				continue;
 			} else if (parIndex < actPars.size()) {
 				Struct actPar = actPars.get(parIndex++);
-				if (!equivAssignTypes(methFormPar.getType(), actPar)) {
+				if (!compatAssignTypes(methFormPar.getType(), actPar)) {
 					return false;
 				}
 			} else {
@@ -648,22 +673,20 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		if (declaringClass) {
 			if (currentSuperclass != null) {
 				if (inConstructor) {
-					if(classConstructors.containsKey(currentSuperclass.getName())) {
+					if (classConstructors.containsKey(currentSuperclass.getName())) {
 						Obj superMeth = classConstructors.get(currentSuperclass.getName());
-						if(actPars.size() == 0) {
+						if (actPars.size() == 0) {
 							factor.struct = superMeth.getType();
-						}
-						else {
+						} else {
 							report_error("Neispravni stvarni argumenti.", factor);
 							factor.struct = Tab.noType;
 						}
-					}
-					else {
+					} else {
 						report_error("Nadklasa ne sadrzi trenutnu metodu.", factor);
 						factor.struct = Tab.noType;
 					}
 				} else {
-					if(methName != null) {
+					if (methName != null) {
 						Obj superMethodObj = null;
 						for (Obj obj : currentSuperclass.getType().getMembers()) {
 							if (obj.getName().equals(methName)) {
@@ -676,16 +699,14 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 							report_error("Nadklasa ne sadrzi trenutnu metodu.", factor);
 							factor.struct = Tab.noType;
 						}
-						
-						if(checkActParams(superMethodObj)) {
+
+						if (checkActParams(superMethodObj)) {
 							factor.struct = superMethodObj.getType();
-						}
-						else {
+						} else {
 							report_error("Neispravni stvarni argumenti.", factor);
 							factor.struct = Tab.noType;
 						}
-					}
-					else {
+					} else {
 						report_error("Nadklasa ne sadrzi trenutnu metodu.", factor);
 						factor.struct = Tab.noType;
 					}
@@ -767,6 +788,59 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		}
 	}
 
+	public void visit(CondFactExpr fact) {
+		fact.struct = fact.getExpr().struct;
+	}
+	
+	public void visit(InstanceofCondFact fact) {
+		if(fact.getDesignator().obj.getType().getKind() != Struct.Class || fact.getType().struct.getKind() != Struct.Class) {
+			report_error("Operacija instanceof se moze raditi samo nad klasama.", fact);
+		}
+		fact.struct = ExtendedTab.boolType;
+	}
+	
+	public void visit(RelopCondFact fact) {
+		if(!compatTypes(fact.getCondFact().struct, fact.getExpr().struct)) {
+			report_error("Operandi u uslovnom iskazu moraju biti kompatibilni.", fact);
+		}
+		else if(fact.getCondFact().struct.isRefType() && !(fact.getRelop() instanceof RelopEq) && !(fact.getRelop() instanceof RelopNeq)) {
+			report_error("Uz promenljive tipa klase ili niza, od relacionih operatora, mogu se koristiti samo != i ==.", fact);
+		}
+		fact.struct = ExtendedTab.boolType;
+	}
+	
+	public void visit(CondTermFact term) {
+		if(term.getCondFact().struct != ExtendedTab.boolType) {
+			report_error("Operandi u uslovnom iskazu moraju biti bool.", term);
+		}
+	}
+	
+	public void visit(AndCondTerm term) {
+		if(term.getCondFact().struct != ExtendedTab.boolType) {
+			report_error("Operandi u uslovnom iskazu moraju biti bool.", term);
+		}
+	}
+	
+	public void visit(DoWhileLoopStart loop) {
+		++nestedLoops;
+	}
+	
+	public void visit(DoWhileStatement loop) {
+		--nestedLoops;
+	}
+	
+	public void visit(BreakStatement stmt) {
+		if(nestedLoops ==0) {
+			report_error("Koriscenje break je dozvoljeno samo unutar petlji.", stmt);
+		}
+	}
+	
+	public void visit(ContinueStatement stmt) {
+		if(nestedLoops ==0) {
+			report_error("Koriscenje continue je dozvoljeno samo unutar petlji.", stmt);
+		}
+	}
+	
 	public void visit(IntConst intConst) {
 		intConst.struct = Tab.intType;
 	}

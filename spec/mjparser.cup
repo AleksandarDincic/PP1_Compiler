@@ -67,12 +67,12 @@ nonterminal VarNameList, VarName, VarDeclList, ClassExtends, ClassBody, ClassMet
 nonterminal ClassMethodDecls, ClassFirstMethod, ConstructorDecl, FormPars, FormalParamsList, FormalParam;
 nonterminal Assignop, Relop, Addop, Mulop;
 nonterminal ActPars, ActualParamsList, StatementList, Statement, SingleStatement, Statements, DesignatorStatement, AssignStatement;
-nonterminal Condition, CondTerm, CondFact, IfCon, GlobalVarDecl, GlobalVarNameList, GlobalVarName, MethodReturnType;
-nonterminal FieldDeclList, FieldDecl, FieldNameList, ConstType, VarType, FieldType;
+nonterminal Condition, CondTerm, IfCon, GlobalVarDecl, GlobalVarNameList, GlobalVarName, MethodReturnType;
+nonterminal FieldDeclList, FieldDecl, FieldNameList, ConstType, VarType, FieldType, DoWhileLoopStart;
 nonterminal ClassBodyStart, ClassMethodsStart;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodSignature, FieldName, ConstructorName, Designator;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor, Term, Expr, Expression, Type, Const;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor, Term, Expr, Expression, Type, Const, CondFact;
  
 precedence left ELSE;
 
@@ -241,7 +241,7 @@ SingleStatement ::= (DesignStatement) DesignatorStatement SEMI
 				|
 				(IfElseStatement) IF LPAREN IfCon RPAREN Statement ELSE Statement
 				|
-				(DoWhileStatement) DO Statement WHILE LPAREN Condition RPAREN SEMI
+				(DoWhileStatement) DoWhileLoopStart Statement WHILE LPAREN Condition RPAREN SEMI
 				|
 				(BreakStatement) BREAK SEMI
 				|
@@ -256,6 +256,8 @@ SingleStatement ::= (DesignStatement) DesignatorStatement SEMI
 				(PrintStatement) PRINT LPAREN Expr RPAREN SEMI
 				|
 				(PrintWithPadStatement) PRINT LPAREN Expr COMMA Const RPAREN SEMI;
+
+DoWhileLoopStart ::= (DoWhileLoopStart) DO;
 
 IfCon ::= (IfCondition) Condition
 	  |

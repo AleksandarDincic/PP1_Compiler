@@ -99,7 +99,6 @@ nonterminal DesignatorStatement DesignatorStatement;
 nonterminal AssignStatement AssignStatement;
 nonterminal Condition Condition;
 nonterminal CondTerm CondTerm;
-nonterminal CondFact CondFact;
 nonterminal IfCon IfCon;
 nonterminal GlobalVarDecl GlobalVarDecl;
 nonterminal GlobalVarNameList GlobalVarNameList;
@@ -111,11 +110,12 @@ nonterminal FieldNameList FieldNameList;
 nonterminal ConstType ConstType;
 nonterminal VarType VarType;
 nonterminal FieldType FieldType;
+nonterminal DoWhileLoopStart DoWhileLoopStart;
 nonterminal ClassBodyStart ClassBodyStart;
 nonterminal ClassMethodsStart ClassMethodsStart;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodSignature, FieldName, ConstructorName, Designator;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor, Term, Expr, Expression, Type, Const;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor, Term, Expr, Expression, Type, Const, CondFact;
  
 precedence left ELSE;
 
@@ -284,7 +284,7 @@ SingleStatement ::= (DesignStatement) DesignatorStatement:D1 SEMI {: RESULT=new 
 				|
 				(IfElseStatement) IF LPAREN IfCon:I1 RPAREN Statement:S2 ELSE Statement:S3 {: RESULT=new IfElseStatement(I1, S2, S3); RESULT.setLine(I1left); :}
 				|
-				(DoWhileStatement) DO Statement:S1 WHILE LPAREN Condition:C2 RPAREN SEMI {: RESULT=new DoWhileStatement(S1, C2); RESULT.setLine(S1left); :}
+				(DoWhileStatement) DoWhileLoopStart:D1 Statement:S2 WHILE LPAREN Condition:C3 RPAREN SEMI {: RESULT=new DoWhileStatement(D1, S2, C3); RESULT.setLine(D1left); :}
 				|
 				(BreakStatement) BREAK SEMI {: RESULT=new BreakStatement(); :}
 				|
@@ -299,6 +299,8 @@ SingleStatement ::= (DesignStatement) DesignatorStatement:D1 SEMI {: RESULT=new 
 				(PrintStatement) PRINT LPAREN Expr:E1 RPAREN SEMI {: RESULT=new PrintStatement(E1); RESULT.setLine(E1left); :}
 				|
 				(PrintWithPadStatement) PRINT LPAREN Expr:E1 COMMA Const:C2 RPAREN SEMI {: RESULT=new PrintWithPadStatement(E1, C2); RESULT.setLine(E1left); :};
+
+DoWhileLoopStart ::= (DoWhileLoopStart) DO {: RESULT=new DoWhileLoopStart(); :};
 
 IfCon ::= (IfCondition) Condition:C1 {: RESULT=new IfCondition(C1); RESULT.setLine(C1left); :}
 	  |
