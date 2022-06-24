@@ -65,14 +65,14 @@ terminal Boolean BOOL;
 nonterminal Program, ProgDeclList, ProgDecl, ConstDecl, VarDecl, ClassDecl, RecordDecl, ConstNameValList, ConstNameVal;
 nonterminal VarNameList, VarName, VarDeclList, ClassExtends, ClassBody, ClassMethods, MethodDeclList, MethodDecl;
 nonterminal ClassMethodDecls, ClassFirstMethod, ConstructorDecl, FormPars, FormalParamsList, FormalParam;
-nonterminal Assignop, Relop, Addop, Mulop, Expr, Expression, Term, Factor, Designator, AddressingList, Addressing;
+nonterminal Assignop, Relop, Addop, Mulop;
 nonterminal ActPars, ActualParamsList, StatementList, Statement, SingleStatement, Statements, DesignatorStatement, AssignStatement;
 nonterminal Condition, CondTerm, CondFact, IfCon, GlobalVarDecl, GlobalVarNameList, GlobalVarName, MethodReturnType;
-nonterminal FieldDeclList, FieldDecl, FieldNameList, DesignatorName, ConstType, VarType, FieldType;
+nonterminal FieldDeclList, FieldDecl, FieldNameList, ConstType, VarType, FieldType;
 nonterminal ClassBodyStart, ClassMethodsStart;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodSignature, FieldName, ConstructorName;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Const;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodSignature, FieldName, ConstructorName, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor, Term, Expr, Expression, Type, Const;
  
 precedence left ELSE;
 
@@ -266,6 +266,8 @@ Statements ::= (Statements) LCURLY StatementList RCURLY;
 DesignatorStatement ::= (DesignAssign) AssignStatement
 					|
 					(MethodCall) Designator LPAREN ActPars RPAREN
+				    |
+	   				(SuperMethodCall) SUPER LPAREN ActPars RPAREN
 					|
 					(IncStatement) Designator INC
 					|
@@ -310,6 +312,8 @@ Factor ::= (DesignOfVarFactor) Designator
 	   |
 	   (DesignOfMethodFactor) Designator LPAREN ActPars RPAREN
 	   |
+	   (SuperMethodFactor) SUPER LPAREN ActPars RPAREN
+	   |
 	   (ConstFactor) Const
 	   |
 	   (NewObjectFactor) NEW Type
@@ -318,22 +322,13 @@ Factor ::= (DesignOfVarFactor) Designator
 	   |
 	   (ParenFactor) LPAREN Expr RPAREN;
 	   
-Designator ::= (Designator) DesignatorName AddressingList;
-
-DesignatorName ::= (NamedDesignator) IDENT:designName
-			   |
-			   (ThisDesignator) THIS
-			   |
-			   (SuperDesignator) SUPER;
-
-AddressingList ::= (Addressings) AddressingList Addressing
-			   |
-			   (NoAddressing)
-			   ;
-
-Addressing ::= (AddressingMember) DOT IDENT:mozdanovo
+Designator ::= (AddressingElem) Designator LSQUARE Expr RSQUARE
 		   |
-		   (AddressingElem) LSQUARE Expr RSQUARE;
+		   (AddressingMember) Designator DOT IDENT:memberName
+		   |
+		   (NamedDesignator) IDENT:designName
+		   |
+		   (ThisDesignator) THIS;
 
 Assignop ::= (Assignop) EQUALS;
 

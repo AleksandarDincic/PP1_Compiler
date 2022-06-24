@@ -89,13 +89,6 @@ nonterminal Assignop Assignop;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
-nonterminal Expr Expr;
-nonterminal Expression Expression;
-nonterminal Term Term;
-nonterminal Factor Factor;
-nonterminal Designator Designator;
-nonterminal AddressingList AddressingList;
-nonterminal Addressing Addressing;
 nonterminal ActPars ActPars;
 nonterminal ActualParamsList ActualParamsList;
 nonterminal StatementList StatementList;
@@ -115,15 +108,14 @@ nonterminal MethodReturnType MethodReturnType;
 nonterminal FieldDeclList FieldDeclList;
 nonterminal FieldDecl FieldDecl;
 nonterminal FieldNameList FieldNameList;
-nonterminal DesignatorName DesignatorName;
 nonterminal ConstType ConstType;
 nonterminal VarType VarType;
 nonterminal FieldType FieldType;
 nonterminal ClassBodyStart ClassBodyStart;
 nonterminal ClassMethodsStart ClassMethodsStart;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodSignature, FieldName, ConstructorName;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Const;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodSignature, FieldName, ConstructorName, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor, Term, Expr, Expression, Type, Const;
  
 precedence left ELSE;
 
@@ -317,6 +309,8 @@ Statements ::= (Statements) LCURLY StatementList:S1 RCURLY {: RESULT=new Stateme
 DesignatorStatement ::= (DesignAssign) AssignStatement:A1 {: RESULT=new DesignAssign(A1); RESULT.setLine(A1left); :}
 					|
 					(MethodCall) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new MethodCall(D1, A2); RESULT.setLine(D1left); :}
+				    |
+	   				(SuperMethodCall) SUPER LPAREN ActPars:A1 RPAREN {: RESULT=new SuperMethodCall(A1); RESULT.setLine(A1left); :}
 					|
 					(IncStatement) Designator:D1 INC {: RESULT=new IncStatement(D1); RESULT.setLine(D1left); :}
 					|
@@ -361,6 +355,8 @@ Factor ::= (DesignOfVarFactor) Designator:D1 {: RESULT=new DesignOfVarFactor(D1)
 	   |
 	   (DesignOfMethodFactor) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new DesignOfMethodFactor(D1, A2); RESULT.setLine(D1left); :}
 	   |
+	   (SuperMethodFactor) SUPER LPAREN ActPars:A1 RPAREN {: RESULT=new SuperMethodFactor(A1); RESULT.setLine(A1left); :}
+	   |
 	   (ConstFactor) Const:C1 {: RESULT=new ConstFactor(C1); RESULT.setLine(C1left); :}
 	   |
 	   (NewObjectFactor) NEW Type:T1 {: RESULT=new NewObjectFactor(T1); RESULT.setLine(T1left); :}
@@ -369,22 +365,13 @@ Factor ::= (DesignOfVarFactor) Designator:D1 {: RESULT=new DesignOfVarFactor(D1)
 	   |
 	   (ParenFactor) LPAREN Expr:E1 RPAREN {: RESULT=new ParenFactor(E1); RESULT.setLine(E1left); :};
 	   
-Designator ::= (Designator) DesignatorName:D1 AddressingList:A2 {: RESULT=new Designator(D1, A2); RESULT.setLine(D1left); :};
-
-DesignatorName ::= (NamedDesignator) IDENT:designName {: RESULT=new NamedDesignator(designName); RESULT.setLine(designNameleft); :}
-			   |
-			   (ThisDesignator) THIS {: RESULT=new ThisDesignator(); :}
-			   |
-			   (SuperDesignator) SUPER {: RESULT=new SuperDesignator(); :};
-
-AddressingList ::= (Addressings) AddressingList:A1 Addressing:A2 {: RESULT=new Addressings(A1, A2); RESULT.setLine(A1left); :}
-			   |
-			   (NoAddressing) {: RESULT=new NoAddressing(); :}
-			   ;
-
-Addressing ::= (AddressingMember) DOT IDENT:mozdanovo {: RESULT=new AddressingMember(mozdanovo); RESULT.setLine(mozdanovoleft); :}
+Designator ::= (AddressingElem) Designator:D1 LSQUARE Expr:E2 RSQUARE {: RESULT=new AddressingElem(D1, E2); RESULT.setLine(D1left); :}
 		   |
-		   (AddressingElem) LSQUARE Expr:E1 RSQUARE {: RESULT=new AddressingElem(E1); RESULT.setLine(E1left); :};
+		   (AddressingMember) Designator:D1 DOT IDENT:memberName {: RESULT=new AddressingMember(D1, memberName); RESULT.setLine(D1left); :}
+		   |
+		   (NamedDesignator) IDENT:designName {: RESULT=new NamedDesignator(designName); RESULT.setLine(designNameleft); :}
+		   |
+		   (ThisDesignator) THIS {: RESULT=new ThisDesignator(); :};
 
 Assignop ::= (Assignop) EQUALS {: RESULT=new Assignop(); :};
 

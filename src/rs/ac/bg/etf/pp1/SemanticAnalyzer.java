@@ -11,6 +11,8 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 
 import rs.ac.bg.etf.pp1.ClassTree.Method;
+import rs.ac.bg.etf.pp1.ast.AddressingElem;
+import rs.ac.bg.etf.pp1.ast.AddressingMember;
 import rs.ac.bg.etf.pp1.ast.BoolConst;
 import rs.ac.bg.etf.pp1.ast.CharConst;
 import rs.ac.bg.etf.pp1.ast.ClassBodyStart;
@@ -19,12 +21,18 @@ import rs.ac.bg.etf.pp1.ast.ClassMethodsStart;
 import rs.ac.bg.etf.pp1.ast.ClassName;
 import rs.ac.bg.etf.pp1.ast.ClassNoMethods;
 import rs.ac.bg.etf.pp1.ast.Const;
+import rs.ac.bg.etf.pp1.ast.ConstFactor;
 import rs.ac.bg.etf.pp1.ast.ConstNameVal;
 import rs.ac.bg.etf.pp1.ast.ConstType;
 import rs.ac.bg.etf.pp1.ast.ConstructorDecl;
 import rs.ac.bg.etf.pp1.ast.ConstructorName;
+import rs.ac.bg.etf.pp1.ast.DesignOfMethodFactor;
+import rs.ac.bg.etf.pp1.ast.DesignOfVarFactor;
 import rs.ac.bg.etf.pp1.ast.DoesExtend;
 import rs.ac.bg.etf.pp1.ast.DoesNotExtend;
+import rs.ac.bg.etf.pp1.ast.Expr;
+import rs.ac.bg.etf.pp1.ast.ExprTerm;
+import rs.ac.bg.etf.pp1.ast.ExprWithAddop;
 import rs.ac.bg.etf.pp1.ast.ExtendsError;
 import rs.ac.bg.etf.pp1.ast.FieldNameOfArray;
 import rs.ac.bg.etf.pp1.ast.FieldNameOfSingle;
@@ -38,11 +46,22 @@ import rs.ac.bg.etf.pp1.ast.MethodDecl;
 import rs.ac.bg.etf.pp1.ast.MethodReturnsValue;
 import rs.ac.bg.etf.pp1.ast.MethodReturnsVoid;
 import rs.ac.bg.etf.pp1.ast.MethodSignature;
+import rs.ac.bg.etf.pp1.ast.NamedDesignator;
+import rs.ac.bg.etf.pp1.ast.NegativeExpr;
+import rs.ac.bg.etf.pp1.ast.NewArrayFactor;
+import rs.ac.bg.etf.pp1.ast.NewObjectFactor;
+import rs.ac.bg.etf.pp1.ast.ParenFactor;
+import rs.ac.bg.etf.pp1.ast.PositiveExpr;
 import rs.ac.bg.etf.pp1.ast.Program;
 import rs.ac.bg.etf.pp1.ast.ProgramName;
 import rs.ac.bg.etf.pp1.ast.RecordDecl;
 import rs.ac.bg.etf.pp1.ast.RecordName;
+import rs.ac.bg.etf.pp1.ast.SingleActualParam;
+import rs.ac.bg.etf.pp1.ast.SuperMethodFactor;
 import rs.ac.bg.etf.pp1.ast.SyntaxNode;
+import rs.ac.bg.etf.pp1.ast.TermFactor;
+import rs.ac.bg.etf.pp1.ast.TermWithMulop;
+import rs.ac.bg.etf.pp1.ast.ThisDesignator;
 import rs.ac.bg.etf.pp1.ast.Type;
 import rs.ac.bg.etf.pp1.ast.VarNameOfArray;
 import rs.ac.bg.etf.pp1.ast.VarNameOfSingle;
@@ -50,6 +69,7 @@ import rs.ac.bg.etf.pp1.ast.VarType;
 import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
 import rs.etf.pp1.symboltable.Tab;
 import rs.etf.pp1.symboltable.concepts.Obj;
+import rs.etf.pp1.symboltable.concepts.Scope;
 import rs.etf.pp1.symboltable.concepts.Struct;
 import rs.etf.pp1.symboltable.structure.HashTableDataStructure;
 
@@ -76,6 +96,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
 	Map<String, Obj> classConstructors = new HashMap<String, Obj>();
 	List<Obj> formPars = new ArrayList<>();
+	List<Struct> actPars = new ArrayList<>();
 
 	public void report_error(String message, SyntaxNode info) {
 		errorDetected = true;
@@ -337,9 +358,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		Struct superType = doesExtend.getType().struct;
 		if (superType != Tab.noType) {
 			if (superType.getKind() != Struct.Class) {
-				report_error("Tip " + doesExtend.getType().getTypeName() + " iz kojeg se izvodi mora biti klasa.", doesExtend);
+				report_error("Tip " + doesExtend.getType().getTypeName() + " iz kojeg se izvodi mora biti klasa.",
+						doesExtend);
 			} else if (records.containsKey(doesExtend.getType().getTypeName())) {
-				report_error("Tip " + doesExtend.getType().getTypeName() + " iz kojeg se izvodi mora biti klasa.", doesExtend);
+				report_error("Tip " + doesExtend.getType().getTypeName() + " iz kojeg se izvodi mora biti klasa.",
+						doesExtend);
 			} else {
 				currentSuperclass = Tab.find(doesExtend.getType().getTypeName());
 				currentSuperclassNode = classTree.find(currentSuperclass.getName());
@@ -425,13 +448,14 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			if (constName.getConstName().equals(currentClass.getName())) {
 				Obj existingMet = Tab.currentScope().findSymbol(constName.getConstName());
 				if (existingMet != null) {
-					//superclass constructor
+					// superclass constructor
 					if (classConstructors.containsKey(currentClass.getName())
 							&& classConstructors.get(currentClass.getName()).equals(existingMet)) {
 						existingMet.setLocals(new HashTableDataStructure());
 						constName.obj = existingMet;
 					} else {
-						report_error("Ime " + constName.getConstName() + " se vec koristi u trenutnom opsegu.", constName);
+						report_error("Ime " + constName.getConstName() + " se vec koristi u trenutnom opsegu.",
+								constName);
 						constName.obj = Tab.noObj;
 					}
 
@@ -478,10 +502,173 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			report_error("Tip " + type.getTypeName() + " ne postoji.", type);
 			type.struct = Tab.noType;
 		} else if (typeObj.getKind() != Obj.Type) {
-			report_error("Ime" + type.getTypeName() + " ne oznacava tip.", type);
+			report_error("Ime " + type.getTypeName() + " ne oznacava tip.", type);
 			type.struct = Tab.noType;
 		} else {
 			type.struct = typeObj.getType();
+		}
+	}
+
+	public void visit(NamedDesignator design) {
+		Obj designated = Tab.find(design.getDesignName());
+		if (designated == Tab.noObj) {
+			report_error("Ime " + design.getDesignName() + " ne postoji.", design);
+			design.obj = Tab.noObj;
+		} else {
+			design.obj = designated;
+		}
+	}
+
+	public void visit(ThisDesignator design) {
+		if (declaringClass) {
+			Obj thisObj = Tab.currentScope().findSymbol("this");
+			if (thisObj != null) {
+				design.obj = thisObj;
+			} else {
+				report_error("This ne postoji, a trebalo bi. Ne znam kako.", design);
+				design.obj = Tab.noObj;
+			}
+		} else {
+			report_error("Koriscenje this izvan metode klase.", design);
+			design.obj = Tab.noObj;
+		}
+	}
+
+	public void visit(AddressingMember member) {
+		Obj leftObj = member.getDesignator().obj;
+		if (leftObj.getType().getKind() != Struct.Class) {
+			report_error("Pristup clanovima moze se raditi samo nad objektim klase.", member);
+			member.obj = Tab.noObj;
+		} else {
+			Obj memberObj = null;
+			if (member.getDesignator() instanceof ThisDesignator) {
+				Scope classScope = Tab.currentScope().getOuter();
+				memberObj = classScope.findSymbol(member.getMemberName());
+			} else {
+				memberObj = leftObj.getType().getMembersTable().searchKey(member.getMemberName());
+			}
+			if (memberObj != null) {
+				member.obj = memberObj;
+			} else {
+				report_error(
+						"Polje " + member.getMemberName() + " ne postoji u klasi objekta " + leftObj.getName() + ".",
+						member);
+				member.obj = Tab.noObj;
+			}
+		}
+	}
+
+	public void visit(AddressingElem member) {
+		Obj leftObj = member.getDesignator().obj;
+		if (leftObj.getType().getKind() != Struct.Array) {
+			report_error("Pristup elementima moze se raditi samo nad nizovima.", member);
+			member.obj = Tab.noObj;
+		} else {
+			Expr expr = member.getExpr();
+			if (expr.struct.equals(Tab.intType)) {
+				member.obj = new Obj(Obj.Elem, "#", leftObj.getType().getElemType());
+			} else {
+				report_error("Indeks pri pristupu elementima mora biti int.", member);
+				member.obj = Tab.noObj;
+			}
+		}
+	}
+
+	public void visit(DesignOfVarFactor factor) {
+		Obj factorObj = factor.getDesignator().obj;
+		if (factorObj.getKind() != Obj.Con && factorObj.getKind() != Obj.Elem && factorObj.getKind() != Obj.Fld
+				&& factorObj.getKind() != Obj.Var) {
+			report_error("Ime " + (factorObj == Tab.noObj ? "" : factorObj.getName())
+					+ " ne predstavlja promenljivu, konstantu ili element niza.", factor);
+			factor.struct = Tab.noType;
+		} else {
+			factor.struct = factorObj.getType();
+		}
+	}
+
+	public void visit(SingleActualParam param) {
+		actPars.add(param.getExpr().struct);
+	}
+	
+	public void visit(DesignOfMethodFactor factor) {
+		Obj factorObj = factor.getDesignator().obj;
+		if (factorObj.getKind() != Obj.Meth) {
+			report_error("Ime " + (factorObj == Tab.noObj ? "" : factorObj.getName()) + " ne predstavlja metodu.",
+					factor);
+			factor.struct = Tab.noType;
+		} else {
+			// TODO Provera parametara
+			factor.struct = factorObj.getType();
+		}
+	}
+
+	public void visit(SuperMethodFactor factor) {
+		// TODO kasnije
+	}
+
+	public void visit(ConstFactor factor) {
+		factor.struct = factor.getConst().struct;
+	}
+
+	public void visit(NewObjectFactor factor) {
+		if (factor.getType().struct.getKind() == Struct.Class) {
+			factor.struct = factor.getType().struct;
+		} else {
+			report_error("Tip " + factor.getType().getTypeName() + " ne predstavlja klasu.", factor);
+			factor.struct = Tab.noType;
+		}
+	}
+
+	public void visit(NewArrayFactor factor) {
+		Expr expr = factor.getExpr();
+		if (expr.struct.equals(Tab.intType)) {
+			factor.struct = factor.getType().struct;
+		} else {
+			report_error("Indeks pri pristupu elementima mora biti int.", factor);
+			factor.struct = Tab.noType;
+		}
+	}
+
+	public void visit(ParenFactor factor) {
+		factor.struct = factor.getExpr().struct;
+	}
+
+	public void visit(TermFactor term) {
+		term.struct = term.getFactor().struct;
+	}
+
+	public void visit(TermWithMulop term) {
+		if (term.getTerm().struct.equals(Tab.intType) && term.getFactor().struct.equals(Tab.intType)) {
+			term.struct = Tab.intType;
+		} else {
+			report_error("Operandi za *, /, i % moraju biti int.", term);
+			term.struct = Tab.noType;
+		}
+	}
+
+	public void visit(ExprTerm expr) {
+		expr.struct = expr.getTerm().struct;
+	}
+
+	public void visit(ExprWithAddop expr) {
+		if (expr.getExpression().struct.equals(Tab.intType) && expr.getTerm().struct.equals(Tab.intType)) {
+			expr.struct = Tab.intType;
+		} else {
+			report_error("Operandi za + i - moraju biti int.", expr);
+			expr.struct = Tab.noType;
+		}
+	}
+
+	public void visit(PositiveExpr expr) {
+		expr.struct = expr.getExpression().struct;
+	}
+
+	public void visit(NegativeExpr expr) {
+		if (expr.getExpression().struct.equals(Tab.intType)) {
+			expr.struct = Tab.intType;
+		} else {
+			report_error("Negacija se moze raditi samo nad int.", expr);
+			expr.struct = Tab.noType;
 		}
 	}
 

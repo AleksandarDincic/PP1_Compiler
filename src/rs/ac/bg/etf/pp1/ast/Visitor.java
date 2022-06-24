@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 24/5/2022 11:35:27
+// 24/5/2022 20:27:25
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -16,27 +16,26 @@ public interface Visitor {
     public void visit(VarName VarName);
     public void visit(ActualParamsList ActualParamsList);
     public void visit(StatementList StatementList);
-    public void visit(AddressingList AddressingList);
     public void visit(Addop Addop);
     public void visit(FormalParamsList FormalParamsList);
     public void visit(Factor Factor);
     public void visit(CondTerm CondTerm);
     public void visit(ClassFirstMethod ClassFirstMethod);
     public void visit(GlobalVarDecl GlobalVarDecl);
+    public void visit(Designator Designator);
     public void visit(ProgDecl ProgDecl);
-    public void visit(FieldDecl FieldDecl);
     public void visit(Term Term);
+    public void visit(FieldDecl FieldDecl);
     public void visit(Condition Condition);
     public void visit(AssignStatement AssignStatement);
     public void visit(VarNameList VarNameList);
-    public void visit(DesignatorName DesignatorName);
     public void visit(FormalParam FormalParam);
     public void visit(ClassExtends ClassExtends);
     public void visit(VarDeclList VarDeclList);
     public void visit(Expr Expr);
     public void visit(ActPars ActPars);
-    public void visit(DesignatorStatement DesignatorStatement);
     public void visit(ClassMethodDecls ClassMethodDecls);
+    public void visit(DesignatorStatement DesignatorStatement);
     public void visit(Const Const);
     public void visit(IfCon IfCon);
     public void visit(MethodReturnType MethodReturnType);
@@ -47,7 +46,6 @@ public interface Visitor {
     public void visit(Expression Expression);
     public void visit(CondFact CondFact);
     public void visit(MethodDeclList MethodDeclList);
-    public void visit(Addressing Addressing);
     public void visit(SingleStatement SingleStatement);
     public void visit(FormPars FormPars);
     public void visit(ClassMethods ClassMethods);
@@ -67,18 +65,15 @@ public interface Visitor {
     public void visit(RelopNeq RelopNeq);
     public void visit(RelopEq RelopEq);
     public void visit(Assignop Assignop);
-    public void visit(AddressingElem AddressingElem);
-    public void visit(AddressingMember AddressingMember);
-    public void visit(NoAddressing NoAddressing);
-    public void visit(Addressings Addressings);
-    public void visit(SuperDesignator SuperDesignator);
     public void visit(ThisDesignator ThisDesignator);
     public void visit(NamedDesignator NamedDesignator);
-    public void visit(Designator Designator);
+    public void visit(AddressingMember AddressingMember);
+    public void visit(AddressingElem AddressingElem);
     public void visit(ParenFactor ParenFactor);
     public void visit(NewArrayFactor NewArrayFactor);
     public void visit(NewObjectFactor NewObjectFactor);
     public void visit(ConstFactor ConstFactor);
+    public void visit(SuperMethodFactor SuperMethodFactor);
     public void visit(DesignOfMethodFactor DesignOfMethodFactor);
     public void visit(DesignOfVarFactor DesignOfVarFactor);
     public void visit(TermFactor TermFactor);
@@ -100,6 +95,7 @@ public interface Visitor {
     public void visit(AssStatement AssStatement);
     public void visit(DecStatement DecStatement);
     public void visit(IncStatement IncStatement);
+    public void visit(SuperMethodCall SuperMethodCall);
     public void visit(MethodCall MethodCall);
     public void visit(DesignAssign DesignAssign);
     public void visit(Statements Statements);
