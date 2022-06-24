@@ -71,7 +71,7 @@ nonterminal Condition, CondTerm, CondFact, IfCon, GlobalVarDecl, GlobalVarNameLi
 nonterminal FieldDeclList, FieldDecl, FieldNameList, DesignatorName, ConstType, VarType, FieldType;
 nonterminal ClassBodyStart, ClassMethodsStart;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodName, FieldName, ConstructorName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodSignature, FieldName, ConstructorName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Const;
  
 precedence left ELSE;
@@ -198,9 +198,9 @@ MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
 			   (NoMethodDecl)
 			   ;
 
-MethodDecl ::= (MethodDecl) MethodReturnType MethodName LPAREN FormPars RPAREN VarDeclList LCURLY StatementList RCURLY;
+MethodDecl ::= (MethodDecl) MethodReturnType MethodSignature RPAREN VarDeclList LCURLY StatementList RCURLY;
 
-MethodName ::= (MethodName) IDENT:methodName;
+MethodSignature ::= (MethodSignature) IDENT:methodName LPAREN FormPars;
 
 MethodReturnType ::= (MethodReturnsValue) Type:retType
 				 |

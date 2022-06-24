@@ -122,7 +122,7 @@ nonterminal FieldType FieldType;
 nonterminal ClassBodyStart ClassBodyStart;
 nonterminal ClassMethodsStart ClassMethodsStart;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodName, FieldName, ConstructorName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodSignature, FieldName, ConstructorName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Const;
  
 precedence left ELSE;
@@ -249,9 +249,9 @@ MethodDeclList ::= (MethodDeclarations) MethodDeclList:M1 MethodDecl:M2 {: RESUL
 			   (NoMethodDecl) {: RESULT=new NoMethodDecl(); :}
 			   ;
 
-MethodDecl ::= (MethodDecl) MethodReturnType:M1 MethodName:M2 LPAREN FormPars:F3 RPAREN VarDeclList:V4 LCURLY StatementList:S5 RCURLY {: RESULT=new MethodDecl(M1, M2, F3, V4, S5); RESULT.setLine(M1left); :};
+MethodDecl ::= (MethodDecl) MethodReturnType:M1 MethodSignature:M2 RPAREN VarDeclList:V3 LCURLY StatementList:S4 RCURLY {: RESULT=new MethodDecl(M1, M2, V3, S4); RESULT.setLine(M1left); :};
 
-MethodName ::= (MethodName) IDENT:methodName {: RESULT=new MethodName(methodName); RESULT.setLine(methodNameleft); :};
+MethodSignature ::= (MethodSignature) IDENT:methodName LPAREN FormPars:F1 {: RESULT=new MethodSignature(methodName, F1); RESULT.setLine(methodNameleft); :};
 
 MethodReturnType ::= (MethodReturnsValue) Type:retType {: RESULT=new MethodReturnsValue(retType); RESULT.setLine(retTypeleft); :}
 				 |

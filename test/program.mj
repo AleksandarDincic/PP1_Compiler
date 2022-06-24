@@ -3,21 +3,23 @@
 program test_303
 
 class A {
-	int a;
-	char b;
-	{
-		A(){
-		
-		}
-		
-		int c(bool d) int e;{
-		
-		}
+	int a;{
+	A(){
+	}
+	int B(bool b, int c){
+	}
 	}
 }
 
 class B extends A{
-
+	{	
+		B()A c;{
+		}
+		int f(bool x, int y) int kme;{
+		}
+	}
 }
+
 {
+void main(int a) char b;{}
 }

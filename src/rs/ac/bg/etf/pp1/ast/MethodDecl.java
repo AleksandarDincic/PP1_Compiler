@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/5/2022 21:21:5
+// 24/5/2022 11:35:27
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -10,18 +10,15 @@ public class MethodDecl implements SyntaxNode {
     private SyntaxNode parent;
     private int line;
     private MethodReturnType MethodReturnType;
-    private MethodName MethodName;
-    private FormPars FormPars;
+    private MethodSignature MethodSignature;
     private VarDeclList VarDeclList;
     private StatementList StatementList;
 
-    public MethodDecl (MethodReturnType MethodReturnType, MethodName MethodName, FormPars FormPars, VarDeclList VarDeclList, StatementList StatementList) {
+    public MethodDecl (MethodReturnType MethodReturnType, MethodSignature MethodSignature, VarDeclList VarDeclList, StatementList StatementList) {
         this.MethodReturnType=MethodReturnType;
         if(MethodReturnType!=null) MethodReturnType.setParent(this);
-        this.MethodName=MethodName;
-        if(MethodName!=null) MethodName.setParent(this);
-        this.FormPars=FormPars;
-        if(FormPars!=null) FormPars.setParent(this);
+        this.MethodSignature=MethodSignature;
+        if(MethodSignature!=null) MethodSignature.setParent(this);
         this.VarDeclList=VarDeclList;
         if(VarDeclList!=null) VarDeclList.setParent(this);
         this.StatementList=StatementList;
@@ -36,20 +33,12 @@ public class MethodDecl implements SyntaxNode {
         this.MethodReturnType=MethodReturnType;
     }
 
-    public MethodName getMethodName() {
-        return MethodName;
+    public MethodSignature getMethodSignature() {
+        return MethodSignature;
     }
 
-    public void setMethodName(MethodName MethodName) {
-        this.MethodName=MethodName;
-    }
-
-    public FormPars getFormPars() {
-        return FormPars;
-    }
-
-    public void setFormPars(FormPars FormPars) {
-        this.FormPars=FormPars;
+    public void setMethodSignature(MethodSignature MethodSignature) {
+        this.MethodSignature=MethodSignature;
     }
 
     public VarDeclList getVarDeclList() {
@@ -90,8 +79,7 @@ public class MethodDecl implements SyntaxNode {
 
     public void childrenAccept(Visitor visitor) {
         if(MethodReturnType!=null) MethodReturnType.accept(visitor);
-        if(MethodName!=null) MethodName.accept(visitor);
-        if(FormPars!=null) FormPars.accept(visitor);
+        if(MethodSignature!=null) MethodSignature.accept(visitor);
         if(VarDeclList!=null) VarDeclList.accept(visitor);
         if(StatementList!=null) StatementList.accept(visitor);
     }
@@ -99,16 +87,14 @@ public class MethodDecl implements SyntaxNode {
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(MethodReturnType!=null) MethodReturnType.traverseTopDown(visitor);
-        if(MethodName!=null) MethodName.traverseTopDown(visitor);
-        if(FormPars!=null) FormPars.traverseTopDown(visitor);
+        if(MethodSignature!=null) MethodSignature.traverseTopDown(visitor);
         if(VarDeclList!=null) VarDeclList.traverseTopDown(visitor);
         if(StatementList!=null) StatementList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(MethodReturnType!=null) MethodReturnType.traverseBottomUp(visitor);
-        if(MethodName!=null) MethodName.traverseBottomUp(visitor);
-        if(FormPars!=null) FormPars.traverseBottomUp(visitor);
+        if(MethodSignature!=null) MethodSignature.traverseBottomUp(visitor);
         if(VarDeclList!=null) VarDeclList.traverseBottomUp(visitor);
         if(StatementList!=null) StatementList.traverseBottomUp(visitor);
         accept(visitor);
@@ -125,14 +111,8 @@ public class MethodDecl implements SyntaxNode {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(MethodName!=null)
-            buffer.append(MethodName.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        if(FormPars!=null)
-            buffer.append(FormPars.toString("  "+tab));
+        if(MethodSignature!=null)
+            buffer.append(MethodSignature.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
