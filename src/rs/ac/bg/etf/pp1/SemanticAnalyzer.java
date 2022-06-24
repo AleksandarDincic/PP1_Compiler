@@ -10,7 +10,6 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import rs.ac.bg.etf.pp1.ClassTree.Method;
 import rs.ac.bg.etf.pp1.ast.AddressingElem;
 import rs.ac.bg.etf.pp1.ast.AddressingMember;
 import rs.ac.bg.etf.pp1.ast.BoolConst;
@@ -77,15 +76,17 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	boolean errorDetected = false;
 	int nVars;
 
+	
 	Struct currentVarType = null;
 
 	Logger log = Logger.getLogger(getClass());
 
 	Map<String, Struct> records = new HashMap<>();
 
+	String methName = null;
 	Struct methRetType = null;
 
-	ClassTree classTree = new ClassTree("0");
+	ClassTree classTree = new ClassTree("0", null);
 	boolean declaringClass = false;
 
 	Obj currentClass = null;
@@ -93,6 +94,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
 	ClassTree currentClassNode = null;
 	ClassTree currentSuperclassNode = null;
+
+	boolean inConstructor = false;
 
 	Map<String, Obj> classConstructors = new HashMap<String, Obj>();
 	List<Obj> formPars = new ArrayList<>();
@@ -243,15 +246,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			return false;
 		}
 
-		Method superMethod = currentSuperclassNode.findMethod(methodSig.getMethodName());
-		if (superMethod == null) {
-			return false;
-		}
-
-		if (superMethod.getFormPars() != 1 + formPars.size()) {
-			return false;
-		}
-
 		Obj superMethodObj = null;
 		for (Obj obj : currentSuperclass.getType().getMembers()) {
 			if (obj.getName().equals(methodSig.getMethodName())) {
@@ -260,23 +254,29 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			}
 		}
 
-		if (superMethodObj == null) {
+		if (superMethodObj == null || superMethodObj.getKind() != Obj.Meth) {
+			return false;
+		}
+
+		if (classConstructors.get(currentSuperclass.getName()) == superMethodObj) {
 			return false;
 		}
 
 		int parIndex = 0;
 		for (Obj superFormPar : superMethodObj.getLocalSymbols()) {
-			if (superFormPar.getName().equals("this")) {
+			if (superFormPar.getFpPos() == 0) {
 				continue;
-			}
-
-			Obj newFormPar = formPars.get(parIndex++);
-			if (!superFormPar.getType().equals(newFormPar.getType())) {
+			} else if (parIndex < formPars.size()) {
+				Obj newFormPar = formPars.get(parIndex++);
+				if (!superFormPar.getType().equals(newFormPar.getType())) {
+					return false;
+				}
+			} else {
 				return false;
 			}
 		}
 
-		return true;
+		return parIndex == formPars.size();
 	}
 
 	public void visit(MethodSignature methodSig) {
@@ -286,12 +286,14 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 					&& isOverridingMethod(methodSig)) {
 				existingMet.setLocals(new HashTableDataStructure());
 				methodSig.obj = existingMet;
+				methName = methodSig.getMethodName();
 			} else {
 				report_error("Ime " + methodSig.getMethodName() + " se vec koristi u trenutnom opsegu.", methodSig);
 				methodSig.obj = Tab.noObj;
 			}
 		} else {
 			methodSig.obj = Tab.insert(Obj.Meth, methodSig.getMethodName(), methRetType);
+			methName = methodSig.getMethodName();
 		}
 		Tab.openScope();
 
@@ -306,15 +308,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			if (Tab.currentScope().findSymbol(formPar.getName()) != null) {
 				report_error("Ime " + formPar.getName() + " se vec koristi u trenutnom opsegu.", methodSig);
 			} else {
-				Tab.insert(Obj.Var, formPar.getName(), formPar.getType());
-				++parsAdded;
+				Obj parObj = Tab.insert(Obj.Var, formPar.getName(), formPar.getType());
+				parObj.setFpPos(parsAdded++);
 			}
 
-		}
-
-		if (currentClassNode != null) {
-			Method newMethod = currentClassNode.insertMethod(methodSig.getMethodName());
-			newMethod.setFormPars(parsAdded);
 		}
 
 		formPars.clear();
@@ -326,6 +323,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			Tab.chainLocalSymbols(methodObj);
 		}
 		Tab.closeScope();
+		methName = null;
 	}
 
 	public void visit(FormalParamOfSingle formPar) {
@@ -350,7 +348,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
 	public void visit(DoesNotExtend e) {
 		if (currentClass != null) {
-			currentClassNode = classTree.insertChild(currentClass.getName());
+			currentClassNode = classTree.insertChild(currentClass.getName(), currentClass.getType());
 		}
 	}
 
@@ -367,7 +365,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 				currentSuperclass = Tab.find(doesExtend.getType().getTypeName());
 				currentSuperclassNode = classTree.find(currentSuperclass.getName());
 				if (currentClass != null) {
-					currentClassNode = currentSuperclassNode.insertChild(currentClass.getName());
+					currentClassNode = currentSuperclassNode.insertChild(currentClass.getName(),
+							currentClass.getType());
 				}
 			}
 		} else {
@@ -415,7 +414,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 								Tab.insert(locSym.getKind(), "this",
 										currentClass != null ? currentClass.getType() : Tab.noType);
 							} else {
-								Tab.insert(locSym.getKind(), locSym.getName(), locSym.getType());
+								Obj paramObj = Tab.insert(locSym.getKind(), locSym.getName(), locSym.getType());
+								paramObj.setFpPos(locSym.getFpPos());
 							}
 						}
 						Tab.chainLocalSymbols(newMethObj);
@@ -423,10 +423,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 						if (foundConstructor) {
 							foundConstructor = false;
 							classConstructors.put(currentClass.getName(), newMethObj);
-						} else if (currentClassNode != null) {
-							Method newMethodNode = currentClassNode.insertMethod(newMethName);
-							Method copiedMethodNode = currentSuperclassNode.findMethod(obj.getName());
-							newMethodNode.setFormPars(copiedMethodNode.getFormPars());
 						}
 					}
 				}
@@ -473,6 +469,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		Tab.openScope();
 
 		Tab.insert(Obj.Var, "this", currentClass != null ? currentClass.getType() : Tab.noType);
+		inConstructor = true;
 	}
 
 	public void visit(ConstructorDecl constDecl) {
@@ -480,6 +477,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			Tab.chainLocalSymbols(constDecl.getConstructorName().obj);
 		}
 		Tab.closeScope();
+		inConstructor = false;
 	}
 
 	public void visit(ClassDecl classDecl) {
@@ -589,7 +587,46 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void visit(SingleActualParam param) {
 		actPars.add(param.getExpr().struct);
 	}
-	
+
+	private boolean equivAssignTypes(Struct to, Struct from) {
+		if (to == from) {
+			return true;
+		}
+		if (to.getKind() == Struct.Array && from.getKind() == Struct.Array && to.getElemType() == from.getElemType()) {
+			return true;
+		}
+		if (to.isRefType() && from == Tab.nullType) {
+			return true;
+		}
+
+		if (to.getKind() == Struct.Class && from.getKind() == Struct.Class) {
+			ClassTree toNode = classTree.find(to);
+			if (toNode != null && toNode.find(from) != null) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	private boolean checkActParams(Obj meth) {
+		int parIndex = 1;
+		for (Obj methFormPar : meth.getLocalSymbols()) {
+			if (methFormPar.getFpPos() == 0) {
+				continue;
+			} else if (parIndex < actPars.size()) {
+				Struct actPar = actPars.get(parIndex++);
+				if (!equivAssignTypes(methFormPar.getType(), actPar)) {
+					return false;
+				}
+			} else {
+				return false;
+			}
+		}
+
+		return parIndex == actPars.size();
+	}
+
 	public void visit(DesignOfMethodFactor factor) {
 		Obj factorObj = factor.getDesignator().obj;
 		if (factorObj.getKind() != Obj.Meth) {
@@ -597,13 +634,71 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 					factor);
 			factor.struct = Tab.noType;
 		} else {
-			// TODO Provera parametara
-			factor.struct = factorObj.getType();
+			if (checkActParams(factorObj)) {
+				factor.struct = factorObj.getType();
+			} else {
+				report_error("Neispravni stvarni argumenti.", factor);
+				factor.struct = Tab.noType;
+			}
 		}
+		actPars.clear();
 	}
 
 	public void visit(SuperMethodFactor factor) {
-		// TODO kasnije
+		if (declaringClass) {
+			if (currentSuperclass != null) {
+				if (inConstructor) {
+					if(classConstructors.containsKey(currentSuperclass.getName())) {
+						Obj superMeth = classConstructors.get(currentSuperclass.getName());
+						if(actPars.size() == 0) {
+							factor.struct = superMeth.getType();
+						}
+						else {
+							report_error("Neispravni stvarni argumenti.", factor);
+							factor.struct = Tab.noType;
+						}
+					}
+					else {
+						report_error("Nadklasa ne sadrzi trenutnu metodu.", factor);
+						factor.struct = Tab.noType;
+					}
+				} else {
+					if(methName != null) {
+						Obj superMethodObj = null;
+						for (Obj obj : currentSuperclass.getType().getMembers()) {
+							if (obj.getName().equals(methName)) {
+								superMethodObj = obj;
+								break;
+							}
+						}
+
+						if (superMethodObj == null || superMethodObj.getKind() != Obj.Meth) {
+							report_error("Nadklasa ne sadrzi trenutnu metodu.", factor);
+							factor.struct = Tab.noType;
+						}
+						
+						if(checkActParams(superMethodObj)) {
+							factor.struct = superMethodObj.getType();
+						}
+						else {
+							report_error("Neispravni stvarni argumenti.", factor);
+							factor.struct = Tab.noType;
+						}
+					}
+					else {
+						report_error("Nadklasa ne sadrzi trenutnu metodu.", factor);
+						factor.struct = Tab.noType;
+					}
+				}
+			} else {
+				report_error("Koriscenje super bez postojanja nadklase.", factor);
+				factor.struct = Tab.noType;
+			}
+		} else {
+			report_error("Koriscenje super izvan metode klase.", factor);
+			factor.struct = Tab.noType;
+		}
+		actPars.clear();
 	}
 
 	public void visit(ConstFactor factor) {
