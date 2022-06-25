@@ -1,9 +1,7 @@
 package rs.ac.bg.etf.pp1;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import rs.etf.pp1.symboltable.concepts.Struct;
 
@@ -17,6 +15,7 @@ public class ClassTree {
 
 	public ClassTree(String name, Struct type) {
 		this.name = name;
+		this.type = type;
 	}
 
 	public String getName() {
