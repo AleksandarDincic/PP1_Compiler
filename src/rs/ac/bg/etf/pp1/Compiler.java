@@ -30,7 +30,7 @@ public class Compiler {
 		Logger log = Logger.getLogger(Compiler.class);
 		
 		if(args.length < 1) {
-			log.error("Source file not specified");
+			log.error("Fale argumenti");
 			return;
 		}
 		
@@ -55,20 +55,27 @@ public class Compiler {
 		        // ispis sintaksnog stabla
 				log.info(prog.toString(""));
 				
+				
+
+				log.info("===================================");
+				log.info("Semanticka analiza:");
 				ExtendedTab.extendedInit();
 				
 				
 				SemanticAnalyzer semanticAnalyzer = new SemanticAnalyzer();
 				prog.traverseBottomUp(semanticAnalyzer);
 				
-				tsdump();
-			}else {
-				if(s.value instanceof Program) {
-					Program prog = (Program)(s.value);
-			        
-			        // ispis sintaksnog stabla
-					log.info(prog.toString(""));
+				if(!semanticAnalyzer.errorDetected) {
+					log.error("Semanticka analiza uspesno zavrsena.");
+					log.info("===================================");
+					log.error("Tabela simbola:");
+					tsdump();
+					log.info("===================================");
 				}
+				else {
+					log.error("Semanticka analiza neuspesno zavrsena.");
+				}
+			}else {
 				log.error("Parsiranje neuspesno zavrseno.");
 			}
 		} 
