@@ -97,7 +97,7 @@ import rs.etf.pp1.symboltable.structure.HashTableDataStructure;
 
 public class SemanticAnalyzer extends VisitorAdaptor {
 	boolean errorDetected = false;
-	int nVars;
+	int nVars = 0;
 
 	Struct currentVarType = null;
 
@@ -178,14 +178,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		} else {
 			Const c = constNameVal.getConst();
 			int val = -1;
-			if (currentVarType.equals(c.struct)) {
-				if (c instanceof IntConst) {
-					val = ((IntConst) c).getVal();
-				} else if (c instanceof CharConst) {
-					val = ((CharConst) c).getVal();
-				} else if (c instanceof BoolConst) {
-					val = ((BoolConst) c).getVal() ? 1 : 0;
-				}
+			if (currentVarType.equals(c.obj.getType())) {
+				val = c.obj.getAdr();
 			} else {
 				report_error("Vrednost konstante " + constName + " nije kompatbilna sa svojim tipom.", constNameVal);
 			}
@@ -802,7 +796,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(ConstFactor factor) {
-		factor.struct = factor.getConst().struct;
+		factor.struct = factor.getConst().obj.getType();
 	}
 
 	public void visit(NewObjectFactor factor) {
@@ -987,15 +981,18 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(IntConst intConst) {
-		intConst.struct = Tab.intType;
+		intConst.obj = new Obj(Obj.Con, "#", Tab.intType);
+		intConst.obj.setAdr(intConst.getVal());
 	}
 
 	public void visit(CharConst charConst) {
-		charConst.struct = Tab.charType;
+		charConst.obj = new Obj(Obj.Con, "#", Tab.charType);
+		charConst.obj.setAdr(charConst.getVal());
 	}
 
 	public void visit(BoolConst boolConst) {
-		boolConst.struct = ExtendedTab.boolType;
+		boolConst.obj = new Obj(Obj.Con, "#", ExtendedTab.boolType);
+		boolConst.obj.setAdr(boolConst.getVal() ? 1 : 0);
 	}
 
 	public void visit(AssStatement ass) {
@@ -1062,7 +1059,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		Struct exprStruct = stmt.getExpr().struct;
 		if (exprStruct != Tab.charType && exprStruct != Tab.intType && exprStruct != ExtendedTab.boolType) {
 			report_error("Mogu se ispisivati samo int, char i bool.", stmt);
-		} else if (stmt.getConst().struct != Tab.intType) {
+		} else if (stmt.getConst().obj.getType() != Tab.intType) {
 			report_error("Padding pri ispisu mora biti int.", stmt);
 		}
 	}

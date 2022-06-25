@@ -1,12 +1,11 @@
 //Test 303
 
 program test_303
-
-class A{
-	{
-		void main(){
-		}
-	}
-}
 {
+	void main()
+	int x;
+	{
+		x = 1;
+		print(x);
+	}
 }

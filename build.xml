@@ -13,6 +13,7 @@
 				<exclude name="ExtendedTab.java"/>
 				<exclude name="ExtendedDumpSymbolTableVisitor.java"/>
 				<exclude name="ClassTree.java"/>
+				<exclude name="HelperVisitors.java"/>
 			</fileset>
 		</delete>
 	</target>

@@ -71,6 +71,13 @@ public class Compiler {
 					log.error("Tabela simbola:");
 					tsdump();
 					log.info("===================================");
+					
+					CodeGenerator codeGen = new CodeGenerator();
+					prog.traverseBottomUp(codeGen);
+		        	Code.dataSize = semanticAnalyzer.nVars;
+		        	Code.mainPc = codeGen.getMainPc();
+		        	Code.write(new FileOutputStream("test/program.obj"));
+		        	log.info("Parsiranje uspesno zavrseno!");
 				}
 				else {
 					log.error("Semanticka analiza neuspesno zavrsena.");
