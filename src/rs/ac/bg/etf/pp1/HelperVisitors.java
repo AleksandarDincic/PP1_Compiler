@@ -11,11 +11,7 @@ import rs.etf.pp1.mj.runtime.Code;
 
 class CounterVisitor extends VisitorAdaptor {
 
-	protected int count;
-
-	public int getCount() {
-		return count;
-	}
+	int count;
 
 	public static class FormParamCounter extends CounterVisitor {
 

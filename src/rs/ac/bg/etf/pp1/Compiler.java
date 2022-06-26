@@ -66,16 +66,20 @@ public class Compiler {
 				prog.traverseBottomUp(semanticAnalyzer);
 				
 				if(!semanticAnalyzer.errorDetected) {
-					log.error("Semanticka analiza uspesno zavrsena.");
+					log.info("Semanticka analiza uspesno zavrsena.");
 					log.info("===================================");
 					log.error("Tabela simbola:");
 					tsdump();
 					log.info("===================================");
 					
 					CodeGenerator codeGen = new CodeGenerator();
+					codeGen.nVars = semanticAnalyzer.nVars;
+					codeGen.vftStart = codeGen.nVars;
+					codeGen.classConstructors = semanticAnalyzer.classConstructors;
+					log.info(codeGen.nVars);
 					prog.traverseBottomUp(codeGen);
-		        	Code.dataSize = semanticAnalyzer.nVars;
-		        	Code.mainPc = codeGen.getMainPc();
+		        	Code.dataSize = codeGen.nVars;
+		        	Code.mainPc = codeGen.mainPc;
 		        	Code.write(new FileOutputStream("test/program.obj"));
 		        	log.info("Parsiranje uspesno zavrseno!");
 				}

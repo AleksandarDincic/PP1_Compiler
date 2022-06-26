@@ -71,8 +71,8 @@ nonterminal Condition, CondTerm, IfCon, GlobalVarDecl, GlobalVarNameList, Global
 nonterminal FieldDeclList, FieldDecl, FieldNameList, ConstType, VarType, FieldType, DoWhileLoopStart;
 nonterminal ClassBodyStart, ClassMethodsStart;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodSignature, FieldName, ConstructorName, Designator, Const;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor, Term, Expr, Expression, Type, CondFact;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodSignature, FieldName, ConstructorName, Designator, Const, Type;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor, Term, Expr, Expression, CondFact;
  
 precedence left ELSE;
 

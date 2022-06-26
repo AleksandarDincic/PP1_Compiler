@@ -160,7 +160,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(ConstType constType) {
-		Struct typeStruct = constType.getType().struct;
+		Struct typeStruct = constType.getType().obj.getType();
 		if (typeStruct != Tab.charType && typeStruct != Tab.intType && typeStruct != ExtendedTab.boolType) {
 			report_error(
 					"Konstanta  mora biti tipa int, char ili bool, dat je tip " + constType.getType().getTypeName(),
@@ -189,7 +189,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(VarType varType) {
-		Struct typeStruct = varType.getType().struct;
+		Struct typeStruct = varType.getType().obj.getType();
 		currentVarType = typeStruct;
 	}
 
@@ -245,7 +245,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(FieldType fieldType) {
-		Struct typeStruct = fieldType.getType().struct;
+		Struct typeStruct = fieldType.getType().obj.getType();
 		currentVarType = typeStruct;
 	}
 
@@ -258,7 +258,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(MethodReturnsValue retVal) {
-		methRetType = retVal.getType().struct;
+		methRetType = retVal.getType().obj.getType();
 	}
 
 	public void visit(MethodReturnsVoid retVal) {
@@ -355,11 +355,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(FormalParamOfSingle formPar) {
-		formPars.add(new Obj(Obj.Var, formPar.getParName(), formPar.getType().struct));
+		formPars.add(new Obj(Obj.Var, formPar.getParName(), formPar.getType().obj.getType()));
 	}
 
 	public void visit(FormalParamOfArray formPar) {
-		formPars.add(new Obj(Obj.Var, formPar.getParName(), new Struct(Struct.Array, formPar.getType().struct)));
+		formPars.add(new Obj(Obj.Var, formPar.getParName(), new Struct(Struct.Array, formPar.getType().obj.getType())));
 	}
 
 	public void visit(ClassName className) {
@@ -381,7 +381,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(DoesExtend doesExtend) {
-		Struct superType = doesExtend.getType().struct;
+		Struct superType = doesExtend.getType().obj.getType();
 		if (superType != Tab.noType) {
 			if (superType.getKind() != Struct.Class) {
 				report_error("Tip " + doesExtend.getType().getTypeName() + " iz kojeg se izvodi mora biti klasa.",
@@ -526,12 +526,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		Obj typeObj = Tab.find(type.getTypeName());
 		if (typeObj == Tab.noObj) {
 			report_error("Tip " + type.getTypeName() + " ne postoji.", type);
-			type.struct = Tab.noType;
+			type.obj = Tab.noObj;
 		} else if (typeObj.getKind() != Obj.Type) {
 			report_error("Ime " + type.getTypeName() + " ne oznacava tip.", type);
-			type.struct = Tab.noType;
+			type.obj = Tab.noObj;
 		} else {
-			type.struct = typeObj.getType();
+			type.obj = typeObj;
 		}
 	}
 
@@ -800,10 +800,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(NewObjectFactor factor) {
-		if (factor.getType().struct.getKind() == Struct.Class) {
+		if (factor.getType().obj.getType().getKind() == Struct.Class) {
 			report_info("Detektovano kreiranje objekta klase", factor);
 			report_info("\t" + ExtendedTab.printObj(Tab.find(factor.getType().getTypeName())), null);
-			factor.struct = factor.getType().struct;
+			factor.struct = factor.getType().obj.getType();
 		} else {
 			report_error("Tip " + factor.getType().getTypeName() + " ne predstavlja klasu.", factor);
 			factor.struct = Tab.noType;
@@ -813,7 +813,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void visit(NewArrayFactor factor) {
 		Expr expr = factor.getExpr();
 		if (expr.struct.equals(Tab.intType)) {
-			factor.struct = new Struct(Struct.Array, factor.getType().struct);
+			factor.struct = new Struct(Struct.Array, factor.getType().obj.getType());
 		} else {
 			report_error("Velicina niza pri kreiranju mora biti int.", factor);
 			factor.struct = Tab.noType;
@@ -869,7 +869,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
 	public void visit(InstanceofCondFact fact) {
 		if (fact.getDesignator().obj.getType().getKind() != Struct.Class
-				|| fact.getType().struct.getKind() != Struct.Class) {
+				|| fact.getType().obj.getType().getKind() != Struct.Class) {
 			report_error("Operacija instanceof se moze raditi samo nad klasama.", fact);
 		}
 		fact.struct = ExtendedTab.boolType;
