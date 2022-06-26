@@ -1,23 +1,37 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/5/2022 12:52:40
+// 26/5/2022 21:48:52
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class IfElseStatement extends SingleStatement {
 
+    private IfStart IfStart;
     private IfCon IfCon;
     private Statement Statement;
+    private ElseStart ElseStart;
     private Statement Statement1;
 
-    public IfElseStatement (IfCon IfCon, Statement Statement, Statement Statement1) {
+    public IfElseStatement (IfStart IfStart, IfCon IfCon, Statement Statement, ElseStart ElseStart, Statement Statement1) {
+        this.IfStart=IfStart;
+        if(IfStart!=null) IfStart.setParent(this);
         this.IfCon=IfCon;
         if(IfCon!=null) IfCon.setParent(this);
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
+        this.ElseStart=ElseStart;
+        if(ElseStart!=null) ElseStart.setParent(this);
         this.Statement1=Statement1;
         if(Statement1!=null) Statement1.setParent(this);
+    }
+
+    public IfStart getIfStart() {
+        return IfStart;
+    }
+
+    public void setIfStart(IfStart IfStart) {
+        this.IfStart=IfStart;
     }
 
     public IfCon getIfCon() {
@@ -36,6 +50,14 @@ public class IfElseStatement extends SingleStatement {
         this.Statement=Statement;
     }
 
+    public ElseStart getElseStart() {
+        return ElseStart;
+    }
+
+    public void setElseStart(ElseStart ElseStart) {
+        this.ElseStart=ElseStart;
+    }
+
     public Statement getStatement1() {
         return Statement1;
     }
@@ -49,21 +71,27 @@ public class IfElseStatement extends SingleStatement {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(IfStart!=null) IfStart.accept(visitor);
         if(IfCon!=null) IfCon.accept(visitor);
         if(Statement!=null) Statement.accept(visitor);
+        if(ElseStart!=null) ElseStart.accept(visitor);
         if(Statement1!=null) Statement1.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(IfStart!=null) IfStart.traverseTopDown(visitor);
         if(IfCon!=null) IfCon.traverseTopDown(visitor);
         if(Statement!=null) Statement.traverseTopDown(visitor);
+        if(ElseStart!=null) ElseStart.traverseTopDown(visitor);
         if(Statement1!=null) Statement1.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(IfStart!=null) IfStart.traverseBottomUp(visitor);
         if(IfCon!=null) IfCon.traverseBottomUp(visitor);
         if(Statement!=null) Statement.traverseBottomUp(visitor);
+        if(ElseStart!=null) ElseStart.traverseBottomUp(visitor);
         if(Statement1!=null) Statement1.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -73,6 +101,12 @@ public class IfElseStatement extends SingleStatement {
         buffer.append(tab);
         buffer.append("IfElseStatement(\n");
 
+        if(IfStart!=null)
+            buffer.append(IfStart.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
         if(IfCon!=null)
             buffer.append(IfCon.toString("  "+tab));
         else
@@ -81,6 +115,12 @@ public class IfElseStatement extends SingleStatement {
 
         if(Statement!=null)
             buffer.append(Statement.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(ElseStart!=null)
+            buffer.append(ElseStart.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

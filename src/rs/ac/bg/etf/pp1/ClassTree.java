@@ -9,13 +9,15 @@ public class ClassTree {
 
 	private String name;
 	private Struct type;
-
+	private ClassTree parent;
+	
 	private List<ClassTree> children = new LinkedList<>();
 	private ClassTree lastSought = null;
 
-	public ClassTree(String name, Struct type) {
+	public ClassTree(String name, Struct type, ClassTree parent) {
 		this.name = name;
 		this.type = type;
+		this.parent = parent;
 	}
 
 	public String getName() {
@@ -25,9 +27,13 @@ public class ClassTree {
 	public Struct getType() {
 		return type;
 	}
+	
+	public ClassTree getParent() {
+		return parent;
+	}
 
 	public ClassTree insertChild(String name, Struct type) {
-		ClassTree newNode = new ClassTree(name, type);
+		ClassTree newNode = new ClassTree(name, type, this);
 		children.add(newNode);
 		return newNode;
 	}

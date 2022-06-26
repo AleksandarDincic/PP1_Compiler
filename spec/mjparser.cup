@@ -68,11 +68,11 @@ nonterminal ClassMethodDecls, ClassFirstMethod, ConstructorDecl, FormPars, Forma
 nonterminal Assignop, Relop, Addop, Mulop;
 nonterminal ActPars, ActualParamsList, StatementList, Statement, SingleStatement, Statements, DesignatorStatement, AssignStatement;
 nonterminal Condition, CondTerm, IfCon, GlobalVarDecl, GlobalVarNameList, GlobalVarName, MethodReturnType;
-nonterminal FieldDeclList, FieldDecl, FieldNameList, ConstType, VarType, FieldType, DoWhileLoopStart;
-nonterminal ClassBodyStart, ClassMethodsStart;
+nonterminal FieldDeclList, FieldDecl, FieldNameList, ConstType, VarType, FieldType, DoWhileLoopStart, CondFact;
+nonterminal ClassBodyStart, ClassMethodsStart, IfStart, ElseStart, DoWhileCondStart;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodSignature, FieldName, ConstructorName, Designator, Const, Type;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor, Term, Expr, Expression, CondFact;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor, Term, Expr, Expression;
  
 precedence left ELSE;
 
@@ -237,11 +237,11 @@ Statement ::= (OneStatement) SingleStatement
 		  
 SingleStatement ::= (DesignStatement) DesignatorStatement SEMI
 				|
-				(IfStatement) IF LPAREN IfCon RPAREN Statement
+				(IfStatement) IfStart LPAREN IfCon RPAREN Statement
 				|
-				(IfElseStatement) IF LPAREN IfCon RPAREN Statement ELSE Statement
+				(IfElseStatement) IfStart LPAREN IfCon RPAREN Statement ElseStart Statement
 				|
-				(DoWhileStatement) DoWhileLoopStart Statement WHILE LPAREN Condition RPAREN SEMI
+				(DoWhileStatement) DoWhileLoopStart Statement WHILE DoWhileCondStart Condition RPAREN SEMI
 				|
 				(BreakStatement) BREAK SEMI
 				|
@@ -257,7 +257,13 @@ SingleStatement ::= (DesignStatement) DesignatorStatement SEMI
 				|
 				(PrintWithPadStatement) PRINT LPAREN Expr COMMA Const RPAREN SEMI;
 
+IfStart ::= (IfStart) IF;
+
+ElseStart ::= (ElseStart) ELSE;
+
 DoWhileLoopStart ::= (DoWhileLoopStart) DO;
+
+DoWhileCondStart ::= (DoWhileCondStart) LPAREN;
 
 IfCon ::= (IfCondition) Condition
 	  |
@@ -291,7 +297,7 @@ CondTerm ::= (AndCondTerm) CondTerm AND CondFact
 		 |
 		 (CondTermFact) CondFact;
 
-CondFact ::= (RelopCondFact) CondFact Relop Expr
+CondFact ::= (RelopCondFact) Expr:leftExpr Relop Expr:rightExpr
 		 |
 		 (InstanceofCondFact) Designator INSTANCEOF Type
 		 |
@@ -344,7 +350,7 @@ Relop ::= (RelopEq) EQ
 	  |
 	  (RelopLt) LT
 	  |
-	  (Relople) LE;
+	  (RelopLe) LE;
 
 Addop ::= (AddopPlus) PLUS
 	  |

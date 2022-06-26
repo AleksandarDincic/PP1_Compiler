@@ -5,9 +5,27 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class AddopPlus extends Addop {
+public class IfStart implements SyntaxNode {
 
-    public AddopPlus () {
+    private SyntaxNode parent;
+    private int line;
+    public IfStart () {
+    }
+
+    public SyntaxNode getParent() {
+        return parent;
+    }
+
+    public void setParent(SyntaxNode parent) {
+        this.parent=parent;
+    }
+
+    public int getLine() {
+        return line;
+    }
+
+    public void setLine(int line) {
+        this.line=line;
     }
 
     public void accept(Visitor visitor) {
@@ -28,10 +46,10 @@ public class AddopPlus extends Addop {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("AddopPlus(\n");
+        buffer.append("IfStart(\n");
 
         buffer.append(tab);
-        buffer.append(") [AddopPlus]");
+        buffer.append(") [IfStart]");
         return buffer.toString();
     }
 }

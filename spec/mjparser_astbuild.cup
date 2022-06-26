@@ -111,11 +111,15 @@ nonterminal ConstType ConstType;
 nonterminal VarType VarType;
 nonterminal FieldType FieldType;
 nonterminal DoWhileLoopStart DoWhileLoopStart;
+nonterminal CondFact CondFact;
 nonterminal ClassBodyStart ClassBodyStart;
 nonterminal ClassMethodsStart ClassMethodsStart;
+nonterminal IfStart IfStart;
+nonterminal ElseStart ElseStart;
+nonterminal DoWhileCondStart DoWhileCondStart;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, RecordName, ClassName, MethodSignature, FieldName, ConstructorName, Designator, Const, Type;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor, Term, Expr, Expression, CondFact;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor, Term, Expr, Expression;
  
 precedence left ELSE;
 
@@ -280,11 +284,11 @@ Statement ::= (OneStatement) SingleStatement:S1 {: RESULT=new OneStatement(S1); 
 		  
 SingleStatement ::= (DesignStatement) DesignatorStatement:D1 SEMI {: RESULT=new DesignStatement(D1); RESULT.setLine(D1left); :}
 				|
-				(IfStatement) IF LPAREN IfCon:I1 RPAREN Statement:S2 {: RESULT=new IfStatement(I1, S2); RESULT.setLine(I1left); :}
+				(IfStatement) IfStart:I1 LPAREN IfCon:I2 RPAREN Statement:S3 {: RESULT=new IfStatement(I1, I2, S3); RESULT.setLine(I1left); :}
 				|
-				(IfElseStatement) IF LPAREN IfCon:I1 RPAREN Statement:S2 ELSE Statement:S3 {: RESULT=new IfElseStatement(I1, S2, S3); RESULT.setLine(I1left); :}
+				(IfElseStatement) IfStart:I1 LPAREN IfCon:I2 RPAREN Statement:S3 ElseStart:E4 Statement:S5 {: RESULT=new IfElseStatement(I1, I2, S3, E4, S5); RESULT.setLine(I1left); :}
 				|
-				(DoWhileStatement) DoWhileLoopStart:D1 Statement:S2 WHILE LPAREN Condition:C3 RPAREN SEMI {: RESULT=new DoWhileStatement(D1, S2, C3); RESULT.setLine(D1left); :}
+				(DoWhileStatement) DoWhileLoopStart:D1 Statement:S2 WHILE DoWhileCondStart:D3 Condition:C4 RPAREN SEMI {: RESULT=new DoWhileStatement(D1, S2, D3, C4); RESULT.setLine(D1left); :}
 				|
 				(BreakStatement) BREAK SEMI {: RESULT=new BreakStatement(); :}
 				|
@@ -300,7 +304,13 @@ SingleStatement ::= (DesignStatement) DesignatorStatement:D1 SEMI {: RESULT=new 
 				|
 				(PrintWithPadStatement) PRINT LPAREN Expr:E1 COMMA Const:C2 RPAREN SEMI {: RESULT=new PrintWithPadStatement(E1, C2); RESULT.setLine(E1left); :};
 
+IfStart ::= (IfStart) IF {: RESULT=new IfStart(); :};
+
+ElseStart ::= (ElseStart) ELSE {: RESULT=new ElseStart(); :};
+
 DoWhileLoopStart ::= (DoWhileLoopStart) DO {: RESULT=new DoWhileLoopStart(); :};
+
+DoWhileCondStart ::= (DoWhileCondStart) LPAREN {: RESULT=new DoWhileCondStart(); :};
 
 IfCon ::= (IfCondition) Condition:C1 {: RESULT=new IfCondition(C1); RESULT.setLine(C1left); :}
 	  |
@@ -334,7 +344,7 @@ CondTerm ::= (AndCondTerm) CondTerm:C1 AND CondFact:C2 {: RESULT=new AndCondTerm
 		 |
 		 (CondTermFact) CondFact:C1 {: RESULT=new CondTermFact(C1); RESULT.setLine(C1left); :};
 
-CondFact ::= (RelopCondFact) CondFact:C1 Relop:R2 Expr:E3 {: RESULT=new RelopCondFact(C1, R2, E3); RESULT.setLine(C1left); :}
+CondFact ::= (RelopCondFact) Expr:leftExpr Relop:R1 Expr:rightExpr {: RESULT=new RelopCondFact(leftExpr, R1, rightExpr); RESULT.setLine(leftExprleft); :}
 		 |
 		 (InstanceofCondFact) Designator:D1 INSTANCEOF Type:T2 {: RESULT=new InstanceofCondFact(D1, T2); RESULT.setLine(D1left); :}
 		 |
@@ -387,7 +397,7 @@ Relop ::= (RelopEq) EQ {: RESULT=new RelopEq(); :}
 	  |
 	  (RelopLt) LT {: RESULT=new RelopLt(); :}
 	  |
-	  (Relople) LE {: RESULT=new Relople(); :};
+	  (RelopLe) LE {: RESULT=new RelopLe(); :};
 
 Addop ::= (AddopPlus) PLUS {: RESULT=new AddopPlus(); :}
 	  |

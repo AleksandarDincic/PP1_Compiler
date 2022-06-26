@@ -108,7 +108,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	String methName = null;
 	Struct methRetType = null;
 
-	ClassTree classTree = new ClassTree("0", null);
+	ClassTree classTree = new ClassTree("0", null, null);
 	boolean declaringClass = false;
 
 	Obj currentClass = null;
@@ -130,7 +130,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void report_error(String message, SyntaxNode info) {
 		errorDetected = true;
 		StringBuilder msg = new StringBuilder(message);
-		int line = (info == null) ? 0 : info.getLine();
+		int line = (info == null) ? 0 : info.getLine(); 
 		if (line != 0)
 			msg.append(" na liniji ").append(line);
 		log.error(msg.toString());
@@ -197,7 +197,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		if (Tab.currentScope().findSymbol(varName) != null) {
 			report_error("Ime " + varName + " se vec koristi u trenutnom opsegu.", node);
 		} else {
-			Tab.insert(isField ? Obj.Fld : Obj.Var, varName, currentVarType);
+			Obj obj = Tab.insert(isField ? Obj.Fld : Obj.Var, varName, currentVarType);
+			if(obj.getKind() == Obj.Fld) {
+				obj.setAdr(obj.getAdr() + 1);
+			}
 		}
 	}
 
@@ -205,7 +208,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		if (Tab.currentScope().findSymbol(varName) != null) {
 			report_error("Ime " + varName + " se vec koristi u trenutnom opsegu.", node);
 		} else {
-			Tab.insert(isField ? Obj.Fld : Obj.Var, varName, new Struct(Struct.Array, currentVarType));
+			Obj obj = Tab.insert(isField ? Obj.Fld : Obj.Var, varName, new Struct(Struct.Array, currentVarType));
+			if(obj.getKind() == Obj.Fld) {
+				obj.setAdr(obj.getAdr() + 1);
+			}
 		}
 	}
 
@@ -407,7 +413,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			Struct superType = currentSuperclass.getType();
 			for (Obj obj : superType.getMembers()) {
 				if (obj.getKind() == Obj.Fld) {
-					Tab.insert(Obj.Fld, obj.getName(), obj.getType());
+					Obj newObj = Tab.insert(Obj.Fld, obj.getName(), obj.getType());
+					newObj.setAdr(newObj.getAdr()+1);
 				}
 			}
 		}
@@ -864,7 +871,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(CondFactExpr fact) {
-		fact.struct = fact.getExpr().struct;
+		if(fact.getExpr().struct != ExtendedTab.boolType) {
+			report_error("Operandi u uslovnom iskazu moraju biti bool.", fact);
+		}
 	}
 
 	public void visit(InstanceofCondFact fact) {
@@ -872,29 +881,15 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 				|| fact.getType().obj.getType().getKind() != Struct.Class) {
 			report_error("Operacija instanceof se moze raditi samo nad klasama.", fact);
 		}
-		fact.struct = ExtendedTab.boolType;
 	}
 
 	public void visit(RelopCondFact fact) {
-		if (!compatTypes(fact.getCondFact().struct, fact.getExpr().struct)) {
+		if (!compatTypes(fact.getExpr().struct, fact.getExpr1().struct)) {
 			report_error("Operandi u uslovnom iskazu moraju biti kompatibilni.", fact);
-		} else if (fact.getCondFact().struct.isRefType() && !(fact.getRelop() instanceof RelopEq)
+		} else if (fact.getExpr().struct.isRefType() && !(fact.getRelop() instanceof RelopEq)
 				&& !(fact.getRelop() instanceof RelopNeq)) {
 			report_error("Uz promenljive tipa klase ili niza, od relacionih operatora, mogu se koristiti samo != i ==.",
 					fact);
-		}
-		fact.struct = ExtendedTab.boolType;
-	}
-
-	public void visit(CondTermFact term) {
-		if (term.getCondFact().struct != ExtendedTab.boolType) {
-			report_error("Operandi u uslovnom iskazu moraju biti bool.", term);
-		}
-	}
-
-	public void visit(AndCondTerm term) {
-		if (term.getCondFact().struct != ExtendedTab.boolType) {
-			report_error("Operandi u uslovnom iskazu moraju biti bool.", term);
 		}
 	}
 
