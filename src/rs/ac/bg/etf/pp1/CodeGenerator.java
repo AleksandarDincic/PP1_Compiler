@@ -85,10 +85,15 @@ public class CodeGenerator extends VisitorAdaptor {
 	static class CondControl {
 		List<Integer> condFactJumps = new LinkedList<>();
 		List<Integer> condSuccJumps = new LinkedList<>();
-		List<Integer> continueJumps = new LinkedList<>();
-		List<Integer> breakJumps = new LinkedList<>();
 		int endJump = -1;
 
+		boolean isLoop = false;
+	}
+	
+	static class LoopControl {
+		List<Integer> continueJumps = new LinkedList<>();
+		List<Integer> breakJumps = new LinkedList<>();
+		
 		int loopStart = -1;
 	}
 
@@ -107,6 +112,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	Obj currentSuperclass;
 
 	Stack<CondControl> condControlStack = new Stack<>();
+	Stack<LoopControl> loopControlStack = new Stack<>();
 
 	private void initVft() {
 		for (int v : vftBuffer) {
@@ -609,13 +615,17 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	public void visit(DoWhileLoopStart start) {
 		CondControl ctr = new CondControl();
-		ctr.loopStart = Code.pc;
+		ctr.isLoop = true;
 		condControlStack.push(ctr);
+		
+		LoopControl loop = new LoopControl();
+		loop.loopStart = Code.pc;
+		loopControlStack.push(loop);
 	}
 
 	public void visit(DoWhileCondStart start) {
-		CondControl ctr = condControlStack.peek();
-		for (int adr : ctr.continueJumps) {
+		LoopControl loop = loopControlStack.peek();
+		for (int adr : loop.continueJumps) {
 			Code.fixup(adr);
 		}
 	}
@@ -625,7 +635,8 @@ public class CodeGenerator extends VisitorAdaptor {
 		for (int adr : ctr.condFactJumps) {
 			Code.fixup(adr);
 		}
-		for (int adr : ctr.breakJumps) {
+		LoopControl loop = loopControlStack.pop();
+		for (int adr : loop.breakJumps) {
 			Code.fixup(adr);
 		}
 	}
@@ -677,24 +688,26 @@ public class CodeGenerator extends VisitorAdaptor {
 		SyntaxNode parent = cond.getParent();
 		CondControl ctr = condControlStack.peek();
 		if (parent instanceof OrCondition) {
-			if (ctr.loopStart == -1) {
+			if (!ctr.isLoop) {
 				Code.putJump(0);
 				ctr.condSuccJumps.add(Code.pc - 2);
 			} else {
-				Code.putJump(ctr.loopStart);
+				LoopControl loop = loopControlStack.peek();
+				Code.putJump(loop.loopStart);
 			}
 			for (int adr : ctr.condFactJumps) {
 				Code.fixup(adr);
 			}
 			ctr.condFactJumps.clear();
 		} else {
-			if (ctr.loopStart == -1) {
+			if (!ctr.isLoop) {
 				for (int adr : ctr.condSuccJumps) {
 					Code.fixup(adr);
 				}
 				ctr.condSuccJumps.clear();
 			} else {
-				Code.putJump(ctr.loopStart);
+				LoopControl loop = loopControlStack.peek();
+				Code.putJump(loop.loopStart);
 				for (int adr : ctr.condFactJumps) {
 					Code.fixup(adr);
 				}
@@ -712,14 +725,14 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 
 	public void visit(BreakStatement stmt) {
-		CondControl ctr = condControlStack.peek();
+		LoopControl loop = loopControlStack.peek();
 		Code.putJump(0);
-		ctr.breakJumps.add(Code.pc - 2);
+		loop.breakJumps.add(Code.pc - 2);
 	}
 
 	public void visit(ContinueStatement stmt) {
-		CondControl ctr = condControlStack.peek();
+		LoopControl loop = loopControlStack.peek();
 		Code.putJump(0);
-		ctr.continueJumps.add(Code.pc - 2);
+		loop.continueJumps.add(Code.pc - 2);
 	}
 }

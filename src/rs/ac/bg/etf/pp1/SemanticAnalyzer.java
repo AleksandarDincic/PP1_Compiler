@@ -878,7 +878,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
 	public void visit(InstanceofCondFact fact) {
 		if (fact.getDesignator().obj.getType().getKind() != Struct.Class
-				|| fact.getType().obj.getType().getKind() != Struct.Class) {
+				|| fact.getType().obj.getType().getKind() != Struct.Class
+				|| records.containsKey(fact.getType().obj.getName())) {
 			report_error("Operacija instanceof se moze raditi samo nad klasama.", fact);
 		}
 	}
