@@ -1,0 +1,47 @@
+program sem_basictypes
+
+class A
+{
+
+}
+
+A a;
+int i;
+char c;
+bool b;
+int arr[];
+
+{
+	void main()
+	{
+		i = 2;
+		i = 2 * i + i - i / i % i;
+		i = 2 + c;
+		i = 2 - b;
+		i = arr % a;
+		i = -b;
+		a++;
+		i++;
+		a--;
+		i--;
+		read(i);
+		read(c);
+		read(b);
+		read(a);
+		read(arr);
+		print(i);
+		print(c);
+		print(b);
+		print(a);
+		print(arr);
+		
+		arr = new int[4];
+		arr = new int[i];
+		arr = new int[c];
+		
+		arr[0] = 0;
+		arr[i] = 0;
+		arr[a] = 0;
+	}
+
+}

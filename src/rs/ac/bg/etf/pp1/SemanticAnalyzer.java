@@ -119,9 +119,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
 	boolean inConstructor = false;
 
-	Map<String, Obj> classConstructors = new HashMap<String, Obj>();
+	Map<String, Obj> classConstructors = new HashMap<>();
 	List<Obj> formPars = new ArrayList<>();
 	List<Struct> actPars = new ArrayList<>();
+
+	Map<String, Boolean> overriddenMethods = new HashMap<>();
 
 	int nestedLoops = 0;
 
@@ -130,7 +132,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void report_error(String message, SyntaxNode info) {
 		errorDetected = true;
 		StringBuilder msg = new StringBuilder(message);
-		int line = (info == null) ? 0 : info.getLine(); 
+		int line = (info == null) ? 0 : info.getLine();
 		if (line != 0)
 			msg.append(" na liniji ").append(line);
 		log.error(msg.toString());
@@ -198,7 +200,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			report_error("Ime " + varName + " se vec koristi u trenutnom opsegu.", node);
 		} else {
 			Obj obj = Tab.insert(isField ? Obj.Fld : Obj.Var, varName, currentVarType);
-			if(obj.getKind() == Obj.Fld) {
+			if (obj.getKind() == Obj.Fld) {
 				obj.setAdr(obj.getAdr() + 1);
 			}
 		}
@@ -209,7 +211,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			report_error("Ime " + varName + " se vec koristi u trenutnom opsegu.", node);
 		} else {
 			Obj obj = Tab.insert(isField ? Obj.Fld : Obj.Var, varName, new Struct(Struct.Array, currentVarType));
-			if(obj.getKind() == Obj.Fld) {
+			if (obj.getKind() == Obj.Fld) {
 				obj.setAdr(obj.getAdr() + 1);
 			}
 		}
@@ -276,6 +278,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			return false;
 		}
 
+		if (overriddenMethods.containsKey(methodSig.getMethodName())) {
+			return false;
+		}
+
 		Obj superMethodObj = null;
 		for (Obj obj : currentSuperclass.getType().getMembers()) {
 			if (obj.getName().equals(methodSig.getMethodName())) {
@@ -317,6 +323,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 				existingMet.setLocals(new HashTableDataStructure());
 				methodSig.obj = existingMet;
 				methName = methodSig.getMethodName();
+				overriddenMethods.put(methName, true);
 			} else {
 				report_error("Ime " + methodSig.getMethodName() + " se vec koristi u trenutnom opsegu.", methodSig);
 				methodSig.obj = Tab.noObj;
@@ -414,7 +421,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			for (Obj obj : superType.getMembers()) {
 				if (obj.getKind() == Obj.Fld) {
 					Obj newObj = Tab.insert(Obj.Fld, obj.getName(), obj.getType());
-					newObj.setAdr(newObj.getAdr()+1);
+					newObj.setAdr(newObj.getAdr() + 1);
 				}
 			}
 		}
@@ -525,6 +532,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		currentSuperclass = null;
 		currentClassNode = null;
 		currentSuperclassNode = null;
+		overriddenMethods.clear();
 		Tab.closeScope();
 	}
 
@@ -706,6 +714,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	private boolean checkActParams(Obj meth) {
+		if (meth == Tab.lenObj && actPars.size() == 1 && actPars.get(0).getKind() == Struct.Array) {
+			return true;
+		}
+
 		int parIndex = 0;
 		for (Obj methFormPar : meth.getLocalSymbols()) {
 			if (methFormPar.getFpPos() == 0) {
@@ -871,7 +883,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(CondFactExpr fact) {
-		if(fact.getExpr().struct != ExtendedTab.boolType) {
+		if (fact.getExpr().struct != ExtendedTab.boolType) {
 			report_error("Operandi u uslovnom iskazu moraju biti bool.", fact);
 		}
 	}
@@ -939,7 +951,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 				if (inConstructor) {
 					if (classConstructors.containsKey(currentSuperclass.getName())) {
 						report_info("Detektovan pristup konstruktoru nadklase preko super", factor);
-						report_info("\t" + ExtendedTab.printObj(classConstructors.get(currentSuperclass.getName())), null);
+						report_info("\t" + ExtendedTab.printObj(classConstructors.get(currentSuperclass.getName())),
+								null);
 						if (actPars.size() != 0) {
 							report_error("Neispravni stvarni argumenti.", factor);
 						}

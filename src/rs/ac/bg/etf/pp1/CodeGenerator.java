@@ -190,7 +190,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 
 	public void visit(NamedDesignator design) {
-		if (design.obj.getKind() == Obj.Fld || (design.obj.getKind() == Obj.Meth && design.obj.getLevel() != 0)) {
+		if (design.obj.getKind() == Obj.Fld || (design.obj.getKind() == Obj.Meth && design.obj.getLevel() > 0)) {
 			Code.put(Code.load_n); // this
 		}
 		loadDesignator(design);
@@ -670,12 +670,21 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 
 	public void visit(InstanceofCondFact fact) {
+		
+		Code.load(fact.getDesignator().obj);
+		Code.loadConst(0);
+		Code.putFalseJump(Code.ne, 0);
+		int nullJump = Code.pc - 2;
+		
+		fact.getDesignator().traverseBottomUp(new CodeGenerator());
 		Code.load(fact.getDesignator().obj);
 		Code.put(Code.getfield);
 		Code.put2(0);
 		Code.loadConst(fact.getType().obj.getAdr());
 		Code.putFalseJump(Code.eq, 0);
 		condControlStack.peek().condFactJumps.add(Code.pc - 2);
+		
+		Code.fixup(nullJump);
 	}
 
 	public void visit(CondFactExpr fact) {

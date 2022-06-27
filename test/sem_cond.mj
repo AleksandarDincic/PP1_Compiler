@@ -1,0 +1,53 @@
+program sem_cond
+class A
+{
+
+}
+
+
+{
+	void main()
+		int a, b, c, d;
+		char x, y;
+		A obj, obj2;
+	{
+		if(a >= b && a == c || c <= d)
+		{
+		
+		}
+		else if (c != d || a > a)
+		{
+		
+		}
+		
+		if(a)
+		{
+		
+		}
+		
+		if(a != x || c > y)
+		{
+		
+		}
+		
+		if(obj != obj2)
+		{
+		
+		}
+		
+		if(obj >= obj2)
+		{
+		
+		}
+		
+		if(obj instanceof A)
+		{
+		
+		}
+		
+		if(obj instanceof int)
+		{
+		
+		}
+	}
+}

@@ -1,0 +1,35 @@
+program sem_extends
+
+record R
+{
+
+}
+
+class A
+{
+}
+
+class B extends A
+{
+}
+
+class C extends int
+{
+
+}
+
+class D extends X
+{
+
+}
+
+class E extends R
+{
+
+}
+
+{
+	void main()
+	{
+	}
+}

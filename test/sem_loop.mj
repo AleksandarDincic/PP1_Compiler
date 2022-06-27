@@ -1,0 +1,35 @@
+program sem_loop
+
+{
+	void main()
+	int i;
+	{
+		do
+		{
+			break;
+			continue;
+		
+			do
+			{
+				if(i < 0)
+				{
+				break;
+				continue;
+				}
+			
+				break;
+				continue;
+			
+			}while(i < 0);
+		}while(i < 0);
+		
+		if(i < 0)
+		{
+			break;	
+			continue;
+		}
+		
+		break;
+		continue;
+	}
+}

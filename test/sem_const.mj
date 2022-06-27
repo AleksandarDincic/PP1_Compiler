@@ -1,0 +1,16 @@
+program sem_const
+
+class A
+{
+
+}
+
+const int a = 0;
+const A b = 0;
+const int c = true;
+
+{
+	void main()
+	{
+	}
+}

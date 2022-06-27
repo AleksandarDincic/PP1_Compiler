@@ -55,6 +55,7 @@ import java_cup.runtime.Symbol;
 "continue" { return new_symbol(sym.CONTINUE, yytext()); }
 "this" { return new_symbol(sym.THIS, yytext()); }
 "super" { return new_symbol(sym.SUPER, yytext()); }
+"goto" { return new_symbol(sym.GOTO, yytext()); }
 "record" { return new_symbol(sym.RECORD, yytext()); }
 "instanceof" { return new_symbol(sym.INSTANCEOF, yytext()); }
 

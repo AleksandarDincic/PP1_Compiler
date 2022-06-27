@@ -1,0 +1,66 @@
+program sem_actpars
+
+class A
+{
+	{
+		A()
+		{
+		
+		}
+		
+		
+		int x(int a, char b)
+		{
+			return 1;
+		}
+	}
+
+}
+
+class B extends A
+{
+	{
+		B()
+		{
+			super();
+			super(1);
+		}
+		
+		int x(int aa, char bb)
+		{
+			super(aa, bb);
+			super(aa);
+			super(aa, bb, bb);
+		}
+		
+		int comp(A a)
+		{
+		
+		}
+	}
+}
+
+class C
+{
+
+}
+
+{
+
+	void main()
+		B b;
+		C c;
+	{
+		b = new B;
+		
+		b.x();
+		b.x(1, 'c');
+		b.x(1, 2, false);
+		
+		b.comp(b);
+		b.comp(null);
+		b.comp(c);
+		
+		B();
+	}
+}

@@ -1,0 +1,27 @@
+program sem_duplicate
+
+int x;
+char x;
+
+class A
+{
+	int a;
+}
+
+class B extends A
+{
+	
+	{
+		void a()
+		{
+		
+		}
+	}
+}
+
+{
+	void main()
+	{
+		x = 'a';
+	}
+}

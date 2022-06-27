@@ -1,0 +1,49 @@
+program sem_super
+
+class A
+{
+
+	{
+		A()
+		{
+		}
+	
+		void f()
+		{
+			super();
+		}
+	}
+}
+
+class B extends A
+{
+
+	{
+		B()
+		{
+			super();
+		}
+	
+		f()
+		{
+			super();
+		}
+		
+		ff()
+		{
+			super();
+		}
+	}
+}
+
+{
+	void notsuper()
+	{
+		super();
+	}
+
+	void main()
+	{
+		notsuper();
+	}
+}

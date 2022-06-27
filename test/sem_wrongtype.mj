@@ -1,0 +1,46 @@
+program sem_wrongtype
+
+int x;
+char y;
+
+class A
+{
+	int i;
+}
+
+class B extends A
+{
+}
+
+class C
+{
+
+}
+
+{
+	void main()
+		A a;
+		B b;
+		C c;
+		len l;
+	{
+		x = 1;
+		y = x;
+		y = chr(x);
+		
+		a = null;
+		b = null;
+		a = new C;
+		a = new B;
+		a = new A;
+		b = a;
+		c = a;
+		
+		A = a;
+		
+		a.i = 0;
+		x.i = 0;
+	
+		x = new int;	
+	}
+}

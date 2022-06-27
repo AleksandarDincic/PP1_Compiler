@@ -1,0 +1,27 @@
+program sem_return
+
+{
+	char ok()
+	{
+		return '!';
+	}
+
+	int a()
+	{
+		return;
+	}
+	
+	int b()
+	{
+	
+	}
+	
+	void c()
+	{
+		return 1;
+	}
+
+	void main()
+	{
+	}
+}

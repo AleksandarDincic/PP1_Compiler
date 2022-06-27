@@ -1,0 +1,25 @@
+program sem_nonexistent
+
+int x;
+char y;
+
+class A
+{
+}
+
+class B
+{
+}
+
+{
+	void main()
+		A a;
+		B b;
+		C c;
+	{
+		x = 1;
+		z = 2;
+		
+		c = new C;
+	}
+}
