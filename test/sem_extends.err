@@ -1,0 +1,5 @@
+ERROR 16:58:32,696 - Tip int iz kojeg se izvodi mora biti klasa. na liniji 16
+ERROR 16:58:32,696 - Tip X ne postoji. na liniji 21
+ERROR 16:58:32,696 - Tip X iz kojeg se izvodi ne postoji. na liniji 21
+ERROR 16:58:32,696 - Tip R iz kojeg se izvodi mora biti klasa. na liniji 26
+ERROR 16:58:32,697 - Semanticka analiza neuspesno zavrsena.

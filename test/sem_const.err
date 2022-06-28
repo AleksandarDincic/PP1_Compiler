@@ -1,0 +1,4 @@
+ERROR 16:55:54,219 - Konstanta  mora biti tipa int, char ili bool, dat je tip A na liniji 9
+ERROR 16:55:54,220 - Vrednost konstante b nije kompatbilna sa svojim tipom. na liniji 9
+ERROR 16:55:54,220 - Vrednost konstante c nije kompatbilna sa svojim tipom. na liniji 10
+ERROR 16:55:54,220 - Semanticka analiza neuspesno zavrsena.

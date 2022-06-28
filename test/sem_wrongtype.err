@@ -1,0 +1,11 @@
+ERROR 17:26:44,213 - Ime len ne oznacava tip. na liniji 25
+ERROR 17:26:44,214 - Tipovi moraju biti kompatibilni pri dodeli. na liniji 28
+ERROR 17:26:44,215 - Tipovi moraju biti kompatibilni pri dodeli. na liniji 33
+ERROR 17:26:44,216 - Tipovi moraju biti kompatibilni pri dodeli. na liniji 36
+ERROR 17:26:44,217 - Tipovi moraju biti kompatibilni pri dodeli. na liniji 37
+ERROR 17:26:44,217 - Leva strana pri dodeli mora biti promenljiva, element niza ili polje klase. na liniji 39
+ERROR 17:26:44,218 - Pristup clanovima moze se raditi samo nad objektim klase. na liniji 42
+ERROR 17:26:44,218 - Tipovi moraju biti kompatibilni pri dodeli. na liniji 42
+ERROR 17:26:44,218 - Tip int ne predstavlja klasu. na liniji 44
+ERROR 17:26:44,218 - Tipovi moraju biti kompatibilni pri dodeli. na liniji 44
+ERROR 17:26:44,218 - Semanticka analiza neuspesno zavrsena.

@@ -1,0 +1,209 @@
+INFO  16:57:14,412 - Kompajliranje fajla: D:\Faks\PP1\workspace\MJCompiler\test\sem_duplicate.mj
+INFO  16:57:14,412 - ===================================
+INFO  16:57:14,412 - Leksicka analiza
+INFO  16:57:14,416 - ===================================
+INFO  16:57:14,416 - Sintaksna analiza
+INFO  16:57:14,466 - #2 program
+INFO  16:57:14,466 - #51 sem_duplicate
+INFO  16:57:14,466 - #51 int
+INFO  16:57:14,467 - #51 x
+INFO  16:57:14,468 - #39 ;
+INFO  16:57:14,468 - #51 char
+INFO  16:57:14,468 - #51 x
+INFO  16:57:14,469 - #39 ;
+INFO  16:57:14,469 - #4 class
+INFO  16:57:14,469 - #51 A
+INFO  16:57:14,469 - #47 {
+INFO  16:57:14,470 - #51 int
+INFO  16:57:14,470 - #51 a
+INFO  16:57:14,471 - #39 ;
+INFO  16:57:14,471 - #48 }
+INFO  16:57:14,473 - #4 class
+INFO  16:57:14,474 - #51 B
+INFO  16:57:14,474 - #16 extends
+INFO  16:57:14,474 - #51 A
+INFO  16:57:14,474 - #47 {
+INFO  16:57:14,474 - #47 {
+INFO  16:57:14,474 - #15 void
+INFO  16:57:14,474 - #51 a
+INFO  16:57:14,475 - #43 (
+INFO  16:57:14,475 - #44 )
+INFO  16:57:14,476 - #47 {
+INFO  16:57:14,476 - #48 }
+INFO  16:57:14,477 - #48 }
+INFO  16:57:14,478 - #48 }
+INFO  16:57:14,478 - #47 {
+INFO  16:57:14,478 - #15 void
+INFO  16:57:14,478 - #51 main
+INFO  16:57:14,478 - #43 (
+INFO  16:57:14,478 - #44 )
+INFO  16:57:14,478 - #47 {
+INFO  16:57:14,478 - #51 x
+INFO  16:57:14,478 - #36 =
+INFO  16:57:14,478 - #49 a
+INFO  16:57:14,479 - #39 ;
+INFO  16:57:14,480 - #48 }
+INFO  16:57:14,480 - #48 }
+INFO  16:57:14,481 - Parsiranje uspesno zavrseno.
+INFO  16:57:14,483 - Program(
+  ProgramName(
+   sem_duplicate
+  ) [ProgramName]
+  ProgDeclarations(
+    ProgDeclarations(
+      ProgDeclarations(
+        ProgDeclarations(
+          NoProgDecl(
+          ) [NoProgDecl]
+          ProgVarDecl(
+            GlobalVarDeclaration(
+              VarType(
+                Type(
+                 int
+                ) [Type]
+              ) [VarType]
+              SingleGlobalVarName(
+                GlobalVarNameOfSingle(
+                 x
+                ) [GlobalVarNameOfSingle]
+              ) [SingleGlobalVarName]
+            ) [GlobalVarDeclaration]
+          ) [ProgVarDecl]
+        ) [ProgDeclarations]
+        ProgVarDecl(
+          GlobalVarDeclaration(
+            VarType(
+              Type(
+               char
+              ) [Type]
+            ) [VarType]
+            SingleGlobalVarName(
+              GlobalVarNameOfSingle(
+               x
+              ) [GlobalVarNameOfSingle]
+            ) [SingleGlobalVarName]
+          ) [GlobalVarDeclaration]
+        ) [ProgVarDecl]
+      ) [ProgDeclarations]
+      ProgClassDecl(
+        ClassDecl(
+          ClassName(
+           A
+          ) [ClassName]
+          DoesNotExtend(
+          ) [DoesNotExtend]
+          ClassBody(
+            ClassBodyStart(
+            ) [ClassBodyStart]
+            FieldDeclarations(
+              NoFieldDecl(
+              ) [NoFieldDecl]
+              FieldDeclaration(
+                FieldType(
+                  Type(
+                   int
+                  ) [Type]
+                ) [FieldType]
+                SingleFieldName(
+                  FieldNameOfSingle(
+                   a
+                  ) [FieldNameOfSingle]
+                ) [SingleFieldName]
+              ) [FieldDeclaration]
+            ) [FieldDeclarations]
+            ClassNoMethods(
+            ) [ClassNoMethods]
+          ) [ClassBody]
+        ) [ClassDecl]
+      ) [ProgClassDecl]
+    ) [ProgDeclarations]
+    ProgClassDecl(
+      ClassDecl(
+        ClassName(
+         B
+        ) [ClassName]
+        DoesExtend(
+          Type(
+           A
+          ) [Type]
+        ) [DoesExtend]
+        ClassBody(
+          ClassBodyStart(
+          ) [ClassBodyStart]
+          NoFieldDecl(
+          ) [NoFieldDecl]
+          ClassHasMethods(
+            ClassMethodsStart(
+            ) [ClassMethodsStart]
+            ClassMethodDeclarations(
+              ClassFirstMethodNotConstr(
+                MethodDecl(
+                  MethodReturnsVoid(
+                  ) [MethodReturnsVoid]
+                  MethodSignature(
+                   a
+                    NoFormalParams(
+                    ) [NoFormalParams]
+                  ) [MethodSignature]
+                  NoVarDecl(
+                  ) [NoVarDecl]
+                  NoStatement(
+                  ) [NoStatement]
+                ) [MethodDecl]
+              ) [ClassFirstMethodNotConstr]
+              NoMethodDecl(
+              ) [NoMethodDecl]
+            ) [ClassMethodDeclarations]
+          ) [ClassHasMethods]
+        ) [ClassBody]
+      ) [ClassDecl]
+    ) [ProgClassDecl]
+  ) [ProgDeclarations]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodReturnsVoid(
+      ) [MethodReturnsVoid]
+      MethodSignature(
+       main
+        NoFormalParams(
+        ) [NoFormalParams]
+      ) [MethodSignature]
+      NoVarDecl(
+      ) [NoVarDecl]
+      ManyStatements(
+        NoStatement(
+        ) [NoStatement]
+        OneStatement(
+          DesignStatement(
+            DesignAssign(
+              AssStatement(
+                NamedDesignator(
+                 x
+                ) [NamedDesignator]
+                Assignop(
+                ) [Assignop]
+                PositiveExpr(
+                  ExprTerm(
+                    TermFactor(
+                      ConstFactor(
+                        CharConst(
+                         a
+                        ) [CharConst]
+                      ) [ConstFactor]
+                    ) [TermFactor]
+                  ) [ExprTerm]
+                ) [PositiveExpr]
+              ) [AssStatement]
+            ) [DesignAssign]
+          ) [DesignStatement]
+        ) [OneStatement]
+      ) [ManyStatements]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  16:57:14,483 - ===================================
+INFO  16:57:14,483 - Semanticka analiza:
+INFO  16:57:14,555 - Detektovan pristup globalnoj promenljivoj na liniji 25
+INFO  16:57:14,555 - 	Var x: int, 0, 0 

@@ -1,0 +1,5 @@
+ERROR 17:00:19,690 - Koriscenje break je dozvoljeno samo unutar petlji.
+ERROR 17:00:19,690 - Koriscenje continue je dozvoljeno samo unutar petlji.
+ERROR 17:00:19,690 - Koriscenje break je dozvoljeno samo unutar petlji.
+ERROR 17:00:19,690 - Koriscenje continue je dozvoljeno samo unutar petlji.
+ERROR 17:00:19,690 - Semanticka analiza neuspesno zavrsena.

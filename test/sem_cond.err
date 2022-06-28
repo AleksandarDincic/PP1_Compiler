@@ -1,0 +1,6 @@
+ERROR 16:47:48,065 - Operandi u uslovnom iskazu moraju biti bool. na liniji 23
+ERROR 16:47:48,065 - Operandi u uslovnom iskazu moraju biti kompatibilni. na liniji 28
+ERROR 16:47:48,065 - Operandi u uslovnom iskazu moraju biti kompatibilni. na liniji 28
+ERROR 16:47:48,066 - Uz promenljive tipa klase ili niza, od relacionih operatora, mogu se koristiti samo != i ==. na liniji 38
+ERROR 16:47:48,066 - Operacija instanceof se moze raditi samo nad klasama. na liniji 48
+ERROR 16:47:48,066 - Semanticka analiza neuspesno zavrsena.

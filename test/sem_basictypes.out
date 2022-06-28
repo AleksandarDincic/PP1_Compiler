@@ -1,0 +1,1032 @@
+INFO  16:45:57,029 - Kompajliranje fajla: D:\Faks\PP1\workspace\MJCompiler\test\sem_basictypes.mj
+INFO  16:45:57,030 - ===================================
+INFO  16:45:57,030 - Leksicka analiza
+INFO  16:45:57,033 - ===================================
+INFO  16:45:57,034 - Sintaksna analiza
+INFO  16:45:57,092 - #2 program
+INFO  16:45:57,092 - #51 sem_basictypes
+INFO  16:45:57,092 - #4 class
+INFO  16:45:57,093 - #51 A
+INFO  16:45:57,093 - #47 {
+INFO  16:45:57,094 - #48 }
+INFO  16:45:57,095 - #51 A
+INFO  16:45:57,097 - #51 a
+INFO  16:45:57,098 - #39 ;
+INFO  16:45:57,098 - #51 int
+INFO  16:45:57,098 - #51 i
+INFO  16:45:57,098 - #39 ;
+INFO  16:45:57,099 - #51 char
+INFO  16:45:57,099 - #51 c
+INFO  16:45:57,099 - #39 ;
+INFO  16:45:57,100 - #51 bool
+INFO  16:45:57,101 - #51 b
+INFO  16:45:57,101 - #39 ;
+INFO  16:45:57,101 - #51 int
+INFO  16:45:57,101 - #51 arr
+INFO  16:45:57,101 - #45 [
+INFO  16:45:57,101 - #46 ]
+INFO  16:45:57,101 - #39 ;
+INFO  16:45:57,101 - #47 {
+INFO  16:45:57,101 - #15 void
+INFO  16:45:57,102 - #51 main
+INFO  16:45:57,102 - #43 (
+INFO  16:45:57,102 - #44 )
+INFO  16:45:57,104 - #47 {
+INFO  16:45:57,105 - #51 i
+INFO  16:45:57,105 - #36 =
+INFO  16:45:57,105 - #50 2
+INFO  16:45:57,106 - #39 ;
+INFO  16:45:57,107 - #51 i
+INFO  16:45:57,107 - #36 =
+INFO  16:45:57,107 - #50 2
+INFO  16:45:57,107 - #25 *
+INFO  16:45:57,108 - #51 i
+INFO  16:45:57,109 - #23 +
+INFO  16:45:57,109 - #51 i
+INFO  16:45:57,110 - #24 -
+INFO  16:45:57,111 - #51 i
+INFO  16:45:57,111 - #26 /
+INFO  16:45:57,111 - #51 i
+INFO  16:45:57,112 - #27 %
+INFO  16:45:57,112 - #51 i
+INFO  16:45:57,113 - #39 ;
+INFO  16:45:57,113 - #51 i
+INFO  16:45:57,113 - #36 =
+INFO  16:45:57,113 - #50 2
+INFO  16:45:57,113 - #23 +
+INFO  16:45:57,113 - #51 c
+INFO  16:45:57,113 - #39 ;
+INFO  16:45:57,113 - #51 i
+INFO  16:45:57,113 - #36 =
+INFO  16:45:57,114 - #50 2
+INFO  16:45:57,114 - #24 -
+INFO  16:45:57,114 - #51 b
+INFO  16:45:57,114 - #39 ;
+INFO  16:45:57,114 - #51 i
+INFO  16:45:57,115 - #36 =
+INFO  16:45:57,115 - #51 arr
+INFO  16:45:57,115 - #27 %
+INFO  16:45:57,115 - #51 a
+INFO  16:45:57,115 - #39 ;
+INFO  16:45:57,115 - #51 i
+INFO  16:45:57,115 - #36 =
+INFO  16:45:57,115 - #24 -
+INFO  16:45:57,115 - #51 b
+INFO  16:45:57,115 - #39 ;
+INFO  16:45:57,116 - #51 a
+INFO  16:45:57,116 - #37 ++
+INFO  16:45:57,116 - #39 ;
+INFO  16:45:57,116 - #51 i
+INFO  16:45:57,116 - #37 ++
+INFO  16:45:57,116 - #39 ;
+INFO  16:45:57,116 - #51 a
+INFO  16:45:57,117 - #38 --
+INFO  16:45:57,117 - #39 ;
+INFO  16:45:57,117 - #51 i
+INFO  16:45:57,117 - #38 --
+INFO  16:45:57,117 - #39 ;
+INFO  16:45:57,117 - #13 read
+INFO  16:45:57,117 - #43 (
+INFO  16:45:57,117 - #51 i
+INFO  16:45:57,117 - #44 )
+INFO  16:45:57,118 - #39 ;
+INFO  16:45:57,118 - #13 read
+INFO  16:45:57,118 - #43 (
+INFO  16:45:57,118 - #51 c
+INFO  16:45:57,118 - #44 )
+INFO  16:45:57,118 - #39 ;
+INFO  16:45:57,118 - #13 read
+INFO  16:45:57,118 - #43 (
+INFO  16:45:57,118 - #51 b
+INFO  16:45:57,119 - #44 )
+INFO  16:45:57,119 - #39 ;
+INFO  16:45:57,119 - #13 read
+INFO  16:45:57,119 - #43 (
+INFO  16:45:57,119 - #51 a
+INFO  16:45:57,119 - #44 )
+INFO  16:45:57,119 - #39 ;
+INFO  16:45:57,119 - #13 read
+INFO  16:45:57,119 - #43 (
+INFO  16:45:57,119 - #51 arr
+INFO  16:45:57,119 - #44 )
+INFO  16:45:57,119 - #39 ;
+INFO  16:45:57,120 - #12 print
+INFO  16:45:57,120 - #43 (
+INFO  16:45:57,120 - #51 i
+INFO  16:45:57,120 - #44 )
+INFO  16:45:57,120 - #39 ;
+INFO  16:45:57,120 - #12 print
+INFO  16:45:57,120 - #43 (
+INFO  16:45:57,120 - #51 c
+INFO  16:45:57,120 - #44 )
+INFO  16:45:57,120 - #39 ;
+INFO  16:45:57,121 - #12 print
+INFO  16:45:57,121 - #43 (
+INFO  16:45:57,121 - #51 b
+INFO  16:45:57,121 - #44 )
+INFO  16:45:57,121 - #39 ;
+INFO  16:45:57,121 - #12 print
+INFO  16:45:57,121 - #43 (
+INFO  16:45:57,121 - #51 a
+INFO  16:45:57,121 - #44 )
+INFO  16:45:57,121 - #39 ;
+INFO  16:45:57,121 - #12 print
+INFO  16:45:57,122 - #43 (
+INFO  16:45:57,122 - #51 arr
+INFO  16:45:57,122 - #44 )
+INFO  16:45:57,122 - #39 ;
+INFO  16:45:57,122 - #51 arr
+INFO  16:45:57,122 - #36 =
+INFO  16:45:57,122 - #11 new
+INFO  16:45:57,122 - #51 int
+INFO  16:45:57,122 - #45 [
+INFO  16:45:57,122 - #50 4
+INFO  16:45:57,122 - #46 ]
+INFO  16:45:57,122 - #39 ;
+INFO  16:45:57,123 - #51 arr
+INFO  16:45:57,123 - #36 =
+INFO  16:45:57,123 - #11 new
+INFO  16:45:57,123 - #51 int
+INFO  16:45:57,123 - #45 [
+INFO  16:45:57,123 - #51 i
+INFO  16:45:57,123 - #46 ]
+INFO  16:45:57,123 - #39 ;
+INFO  16:45:57,123 - #51 arr
+INFO  16:45:57,123 - #36 =
+INFO  16:45:57,123 - #11 new
+INFO  16:45:57,123 - #51 int
+INFO  16:45:57,123 - #45 [
+INFO  16:45:57,123 - #51 c
+INFO  16:45:57,123 - #46 ]
+INFO  16:45:57,123 - #39 ;
+INFO  16:45:57,124 - #51 arr
+INFO  16:45:57,124 - #45 [
+INFO  16:45:57,124 - #50 0
+INFO  16:45:57,124 - #46 ]
+INFO  16:45:57,124 - #36 =
+INFO  16:45:57,124 - #50 0
+INFO  16:45:57,124 - #39 ;
+INFO  16:45:57,124 - #51 arr
+INFO  16:45:57,124 - #45 [
+INFO  16:45:57,124 - #51 i
+INFO  16:45:57,124 - #46 ]
+INFO  16:45:57,124 - #36 =
+INFO  16:45:57,125 - #50 0
+INFO  16:45:57,125 - #39 ;
+INFO  16:45:57,125 - #51 arr
+INFO  16:45:57,125 - #45 [
+INFO  16:45:57,125 - #51 a
+INFO  16:45:57,125 - #46 ]
+INFO  16:45:57,125 - #36 =
+INFO  16:45:57,125 - #50 0
+INFO  16:45:57,125 - #39 ;
+INFO  16:45:57,125 - #48 }
+INFO  16:45:57,125 - #48 }
+INFO  16:45:57,127 - Parsiranje uspesno zavrseno.
+INFO  16:45:57,132 - Program(
+  ProgramName(
+   sem_basictypes
+  ) [ProgramName]
+  ProgDeclarations(
+    ProgDeclarations(
+      ProgDeclarations(
+        ProgDeclarations(
+          ProgDeclarations(
+            ProgDeclarations(
+              NoProgDecl(
+              ) [NoProgDecl]
+              ProgClassDecl(
+                ClassDecl(
+                  ClassName(
+                   A
+                  ) [ClassName]
+                  DoesNotExtend(
+                  ) [DoesNotExtend]
+                  ClassBody(
+                    ClassBodyStart(
+                    ) [ClassBodyStart]
+                    NoFieldDecl(
+                    ) [NoFieldDecl]
+                    ClassNoMethods(
+                    ) [ClassNoMethods]
+                  ) [ClassBody]
+                ) [ClassDecl]
+              ) [ProgClassDecl]
+            ) [ProgDeclarations]
+            ProgVarDecl(
+              GlobalVarDeclaration(
+                VarType(
+                  Type(
+                   A
+                  ) [Type]
+                ) [VarType]
+                SingleGlobalVarName(
+                  GlobalVarNameOfSingle(
+                   a
+                  ) [GlobalVarNameOfSingle]
+                ) [SingleGlobalVarName]
+              ) [GlobalVarDeclaration]
+            ) [ProgVarDecl]
+          ) [ProgDeclarations]
+          ProgVarDecl(
+            GlobalVarDeclaration(
+              VarType(
+                Type(
+                 int
+                ) [Type]
+              ) [VarType]
+              SingleGlobalVarName(
+                GlobalVarNameOfSingle(
+                 i
+                ) [GlobalVarNameOfSingle]
+              ) [SingleGlobalVarName]
+            ) [GlobalVarDeclaration]
+          ) [ProgVarDecl]
+        ) [ProgDeclarations]
+        ProgVarDecl(
+          GlobalVarDeclaration(
+            VarType(
+              Type(
+               char
+              ) [Type]
+            ) [VarType]
+            SingleGlobalVarName(
+              GlobalVarNameOfSingle(
+               c
+              ) [GlobalVarNameOfSingle]
+            ) [SingleGlobalVarName]
+          ) [GlobalVarDeclaration]
+        ) [ProgVarDecl]
+      ) [ProgDeclarations]
+      ProgVarDecl(
+        GlobalVarDeclaration(
+          VarType(
+            Type(
+             bool
+            ) [Type]
+          ) [VarType]
+          SingleGlobalVarName(
+            GlobalVarNameOfSingle(
+             b
+            ) [GlobalVarNameOfSingle]
+          ) [SingleGlobalVarName]
+        ) [GlobalVarDeclaration]
+      ) [ProgVarDecl]
+    ) [ProgDeclarations]
+    ProgVarDecl(
+      GlobalVarDeclaration(
+        VarType(
+          Type(
+           int
+          ) [Type]
+        ) [VarType]
+        SingleGlobalVarName(
+          GlobalVarNameOfArray(
+           arr
+          ) [GlobalVarNameOfArray]
+        ) [SingleGlobalVarName]
+      ) [GlobalVarDeclaration]
+    ) [ProgVarDecl]
+  ) [ProgDeclarations]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodReturnsVoid(
+      ) [MethodReturnsVoid]
+      MethodSignature(
+       main
+        NoFormalParams(
+        ) [NoFormalParams]
+      ) [MethodSignature]
+      NoVarDecl(
+      ) [NoVarDecl]
+      ManyStatements(
+        ManyStatements(
+          ManyStatements(
+            ManyStatements(
+              ManyStatements(
+                ManyStatements(
+                  ManyStatements(
+                    ManyStatements(
+                      ManyStatements(
+                        ManyStatements(
+                          ManyStatements(
+                            ManyStatements(
+                              ManyStatements(
+                                ManyStatements(
+                                  ManyStatements(
+                                    ManyStatements(
+                                      ManyStatements(
+                                        ManyStatements(
+                                          ManyStatements(
+                                            ManyStatements(
+                                              ManyStatements(
+                                                ManyStatements(
+                                                  ManyStatements(
+                                                    ManyStatements(
+                                                      ManyStatements(
+                                                        ManyStatements(
+                                                          NoStatement(
+                                                          ) [NoStatement]
+                                                          OneStatement(
+                                                            DesignStatement(
+                                                              DesignAssign(
+                                                                AssStatement(
+                                                                  NamedDesignator(
+                                                                   i
+                                                                  ) [NamedDesignator]
+                                                                  Assignop(
+                                                                  ) [Assignop]
+                                                                  PositiveExpr(
+                                                                    ExprTerm(
+                                                                      TermFactor(
+                                                                        ConstFactor(
+                                                                          IntConst(
+                                                                           2
+                                                                          ) [IntConst]
+                                                                        ) [ConstFactor]
+                                                                      ) [TermFactor]
+                                                                    ) [ExprTerm]
+                                                                  ) [PositiveExpr]
+                                                                ) [AssStatement]
+                                                              ) [DesignAssign]
+                                                            ) [DesignStatement]
+                                                          ) [OneStatement]
+                                                        ) [ManyStatements]
+                                                        OneStatement(
+                                                          DesignStatement(
+                                                            DesignAssign(
+                                                              AssStatement(
+                                                                NamedDesignator(
+                                                                 i
+                                                                ) [NamedDesignator]
+                                                                Assignop(
+                                                                ) [Assignop]
+                                                                PositiveExpr(
+                                                                  ExprWithAddop(
+                                                                    ExprWithAddop(
+                                                                      ExprTerm(
+                                                                        TermWithMulop(
+                                                                          TermFactor(
+                                                                            ConstFactor(
+                                                                              IntConst(
+                                                                               2
+                                                                              ) [IntConst]
+                                                                            ) [ConstFactor]
+                                                                          ) [TermFactor]
+                                                                          MulopMul(
+                                                                          ) [MulopMul]
+                                                                          DesignOfVarFactor(
+                                                                            NamedDesignator(
+                                                                             i
+                                                                            ) [NamedDesignator]
+                                                                          ) [DesignOfVarFactor]
+                                                                        ) [TermWithMulop]
+                                                                      ) [ExprTerm]
+                                                                      AddopPlus(
+                                                                      ) [AddopPlus]
+                                                                      TermFactor(
+                                                                        DesignOfVarFactor(
+                                                                          NamedDesignator(
+                                                                           i
+                                                                          ) [NamedDesignator]
+                                                                        ) [DesignOfVarFactor]
+                                                                      ) [TermFactor]
+                                                                    ) [ExprWithAddop]
+                                                                    AddopMinus(
+                                                                    ) [AddopMinus]
+                                                                    TermWithMulop(
+                                                                      TermWithMulop(
+                                                                        TermFactor(
+                                                                          DesignOfVarFactor(
+                                                                            NamedDesignator(
+                                                                             i
+                                                                            ) [NamedDesignator]
+                                                                          ) [DesignOfVarFactor]
+                                                                        ) [TermFactor]
+                                                                        MulopDiv(
+                                                                        ) [MulopDiv]
+                                                                        DesignOfVarFactor(
+                                                                          NamedDesignator(
+                                                                           i
+                                                                          ) [NamedDesignator]
+                                                                        ) [DesignOfVarFactor]
+                                                                      ) [TermWithMulop]
+                                                                      MulopMod(
+                                                                      ) [MulopMod]
+                                                                      DesignOfVarFactor(
+                                                                        NamedDesignator(
+                                                                         i
+                                                                        ) [NamedDesignator]
+                                                                      ) [DesignOfVarFactor]
+                                                                    ) [TermWithMulop]
+                                                                  ) [ExprWithAddop]
+                                                                ) [PositiveExpr]
+                                                              ) [AssStatement]
+                                                            ) [DesignAssign]
+                                                          ) [DesignStatement]
+                                                        ) [OneStatement]
+                                                      ) [ManyStatements]
+                                                      OneStatement(
+                                                        DesignStatement(
+                                                          DesignAssign(
+                                                            AssStatement(
+                                                              NamedDesignator(
+                                                               i
+                                                              ) [NamedDesignator]
+                                                              Assignop(
+                                                              ) [Assignop]
+                                                              PositiveExpr(
+                                                                ExprWithAddop(
+                                                                  ExprTerm(
+                                                                    TermFactor(
+                                                                      ConstFactor(
+                                                                        IntConst(
+                                                                         2
+                                                                        ) [IntConst]
+                                                                      ) [ConstFactor]
+                                                                    ) [TermFactor]
+                                                                  ) [ExprTerm]
+                                                                  AddopPlus(
+                                                                  ) [AddopPlus]
+                                                                  TermFactor(
+                                                                    DesignOfVarFactor(
+                                                                      NamedDesignator(
+                                                                       c
+                                                                      ) [NamedDesignator]
+                                                                    ) [DesignOfVarFactor]
+                                                                  ) [TermFactor]
+                                                                ) [ExprWithAddop]
+                                                              ) [PositiveExpr]
+                                                            ) [AssStatement]
+                                                          ) [DesignAssign]
+                                                        ) [DesignStatement]
+                                                      ) [OneStatement]
+                                                    ) [ManyStatements]
+                                                    OneStatement(
+                                                      DesignStatement(
+                                                        DesignAssign(
+                                                          AssStatement(
+                                                            NamedDesignator(
+                                                             i
+                                                            ) [NamedDesignator]
+                                                            Assignop(
+                                                            ) [Assignop]
+                                                            PositiveExpr(
+                                                              ExprWithAddop(
+                                                                ExprTerm(
+                                                                  TermFactor(
+                                                                    ConstFactor(
+                                                                      IntConst(
+                                                                       2
+                                                                      ) [IntConst]
+                                                                    ) [ConstFactor]
+                                                                  ) [TermFactor]
+                                                                ) [ExprTerm]
+                                                                AddopMinus(
+                                                                ) [AddopMinus]
+                                                                TermFactor(
+                                                                  DesignOfVarFactor(
+                                                                    NamedDesignator(
+                                                                     b
+                                                                    ) [NamedDesignator]
+                                                                  ) [DesignOfVarFactor]
+                                                                ) [TermFactor]
+                                                              ) [ExprWithAddop]
+                                                            ) [PositiveExpr]
+                                                          ) [AssStatement]
+                                                        ) [DesignAssign]
+                                                      ) [DesignStatement]
+                                                    ) [OneStatement]
+                                                  ) [ManyStatements]
+                                                  OneStatement(
+                                                    DesignStatement(
+                                                      DesignAssign(
+                                                        AssStatement(
+                                                          NamedDesignator(
+                                                           i
+                                                          ) [NamedDesignator]
+                                                          Assignop(
+                                                          ) [Assignop]
+                                                          PositiveExpr(
+                                                            ExprTerm(
+                                                              TermWithMulop(
+                                                                TermFactor(
+                                                                  DesignOfVarFactor(
+                                                                    NamedDesignator(
+                                                                     arr
+                                                                    ) [NamedDesignator]
+                                                                  ) [DesignOfVarFactor]
+                                                                ) [TermFactor]
+                                                                MulopMod(
+                                                                ) [MulopMod]
+                                                                DesignOfVarFactor(
+                                                                  NamedDesignator(
+                                                                   a
+                                                                  ) [NamedDesignator]
+                                                                ) [DesignOfVarFactor]
+                                                              ) [TermWithMulop]
+                                                            ) [ExprTerm]
+                                                          ) [PositiveExpr]
+                                                        ) [AssStatement]
+                                                      ) [DesignAssign]
+                                                    ) [DesignStatement]
+                                                  ) [OneStatement]
+                                                ) [ManyStatements]
+                                                OneStatement(
+                                                  DesignStatement(
+                                                    DesignAssign(
+                                                      AssStatement(
+                                                        NamedDesignator(
+                                                         i
+                                                        ) [NamedDesignator]
+                                                        Assignop(
+                                                        ) [Assignop]
+                                                        NegativeExpr(
+                                                          ExprTerm(
+                                                            TermFactor(
+                                                              DesignOfVarFactor(
+                                                                NamedDesignator(
+                                                                 b
+                                                                ) [NamedDesignator]
+                                                              ) [DesignOfVarFactor]
+                                                            ) [TermFactor]
+                                                          ) [ExprTerm]
+                                                        ) [NegativeExpr]
+                                                      ) [AssStatement]
+                                                    ) [DesignAssign]
+                                                  ) [DesignStatement]
+                                                ) [OneStatement]
+                                              ) [ManyStatements]
+                                              OneStatement(
+                                                DesignStatement(
+                                                  IncStatement(
+                                                    NamedDesignator(
+                                                     a
+                                                    ) [NamedDesignator]
+                                                  ) [IncStatement]
+                                                ) [DesignStatement]
+                                              ) [OneStatement]
+                                            ) [ManyStatements]
+                                            OneStatement(
+                                              DesignStatement(
+                                                IncStatement(
+                                                  NamedDesignator(
+                                                   i
+                                                  ) [NamedDesignator]
+                                                ) [IncStatement]
+                                              ) [DesignStatement]
+                                            ) [OneStatement]
+                                          ) [ManyStatements]
+                                          OneStatement(
+                                            DesignStatement(
+                                              DecStatement(
+                                                NamedDesignator(
+                                                 a
+                                                ) [NamedDesignator]
+                                              ) [DecStatement]
+                                            ) [DesignStatement]
+                                          ) [OneStatement]
+                                        ) [ManyStatements]
+                                        OneStatement(
+                                          DesignStatement(
+                                            DecStatement(
+                                              NamedDesignator(
+                                               i
+                                              ) [NamedDesignator]
+                                            ) [DecStatement]
+                                          ) [DesignStatement]
+                                        ) [OneStatement]
+                                      ) [ManyStatements]
+                                      OneStatement(
+                                        ReadStatement(
+                                          NamedDesignator(
+                                           i
+                                          ) [NamedDesignator]
+                                        ) [ReadStatement]
+                                      ) [OneStatement]
+                                    ) [ManyStatements]
+                                    OneStatement(
+                                      ReadStatement(
+                                        NamedDesignator(
+                                         c
+                                        ) [NamedDesignator]
+                                      ) [ReadStatement]
+                                    ) [OneStatement]
+                                  ) [ManyStatements]
+                                  OneStatement(
+                                    ReadStatement(
+                                      NamedDesignator(
+                                       b
+                                      ) [NamedDesignator]
+                                    ) [ReadStatement]
+                                  ) [OneStatement]
+                                ) [ManyStatements]
+                                OneStatement(
+                                  ReadStatement(
+                                    NamedDesignator(
+                                     a
+                                    ) [NamedDesignator]
+                                  ) [ReadStatement]
+                                ) [OneStatement]
+                              ) [ManyStatements]
+                              OneStatement(
+                                ReadStatement(
+                                  NamedDesignator(
+                                   arr
+                                  ) [NamedDesignator]
+                                ) [ReadStatement]
+                              ) [OneStatement]
+                            ) [ManyStatements]
+                            OneStatement(
+                              PrintStatement(
+                                PositiveExpr(
+                                  ExprTerm(
+                                    TermFactor(
+                                      DesignOfVarFactor(
+                                        NamedDesignator(
+                                         i
+                                        ) [NamedDesignator]
+                                      ) [DesignOfVarFactor]
+                                    ) [TermFactor]
+                                  ) [ExprTerm]
+                                ) [PositiveExpr]
+                              ) [PrintStatement]
+                            ) [OneStatement]
+                          ) [ManyStatements]
+                          OneStatement(
+                            PrintStatement(
+                              PositiveExpr(
+                                ExprTerm(
+                                  TermFactor(
+                                    DesignOfVarFactor(
+                                      NamedDesignator(
+                                       c
+                                      ) [NamedDesignator]
+                                    ) [DesignOfVarFactor]
+                                  ) [TermFactor]
+                                ) [ExprTerm]
+                              ) [PositiveExpr]
+                            ) [PrintStatement]
+                          ) [OneStatement]
+                        ) [ManyStatements]
+                        OneStatement(
+                          PrintStatement(
+                            PositiveExpr(
+                              ExprTerm(
+                                TermFactor(
+                                  DesignOfVarFactor(
+                                    NamedDesignator(
+                                     b
+                                    ) [NamedDesignator]
+                                  ) [DesignOfVarFactor]
+                                ) [TermFactor]
+                              ) [ExprTerm]
+                            ) [PositiveExpr]
+                          ) [PrintStatement]
+                        ) [OneStatement]
+                      ) [ManyStatements]
+                      OneStatement(
+                        PrintStatement(
+                          PositiveExpr(
+                            ExprTerm(
+                              TermFactor(
+                                DesignOfVarFactor(
+                                  NamedDesignator(
+                                   a
+                                  ) [NamedDesignator]
+                                ) [DesignOfVarFactor]
+                              ) [TermFactor]
+                            ) [ExprTerm]
+                          ) [PositiveExpr]
+                        ) [PrintStatement]
+                      ) [OneStatement]
+                    ) [ManyStatements]
+                    OneStatement(
+                      PrintStatement(
+                        PositiveExpr(
+                          ExprTerm(
+                            TermFactor(
+                              DesignOfVarFactor(
+                                NamedDesignator(
+                                 arr
+                                ) [NamedDesignator]
+                              ) [DesignOfVarFactor]
+                            ) [TermFactor]
+                          ) [ExprTerm]
+                        ) [PositiveExpr]
+                      ) [PrintStatement]
+                    ) [OneStatement]
+                  ) [ManyStatements]
+                  OneStatement(
+                    DesignStatement(
+                      DesignAssign(
+                        AssStatement(
+                          NamedDesignator(
+                           arr
+                          ) [NamedDesignator]
+                          Assignop(
+                          ) [Assignop]
+                          PositiveExpr(
+                            ExprTerm(
+                              TermFactor(
+                                NewArrayFactor(
+                                  Type(
+                                   int
+                                  ) [Type]
+                                  PositiveExpr(
+                                    ExprTerm(
+                                      TermFactor(
+                                        ConstFactor(
+                                          IntConst(
+                                           4
+                                          ) [IntConst]
+                                        ) [ConstFactor]
+                                      ) [TermFactor]
+                                    ) [ExprTerm]
+                                  ) [PositiveExpr]
+                                ) [NewArrayFactor]
+                              ) [TermFactor]
+                            ) [ExprTerm]
+                          ) [PositiveExpr]
+                        ) [AssStatement]
+                      ) [DesignAssign]
+                    ) [DesignStatement]
+                  ) [OneStatement]
+                ) [ManyStatements]
+                OneStatement(
+                  DesignStatement(
+                    DesignAssign(
+                      AssStatement(
+                        NamedDesignator(
+                         arr
+                        ) [NamedDesignator]
+                        Assignop(
+                        ) [Assignop]
+                        PositiveExpr(
+                          ExprTerm(
+                            TermFactor(
+                              NewArrayFactor(
+                                Type(
+                                 int
+                                ) [Type]
+                                PositiveExpr(
+                                  ExprTerm(
+                                    TermFactor(
+                                      DesignOfVarFactor(
+                                        NamedDesignator(
+                                         i
+                                        ) [NamedDesignator]
+                                      ) [DesignOfVarFactor]
+                                    ) [TermFactor]
+                                  ) [ExprTerm]
+                                ) [PositiveExpr]
+                              ) [NewArrayFactor]
+                            ) [TermFactor]
+                          ) [ExprTerm]
+                        ) [PositiveExpr]
+                      ) [AssStatement]
+                    ) [DesignAssign]
+                  ) [DesignStatement]
+                ) [OneStatement]
+              ) [ManyStatements]
+              OneStatement(
+                DesignStatement(
+                  DesignAssign(
+                    AssStatement(
+                      NamedDesignator(
+                       arr
+                      ) [NamedDesignator]
+                      Assignop(
+                      ) [Assignop]
+                      PositiveExpr(
+                        ExprTerm(
+                          TermFactor(
+                            NewArrayFactor(
+                              Type(
+                               int
+                              ) [Type]
+                              PositiveExpr(
+                                ExprTerm(
+                                  TermFactor(
+                                    DesignOfVarFactor(
+                                      NamedDesignator(
+                                       c
+                                      ) [NamedDesignator]
+                                    ) [DesignOfVarFactor]
+                                  ) [TermFactor]
+                                ) [ExprTerm]
+                              ) [PositiveExpr]
+                            ) [NewArrayFactor]
+                          ) [TermFactor]
+                        ) [ExprTerm]
+                      ) [PositiveExpr]
+                    ) [AssStatement]
+                  ) [DesignAssign]
+                ) [DesignStatement]
+              ) [OneStatement]
+            ) [ManyStatements]
+            OneStatement(
+              DesignStatement(
+                DesignAssign(
+                  AssStatement(
+                    AddressingElem(
+                      NamedDesignator(
+                       arr
+                      ) [NamedDesignator]
+                      PositiveExpr(
+                        ExprTerm(
+                          TermFactor(
+                            ConstFactor(
+                              IntConst(
+                               0
+                              ) [IntConst]
+                            ) [ConstFactor]
+                          ) [TermFactor]
+                        ) [ExprTerm]
+                      ) [PositiveExpr]
+                    ) [AddressingElem]
+                    Assignop(
+                    ) [Assignop]
+                    PositiveExpr(
+                      ExprTerm(
+                        TermFactor(
+                          ConstFactor(
+                            IntConst(
+                             0
+                            ) [IntConst]
+                          ) [ConstFactor]
+                        ) [TermFactor]
+                      ) [ExprTerm]
+                    ) [PositiveExpr]
+                  ) [AssStatement]
+                ) [DesignAssign]
+              ) [DesignStatement]
+            ) [OneStatement]
+          ) [ManyStatements]
+          OneStatement(
+            DesignStatement(
+              DesignAssign(
+                AssStatement(
+                  AddressingElem(
+                    NamedDesignator(
+                     arr
+                    ) [NamedDesignator]
+                    PositiveExpr(
+                      ExprTerm(
+                        TermFactor(
+                          DesignOfVarFactor(
+                            NamedDesignator(
+                             i
+                            ) [NamedDesignator]
+                          ) [DesignOfVarFactor]
+                        ) [TermFactor]
+                      ) [ExprTerm]
+                    ) [PositiveExpr]
+                  ) [AddressingElem]
+                  Assignop(
+                  ) [Assignop]
+                  PositiveExpr(
+                    ExprTerm(
+                      TermFactor(
+                        ConstFactor(
+                          IntConst(
+                           0
+                          ) [IntConst]
+                        ) [ConstFactor]
+                      ) [TermFactor]
+                    ) [ExprTerm]
+                  ) [PositiveExpr]
+                ) [AssStatement]
+              ) [DesignAssign]
+            ) [DesignStatement]
+          ) [OneStatement]
+        ) [ManyStatements]
+        OneStatement(
+          DesignStatement(
+            DesignAssign(
+              AssStatement(
+                AddressingElem(
+                  NamedDesignator(
+                   arr
+                  ) [NamedDesignator]
+                  PositiveExpr(
+                    ExprTerm(
+                      TermFactor(
+                        DesignOfVarFactor(
+                          NamedDesignator(
+                           a
+                          ) [NamedDesignator]
+                        ) [DesignOfVarFactor]
+                      ) [TermFactor]
+                    ) [ExprTerm]
+                  ) [PositiveExpr]
+                ) [AddressingElem]
+                Assignop(
+                ) [Assignop]
+                PositiveExpr(
+                  ExprTerm(
+                    TermFactor(
+                      ConstFactor(
+                        IntConst(
+                         0
+                        ) [IntConst]
+                      ) [ConstFactor]
+                    ) [TermFactor]
+                  ) [ExprTerm]
+                ) [PositiveExpr]
+              ) [AssStatement]
+            ) [DesignAssign]
+          ) [DesignStatement]
+        ) [OneStatement]
+      ) [ManyStatements]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  16:45:57,134 - ===================================
+INFO  16:45:57,134 - Semanticka analiza:
+INFO  16:45:57,226 - Detektovan pristup globalnoj promenljivoj na liniji 17
+INFO  16:45:57,227 - 	Var i: int, 1, 0 
+INFO  16:45:57,227 - Detektovan pristup globalnoj promenljivoj na liniji 18
+INFO  16:45:57,227 - 	Var i: int, 1, 0 
+INFO  16:45:57,227 - Detektovan pristup globalnoj promenljivoj na liniji 18
+INFO  16:45:57,227 - 	Var i: int, 1, 0 
+INFO  16:45:57,233 - Detektovan pristup globalnoj promenljivoj na liniji 18
+INFO  16:45:57,233 - 	Var i: int, 1, 0 
+INFO  16:45:57,233 - Detektovan pristup globalnoj promenljivoj na liniji 18
+INFO  16:45:57,233 - 	Var i: int, 1, 0 
+INFO  16:45:57,233 - Detektovan pristup globalnoj promenljivoj na liniji 18
+INFO  16:45:57,233 - 	Var i: int, 1, 0 
+INFO  16:45:57,233 - Detektovan pristup globalnoj promenljivoj na liniji 18
+INFO  16:45:57,233 - 	Var i: int, 1, 0 
+INFO  16:45:57,233 - Detektovan pristup globalnoj promenljivoj na liniji 19
+INFO  16:45:57,233 - 	Var i: int, 1, 0 
+INFO  16:45:57,233 - Detektovan pristup globalnoj promenljivoj na liniji 19
+INFO  16:45:57,233 - 	Var c: char, 2, 0 
+INFO  16:45:57,234 - Detektovan pristup globalnoj promenljivoj na liniji 20
+INFO  16:45:57,234 - 	Var i: int, 1, 0 
+INFO  16:45:57,234 - Detektovan pristup globalnoj promenljivoj na liniji 20
+INFO  16:45:57,234 - 	Var b: bool, 3, 0 
+INFO  16:45:57,234 - Detektovan pristup globalnoj promenljivoj na liniji 21
+INFO  16:45:57,234 - 	Var i: int, 1, 0 
+INFO  16:45:57,234 - Detektovan pristup globalnoj promenljivoj na liniji 21
+INFO  16:45:57,234 - 	Var arr: Arr of int, 4, 0 
+INFO  16:45:57,234 - Detektovan pristup globalnoj promenljivoj na liniji 21
+INFO  16:45:57,235 - 	Var a: Class [], 0, 0 
+INFO  16:45:57,235 - Detektovan pristup globalnoj promenljivoj na liniji 22
+INFO  16:45:57,235 - 	Var i: int, 1, 0 
+INFO  16:45:57,235 - Detektovan pristup globalnoj promenljivoj na liniji 22
+INFO  16:45:57,235 - 	Var b: bool, 3, 0 
+INFO  16:45:57,235 - Detektovan pristup globalnoj promenljivoj na liniji 23
+INFO  16:45:57,235 - 	Var a: Class [], 0, 0 
+INFO  16:45:57,235 - Detektovan pristup globalnoj promenljivoj na liniji 24
+INFO  16:45:57,235 - 	Var i: int, 1, 0 
+INFO  16:45:57,235 - Detektovan pristup globalnoj promenljivoj na liniji 25
+INFO  16:45:57,235 - 	Var a: Class [], 0, 0 
+INFO  16:45:57,236 - Detektovan pristup globalnoj promenljivoj na liniji 26
+INFO  16:45:57,236 - 	Var i: int, 1, 0 
+INFO  16:45:57,236 - Detektovan pristup globalnoj promenljivoj na liniji 27
+INFO  16:45:57,236 - 	Var i: int, 1, 0 
+INFO  16:45:57,236 - Detektovan pristup globalnoj promenljivoj na liniji 28
+INFO  16:45:57,236 - 	Var c: char, 2, 0 
+INFO  16:45:57,236 - Detektovan pristup globalnoj promenljivoj na liniji 29
+INFO  16:45:57,236 - 	Var b: bool, 3, 0 
+INFO  16:45:57,237 - Detektovan pristup globalnoj promenljivoj na liniji 30
+INFO  16:45:57,237 - 	Var a: Class [], 0, 0 
+INFO  16:45:57,237 - Detektovan pristup globalnoj promenljivoj na liniji 31
+INFO  16:45:57,237 - 	Var arr: Arr of int, 4, 0 
+INFO  16:45:57,237 - Detektovan pristup globalnoj promenljivoj na liniji 32
+INFO  16:45:57,237 - 	Var i: int, 1, 0 
+INFO  16:45:57,237 - Detektovan pristup globalnoj promenljivoj na liniji 33
+INFO  16:45:57,237 - 	Var c: char, 2, 0 
+INFO  16:45:57,237 - Detektovan pristup globalnoj promenljivoj na liniji 34
+INFO  16:45:57,237 - 	Var b: bool, 3, 0 
+INFO  16:45:57,237 - Detektovan pristup globalnoj promenljivoj na liniji 35
+INFO  16:45:57,237 - 	Var a: Class [], 0, 0 
+INFO  16:45:57,238 - Detektovan pristup globalnoj promenljivoj na liniji 36
+INFO  16:45:57,238 - 	Var arr: Arr of int, 4, 0 
+INFO  16:45:57,238 - Detektovan pristup globalnoj promenljivoj na liniji 38
+INFO  16:45:57,238 - 	Var arr: Arr of int, 4, 0 
+INFO  16:45:57,238 - Detektovan pristup globalnoj promenljivoj na liniji 39
+INFO  16:45:57,238 - 	Var arr: Arr of int, 4, 0 
+INFO  16:45:57,238 - Detektovan pristup globalnoj promenljivoj na liniji 39
+INFO  16:45:57,238 - 	Var i: int, 1, 0 
+INFO  16:45:57,238 - Detektovan pristup globalnoj promenljivoj na liniji 40
+INFO  16:45:57,238 - 	Var arr: Arr of int, 4, 0 
+INFO  16:45:57,238 - Detektovan pristup globalnoj promenljivoj na liniji 40
+INFO  16:45:57,239 - 	Var c: char, 2, 0 
+INFO  16:45:57,239 - Detektovan pristup globalnoj promenljivoj na liniji 42
+INFO  16:45:57,239 - 	Var arr: Arr of int, 4, 0 
+INFO  16:45:57,239 - Detektovan pristup elementu niza na liniji 42
+INFO  16:45:57,239 - 	Var arr: Arr of int, 4, 0 
+INFO  16:45:57,239 - Detektovan pristup globalnoj promenljivoj na liniji 43
+INFO  16:45:57,239 - 	Var arr: Arr of int, 4, 0 
+INFO  16:45:57,239 - Detektovan pristup globalnoj promenljivoj na liniji 43
+INFO  16:45:57,239 - 	Var i: int, 1, 0 
+INFO  16:45:57,239 - Detektovan pristup elementu niza na liniji 43
+INFO  16:45:57,239 - 	Var arr: Arr of int, 4, 0 
+INFO  16:45:57,239 - Detektovan pristup globalnoj promenljivoj na liniji 44
+INFO  16:45:57,240 - 	Var arr: Arr of int, 4, 0 
+INFO  16:45:57,240 - Detektovan pristup globalnoj promenljivoj na liniji 44
+INFO  16:45:57,240 - 	Var a: Class [], 0, 0 

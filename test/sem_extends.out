@@ -1,0 +1,192 @@
+INFO  16:58:32,561 - Kompajliranje fajla: D:\Faks\PP1\workspace\MJCompiler\test\sem_extends.mj
+INFO  16:58:32,562 - ===================================
+INFO  16:58:32,562 - Leksicka analiza
+INFO  16:58:32,564 - ===================================
+INFO  16:58:32,564 - Sintaksna analiza
+INFO  16:58:32,611 - #2 program
+INFO  16:58:32,611 - #51 sem_extends
+INFO  16:58:32,611 - #21 record
+INFO  16:58:32,612 - #51 R
+INFO  16:58:32,612 - #47 {
+INFO  16:58:32,613 - #48 }
+INFO  16:58:32,613 - #4 class
+INFO  16:58:32,614 - #51 A
+INFO  16:58:32,614 - #47 {
+INFO  16:58:32,615 - #48 }
+INFO  16:58:32,616 - #4 class
+INFO  16:58:32,617 - #51 B
+INFO  16:58:32,617 - #16 extends
+INFO  16:58:32,618 - #51 A
+INFO  16:58:32,618 - #47 {
+INFO  16:58:32,619 - #48 }
+INFO  16:58:32,619 - #4 class
+INFO  16:58:32,619 - #51 C
+INFO  16:58:32,619 - #16 extends
+INFO  16:58:32,619 - #51 int
+INFO  16:58:32,619 - #47 {
+INFO  16:58:32,619 - #48 }
+INFO  16:58:32,619 - #4 class
+INFO  16:58:32,619 - #51 D
+INFO  16:58:32,619 - #16 extends
+INFO  16:58:32,619 - #51 X
+INFO  16:58:32,619 - #47 {
+INFO  16:58:32,619 - #48 }
+INFO  16:58:32,619 - #4 class
+INFO  16:58:32,620 - #51 E
+INFO  16:58:32,620 - #16 extends
+INFO  16:58:32,620 - #51 R
+INFO  16:58:32,620 - #47 {
+INFO  16:58:32,620 - #48 }
+INFO  16:58:32,620 - #47 {
+INFO  16:58:32,620 - #15 void
+INFO  16:58:32,620 - #51 main
+INFO  16:58:32,621 - #43 (
+INFO  16:58:32,621 - #44 )
+INFO  16:58:32,622 - #47 {
+INFO  16:58:32,622 - #48 }
+INFO  16:58:32,623 - #48 }
+INFO  16:58:32,624 - Parsiranje uspesno zavrseno.
+INFO  16:58:32,625 - Program(
+  ProgramName(
+   sem_extends
+  ) [ProgramName]
+  ProgDeclarations(
+    ProgDeclarations(
+      ProgDeclarations(
+        ProgDeclarations(
+          ProgDeclarations(
+            ProgDeclarations(
+              NoProgDecl(
+              ) [NoProgDecl]
+              ProgRecordDecl(
+                RecordDecl(
+                  RecordName(
+                   R
+                  ) [RecordName]
+                  NoFieldDecl(
+                  ) [NoFieldDecl]
+                ) [RecordDecl]
+              ) [ProgRecordDecl]
+            ) [ProgDeclarations]
+            ProgClassDecl(
+              ClassDecl(
+                ClassName(
+                 A
+                ) [ClassName]
+                DoesNotExtend(
+                ) [DoesNotExtend]
+                ClassBody(
+                  ClassBodyStart(
+                  ) [ClassBodyStart]
+                  NoFieldDecl(
+                  ) [NoFieldDecl]
+                  ClassNoMethods(
+                  ) [ClassNoMethods]
+                ) [ClassBody]
+              ) [ClassDecl]
+            ) [ProgClassDecl]
+          ) [ProgDeclarations]
+          ProgClassDecl(
+            ClassDecl(
+              ClassName(
+               B
+              ) [ClassName]
+              DoesExtend(
+                Type(
+                 A
+                ) [Type]
+              ) [DoesExtend]
+              ClassBody(
+                ClassBodyStart(
+                ) [ClassBodyStart]
+                NoFieldDecl(
+                ) [NoFieldDecl]
+                ClassNoMethods(
+                ) [ClassNoMethods]
+              ) [ClassBody]
+            ) [ClassDecl]
+          ) [ProgClassDecl]
+        ) [ProgDeclarations]
+        ProgClassDecl(
+          ClassDecl(
+            ClassName(
+             C
+            ) [ClassName]
+            DoesExtend(
+              Type(
+               int
+              ) [Type]
+            ) [DoesExtend]
+            ClassBody(
+              ClassBodyStart(
+              ) [ClassBodyStart]
+              NoFieldDecl(
+              ) [NoFieldDecl]
+              ClassNoMethods(
+              ) [ClassNoMethods]
+            ) [ClassBody]
+          ) [ClassDecl]
+        ) [ProgClassDecl]
+      ) [ProgDeclarations]
+      ProgClassDecl(
+        ClassDecl(
+          ClassName(
+           D
+          ) [ClassName]
+          DoesExtend(
+            Type(
+             X
+            ) [Type]
+          ) [DoesExtend]
+          ClassBody(
+            ClassBodyStart(
+            ) [ClassBodyStart]
+            NoFieldDecl(
+            ) [NoFieldDecl]
+            ClassNoMethods(
+            ) [ClassNoMethods]
+          ) [ClassBody]
+        ) [ClassDecl]
+      ) [ProgClassDecl]
+    ) [ProgDeclarations]
+    ProgClassDecl(
+      ClassDecl(
+        ClassName(
+         E
+        ) [ClassName]
+        DoesExtend(
+          Type(
+           R
+          ) [Type]
+        ) [DoesExtend]
+        ClassBody(
+          ClassBodyStart(
+          ) [ClassBodyStart]
+          NoFieldDecl(
+          ) [NoFieldDecl]
+          ClassNoMethods(
+          ) [ClassNoMethods]
+        ) [ClassBody]
+      ) [ClassDecl]
+    ) [ProgClassDecl]
+  ) [ProgDeclarations]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodReturnsVoid(
+      ) [MethodReturnsVoid]
+      MethodSignature(
+       main
+        NoFormalParams(
+        ) [NoFormalParams]
+      ) [MethodSignature]
+      NoVarDecl(
+      ) [NoVarDecl]
+      NoStatement(
+      ) [NoStatement]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  16:58:32,626 - ===================================
+INFO  16:58:32,626 - Semanticka analiza:

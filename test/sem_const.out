@@ -1,0 +1,140 @@
+INFO  16:55:54,009 - Kompajliranje fajla: D:\Faks\PP1\workspace\MJCompiler\test\sem_const.mj
+INFO  16:55:54,010 - ===================================
+INFO  16:55:54,010 - Leksicka analiza
+INFO  16:55:54,016 - ===================================
+INFO  16:55:54,016 - Sintaksna analiza
+INFO  16:55:54,095 - #2 program
+INFO  16:55:54,095 - #51 sem_const
+INFO  16:55:54,095 - #4 class
+INFO  16:55:54,098 - #51 A
+INFO  16:55:54,098 - #47 {
+INFO  16:55:54,098 - #48 }
+INFO  16:55:54,101 - #7 const
+INFO  16:55:54,102 - #51 int
+INFO  16:55:54,102 - #51 a
+INFO  16:55:54,104 - #36 =
+INFO  16:55:54,104 - #50 0
+INFO  16:55:54,104 - #39 ;
+INFO  16:55:54,106 - #7 const
+INFO  16:55:54,106 - #51 A
+INFO  16:55:54,106 - #51 b
+INFO  16:55:54,109 - #36 =
+INFO  16:55:54,109 - #50 0
+INFO  16:55:54,109 - #39 ;
+INFO  16:55:54,109 - #7 const
+INFO  16:55:54,109 - #51 int
+INFO  16:55:54,109 - #51 c
+INFO  16:55:54,109 - #36 =
+INFO  16:55:54,110 - #52 true
+INFO  16:55:54,110 - #39 ;
+INFO  16:55:54,110 - #47 {
+INFO  16:55:54,110 - #15 void
+INFO  16:55:54,110 - #51 main
+INFO  16:55:54,111 - #43 (
+INFO  16:55:54,111 - #44 )
+INFO  16:55:54,112 - #47 {
+INFO  16:55:54,113 - #48 }
+INFO  16:55:54,114 - #48 }
+INFO  16:55:54,115 - Parsiranje uspesno zavrseno.
+INFO  16:55:54,116 - Program(
+  ProgramName(
+   sem_const
+  ) [ProgramName]
+  ProgDeclarations(
+    ProgDeclarations(
+      ProgDeclarations(
+        ProgDeclarations(
+          NoProgDecl(
+          ) [NoProgDecl]
+          ProgClassDecl(
+            ClassDecl(
+              ClassName(
+               A
+              ) [ClassName]
+              DoesNotExtend(
+              ) [DoesNotExtend]
+              ClassBody(
+                ClassBodyStart(
+                ) [ClassBodyStart]
+                NoFieldDecl(
+                ) [NoFieldDecl]
+                ClassNoMethods(
+                ) [ClassNoMethods]
+              ) [ClassBody]
+            ) [ClassDecl]
+          ) [ProgClassDecl]
+        ) [ProgDeclarations]
+        ProgConstDecl(
+          ConstDecl(
+            ConstType(
+              Type(
+               int
+              ) [Type]
+            ) [ConstType]
+            SingleConstNameVal(
+              ConstNameVal(
+               a
+                IntConst(
+                 0
+                ) [IntConst]
+              ) [ConstNameVal]
+            ) [SingleConstNameVal]
+          ) [ConstDecl]
+        ) [ProgConstDecl]
+      ) [ProgDeclarations]
+      ProgConstDecl(
+        ConstDecl(
+          ConstType(
+            Type(
+             A
+            ) [Type]
+          ) [ConstType]
+          SingleConstNameVal(
+            ConstNameVal(
+             b
+              IntConst(
+               0
+              ) [IntConst]
+            ) [ConstNameVal]
+          ) [SingleConstNameVal]
+        ) [ConstDecl]
+      ) [ProgConstDecl]
+    ) [ProgDeclarations]
+    ProgConstDecl(
+      ConstDecl(
+        ConstType(
+          Type(
+           int
+          ) [Type]
+        ) [ConstType]
+        SingleConstNameVal(
+          ConstNameVal(
+           c
+            BoolConst(
+             true
+            ) [BoolConst]
+          ) [ConstNameVal]
+        ) [SingleConstNameVal]
+      ) [ConstDecl]
+    ) [ProgConstDecl]
+  ) [ProgDeclarations]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodReturnsVoid(
+      ) [MethodReturnsVoid]
+      MethodSignature(
+       main
+        NoFormalParams(
+        ) [NoFormalParams]
+      ) [MethodSignature]
+      NoVarDecl(
+      ) [NoVarDecl]
+      NoStatement(
+      ) [NoStatement]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  16:55:54,116 - ===================================
+INFO  16:55:54,116 - Semanticka analiza:

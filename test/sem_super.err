@@ -1,0 +1,4 @@
+ERROR 17:22:55,689 - Koriscenje super bez postojanja nadklase. na liniji 8
+ERROR 17:22:55,690 - Nadklasa ne sadrzi trenutnu metodu. na liniji 8
+ERROR 17:22:55,690 - Koriscenje super izvan metode klase. na liniji 7
+ERROR 17:22:55,691 - Semanticka analiza neuspesno zavrsena.

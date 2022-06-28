@@ -1,0 +1,42 @@
+INFO  17:01:38,127 - Kompajliranje fajla: D:\Faks\PP1\workspace\MJCompiler\test\sem_nomain.mj
+INFO  17:01:38,128 - ===================================
+INFO  17:01:38,128 - Leksicka analiza
+INFO  17:01:38,134 - ===================================
+INFO  17:01:38,134 - Sintaksna analiza
+INFO  17:01:38,219 - #2 program
+INFO  17:01:38,219 - #51 p
+INFO  17:01:38,219 - #47 {
+INFO  17:01:38,220 - #15 void
+INFO  17:01:38,221 - #51 notmain
+INFO  17:01:38,222 - #43 (
+INFO  17:01:38,222 - #44 )
+INFO  17:01:38,223 - #47 {
+INFO  17:01:38,224 - #48 }
+INFO  17:01:38,226 - #48 }
+INFO  17:01:38,228 - Parsiranje uspesno zavrseno.
+INFO  17:01:38,228 - Program(
+  ProgramName(
+   p
+  ) [ProgramName]
+  NoProgDecl(
+  ) [NoProgDecl]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodReturnsVoid(
+      ) [MethodReturnsVoid]
+      MethodSignature(
+       notmain
+        NoFormalParams(
+        ) [NoFormalParams]
+      ) [MethodSignature]
+      NoVarDecl(
+      ) [NoVarDecl]
+      NoStatement(
+      ) [NoStatement]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  17:01:38,230 - ===================================
+INFO  17:01:38,230 - Semanticka analiza:

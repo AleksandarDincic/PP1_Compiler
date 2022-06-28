@@ -62,10 +62,10 @@ public class ClassTree {
 	}
 
 	public ClassTree find(Struct type) {
-		if (lastSought != null && lastSought.getType().getType() == type) {
+		if (lastSought != null && lastSought.getType() != null && lastSought.getType().getType() == type) {
 			return lastSought;
 		}
-		if (this.type.getType() == type) {
+		if (this.type != null && this.type.getType() == type) {
 			lastSought = this;
 			return this;
 		}

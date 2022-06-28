@@ -1,0 +1,739 @@
+INFO  17:26:44,063 - Kompajliranje fajla: D:\Faks\PP1\workspace\MJCompiler\test\sem_wrongtype.mj
+INFO  17:26:44,063 - ===================================
+INFO  17:26:44,063 - Leksicka analiza
+INFO  17:26:44,068 - ===================================
+INFO  17:26:44,068 - Sintaksna analiza
+INFO  17:26:44,114 - #2 program
+INFO  17:26:44,114 - #51 sem_wrongtype
+INFO  17:26:44,114 - #51 int
+INFO  17:26:44,115 - #51 x
+INFO  17:26:44,116 - #39 ;
+INFO  17:26:44,116 - #51 char
+INFO  17:26:44,117 - #51 y
+INFO  17:26:44,117 - #39 ;
+INFO  17:26:44,117 - #4 class
+INFO  17:26:44,117 - #51 A
+INFO  17:26:44,117 - #47 {
+INFO  17:26:44,118 - #51 int
+INFO  17:26:44,118 - #51 i
+INFO  17:26:44,119 - #39 ;
+INFO  17:26:44,120 - #48 }
+INFO  17:26:44,121 - #4 class
+INFO  17:26:44,122 - #51 B
+INFO  17:26:44,122 - #16 extends
+INFO  17:26:44,122 - #51 A
+INFO  17:26:44,122 - #47 {
+INFO  17:26:44,122 - #48 }
+INFO  17:26:44,122 - #4 class
+INFO  17:26:44,122 - #51 C
+INFO  17:26:44,122 - #47 {
+INFO  17:26:44,122 - #48 }
+INFO  17:26:44,122 - #47 {
+INFO  17:26:44,123 - #15 void
+INFO  17:26:44,123 - #51 main
+INFO  17:26:44,124 - #43 (
+INFO  17:26:44,124 - #44 )
+INFO  17:26:44,124 - #51 A
+INFO  17:26:44,125 - #51 a
+INFO  17:26:44,125 - #39 ;
+INFO  17:26:44,125 - #51 B
+INFO  17:26:44,126 - #51 b
+INFO  17:26:44,126 - #39 ;
+INFO  17:26:44,126 - #51 C
+INFO  17:26:44,126 - #51 c
+INFO  17:26:44,126 - #39 ;
+INFO  17:26:44,126 - #51 len
+INFO  17:26:44,126 - #51 l
+INFO  17:26:44,126 - #39 ;
+INFO  17:26:44,126 - #47 {
+INFO  17:26:44,126 - #51 x
+INFO  17:26:44,127 - #36 =
+INFO  17:26:44,127 - #50 1
+INFO  17:26:44,128 - #39 ;
+INFO  17:26:44,129 - #51 y
+INFO  17:26:44,129 - #36 =
+INFO  17:26:44,129 - #51 x
+INFO  17:26:44,129 - #39 ;
+INFO  17:26:44,129 - #51 y
+INFO  17:26:44,129 - #36 =
+INFO  17:26:44,129 - #51 chr
+INFO  17:26:44,129 - #43 (
+INFO  17:26:44,129 - #51 x
+INFO  17:26:44,130 - #44 )
+INFO  17:26:44,130 - #39 ;
+INFO  17:26:44,130 - #51 a
+INFO  17:26:44,130 - #36 =
+INFO  17:26:44,130 - #51 null
+INFO  17:26:44,130 - #39 ;
+INFO  17:26:44,131 - #51 b
+INFO  17:26:44,131 - #36 =
+INFO  17:26:44,131 - #51 null
+INFO  17:26:44,131 - #39 ;
+INFO  17:26:44,131 - #51 a
+INFO  17:26:44,131 - #36 =
+INFO  17:26:44,131 - #11 new
+INFO  17:26:44,131 - #51 C
+INFO  17:26:44,131 - #39 ;
+INFO  17:26:44,131 - #51 a
+INFO  17:26:44,131 - #36 =
+INFO  17:26:44,131 - #11 new
+INFO  17:26:44,131 - #51 B
+INFO  17:26:44,131 - #39 ;
+INFO  17:26:44,132 - #51 a
+INFO  17:26:44,132 - #36 =
+INFO  17:26:44,132 - #11 new
+INFO  17:26:44,132 - #51 A
+INFO  17:26:44,132 - #39 ;
+INFO  17:26:44,132 - #51 b
+INFO  17:26:44,132 - #36 =
+INFO  17:26:44,132 - #51 a
+INFO  17:26:44,132 - #39 ;
+INFO  17:26:44,132 - #51 c
+INFO  17:26:44,132 - #36 =
+INFO  17:26:44,133 - #51 a
+INFO  17:26:44,133 - #39 ;
+INFO  17:26:44,133 - #51 A
+INFO  17:26:44,133 - #36 =
+INFO  17:26:44,133 - #51 a
+INFO  17:26:44,133 - #39 ;
+INFO  17:26:44,133 - #51 a
+INFO  17:26:44,133 - #42 .
+INFO  17:26:44,133 - #51 i
+INFO  17:26:44,133 - #36 =
+INFO  17:26:44,133 - #50 0
+INFO  17:26:44,133 - #39 ;
+INFO  17:26:44,134 - #51 x
+INFO  17:26:44,134 - #42 .
+INFO  17:26:44,134 - #51 i
+INFO  17:26:44,134 - #36 =
+INFO  17:26:44,134 - #50 0
+INFO  17:26:44,134 - #39 ;
+INFO  17:26:44,134 - #51 x
+INFO  17:26:44,134 - #36 =
+INFO  17:26:44,134 - #11 new
+INFO  17:26:44,134 - #51 int
+INFO  17:26:44,134 - #39 ;
+INFO  17:26:44,135 - #48 }
+INFO  17:26:44,135 - #48 }
+INFO  17:26:44,136 - Parsiranje uspesno zavrseno.
+INFO  17:26:44,139 - Program(
+  ProgramName(
+   sem_wrongtype
+  ) [ProgramName]
+  ProgDeclarations(
+    ProgDeclarations(
+      ProgDeclarations(
+        ProgDeclarations(
+          ProgDeclarations(
+            NoProgDecl(
+            ) [NoProgDecl]
+            ProgVarDecl(
+              GlobalVarDeclaration(
+                VarType(
+                  Type(
+                   int
+                  ) [Type]
+                ) [VarType]
+                SingleGlobalVarName(
+                  GlobalVarNameOfSingle(
+                   x
+                  ) [GlobalVarNameOfSingle]
+                ) [SingleGlobalVarName]
+              ) [GlobalVarDeclaration]
+            ) [ProgVarDecl]
+          ) [ProgDeclarations]
+          ProgVarDecl(
+            GlobalVarDeclaration(
+              VarType(
+                Type(
+                 char
+                ) [Type]
+              ) [VarType]
+              SingleGlobalVarName(
+                GlobalVarNameOfSingle(
+                 y
+                ) [GlobalVarNameOfSingle]
+              ) [SingleGlobalVarName]
+            ) [GlobalVarDeclaration]
+          ) [ProgVarDecl]
+        ) [ProgDeclarations]
+        ProgClassDecl(
+          ClassDecl(
+            ClassName(
+             A
+            ) [ClassName]
+            DoesNotExtend(
+            ) [DoesNotExtend]
+            ClassBody(
+              ClassBodyStart(
+              ) [ClassBodyStart]
+              FieldDeclarations(
+                NoFieldDecl(
+                ) [NoFieldDecl]
+                FieldDeclaration(
+                  FieldType(
+                    Type(
+                     int
+                    ) [Type]
+                  ) [FieldType]
+                  SingleFieldName(
+                    FieldNameOfSingle(
+                     i
+                    ) [FieldNameOfSingle]
+                  ) [SingleFieldName]
+                ) [FieldDeclaration]
+              ) [FieldDeclarations]
+              ClassNoMethods(
+              ) [ClassNoMethods]
+            ) [ClassBody]
+          ) [ClassDecl]
+        ) [ProgClassDecl]
+      ) [ProgDeclarations]
+      ProgClassDecl(
+        ClassDecl(
+          ClassName(
+           B
+          ) [ClassName]
+          DoesExtend(
+            Type(
+             A
+            ) [Type]
+          ) [DoesExtend]
+          ClassBody(
+            ClassBodyStart(
+            ) [ClassBodyStart]
+            NoFieldDecl(
+            ) [NoFieldDecl]
+            ClassNoMethods(
+            ) [ClassNoMethods]
+          ) [ClassBody]
+        ) [ClassDecl]
+      ) [ProgClassDecl]
+    ) [ProgDeclarations]
+    ProgClassDecl(
+      ClassDecl(
+        ClassName(
+         C
+        ) [ClassName]
+        DoesNotExtend(
+        ) [DoesNotExtend]
+        ClassBody(
+          ClassBodyStart(
+          ) [ClassBodyStart]
+          NoFieldDecl(
+          ) [NoFieldDecl]
+          ClassNoMethods(
+          ) [ClassNoMethods]
+        ) [ClassBody]
+      ) [ClassDecl]
+    ) [ProgClassDecl]
+  ) [ProgDeclarations]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodReturnsVoid(
+      ) [MethodReturnsVoid]
+      MethodSignature(
+       main
+        NoFormalParams(
+        ) [NoFormalParams]
+      ) [MethodSignature]
+      VarDeclarations(
+        VarDeclarations(
+          VarDeclarations(
+            VarDeclarations(
+              NoVarDecl(
+              ) [NoVarDecl]
+              VarDecl(
+                VarType(
+                  Type(
+                   A
+                  ) [Type]
+                ) [VarType]
+                SingleVarName(
+                  VarNameOfSingle(
+                   a
+                  ) [VarNameOfSingle]
+                ) [SingleVarName]
+              ) [VarDecl]
+            ) [VarDeclarations]
+            VarDecl(
+              VarType(
+                Type(
+                 B
+                ) [Type]
+              ) [VarType]
+              SingleVarName(
+                VarNameOfSingle(
+                 b
+                ) [VarNameOfSingle]
+              ) [SingleVarName]
+            ) [VarDecl]
+          ) [VarDeclarations]
+          VarDecl(
+            VarType(
+              Type(
+               C
+              ) [Type]
+            ) [VarType]
+            SingleVarName(
+              VarNameOfSingle(
+               c
+              ) [VarNameOfSingle]
+            ) [SingleVarName]
+          ) [VarDecl]
+        ) [VarDeclarations]
+        VarDecl(
+          VarType(
+            Type(
+             len
+            ) [Type]
+          ) [VarType]
+          SingleVarName(
+            VarNameOfSingle(
+             l
+            ) [VarNameOfSingle]
+          ) [SingleVarName]
+        ) [VarDecl]
+      ) [VarDeclarations]
+      ManyStatements(
+        ManyStatements(
+          ManyStatements(
+            ManyStatements(
+              ManyStatements(
+                ManyStatements(
+                  ManyStatements(
+                    ManyStatements(
+                      ManyStatements(
+                        ManyStatements(
+                          ManyStatements(
+                            ManyStatements(
+                              ManyStatements(
+                                ManyStatements(
+                                  NoStatement(
+                                  ) [NoStatement]
+                                  OneStatement(
+                                    DesignStatement(
+                                      DesignAssign(
+                                        AssStatement(
+                                          NamedDesignator(
+                                           x
+                                          ) [NamedDesignator]
+                                          Assignop(
+                                          ) [Assignop]
+                                          PositiveExpr(
+                                            ExprTerm(
+                                              TermFactor(
+                                                ConstFactor(
+                                                  IntConst(
+                                                   1
+                                                  ) [IntConst]
+                                                ) [ConstFactor]
+                                              ) [TermFactor]
+                                            ) [ExprTerm]
+                                          ) [PositiveExpr]
+                                        ) [AssStatement]
+                                      ) [DesignAssign]
+                                    ) [DesignStatement]
+                                  ) [OneStatement]
+                                ) [ManyStatements]
+                                OneStatement(
+                                  DesignStatement(
+                                    DesignAssign(
+                                      AssStatement(
+                                        NamedDesignator(
+                                         y
+                                        ) [NamedDesignator]
+                                        Assignop(
+                                        ) [Assignop]
+                                        PositiveExpr(
+                                          ExprTerm(
+                                            TermFactor(
+                                              DesignOfVarFactor(
+                                                NamedDesignator(
+                                                 x
+                                                ) [NamedDesignator]
+                                              ) [DesignOfVarFactor]
+                                            ) [TermFactor]
+                                          ) [ExprTerm]
+                                        ) [PositiveExpr]
+                                      ) [AssStatement]
+                                    ) [DesignAssign]
+                                  ) [DesignStatement]
+                                ) [OneStatement]
+                              ) [ManyStatements]
+                              OneStatement(
+                                DesignStatement(
+                                  DesignAssign(
+                                    AssStatement(
+                                      NamedDesignator(
+                                       y
+                                      ) [NamedDesignator]
+                                      Assignop(
+                                      ) [Assignop]
+                                      PositiveExpr(
+                                        ExprTerm(
+                                          TermFactor(
+                                            DesignOfMethodFactor(
+                                              NamedDesignator(
+                                               chr
+                                              ) [NamedDesignator]
+                                              HasActualParams(
+                                                SingleActualParam(
+                                                  PositiveExpr(
+                                                    ExprTerm(
+                                                      TermFactor(
+                                                        DesignOfVarFactor(
+                                                          NamedDesignator(
+                                                           x
+                                                          ) [NamedDesignator]
+                                                        ) [DesignOfVarFactor]
+                                                      ) [TermFactor]
+                                                    ) [ExprTerm]
+                                                  ) [PositiveExpr]
+                                                ) [SingleActualParam]
+                                              ) [HasActualParams]
+                                            ) [DesignOfMethodFactor]
+                                          ) [TermFactor]
+                                        ) [ExprTerm]
+                                      ) [PositiveExpr]
+                                    ) [AssStatement]
+                                  ) [DesignAssign]
+                                ) [DesignStatement]
+                              ) [OneStatement]
+                            ) [ManyStatements]
+                            OneStatement(
+                              DesignStatement(
+                                DesignAssign(
+                                  AssStatement(
+                                    NamedDesignator(
+                                     a
+                                    ) [NamedDesignator]
+                                    Assignop(
+                                    ) [Assignop]
+                                    PositiveExpr(
+                                      ExprTerm(
+                                        TermFactor(
+                                          DesignOfVarFactor(
+                                            NamedDesignator(
+                                             null
+                                            ) [NamedDesignator]
+                                          ) [DesignOfVarFactor]
+                                        ) [TermFactor]
+                                      ) [ExprTerm]
+                                    ) [PositiveExpr]
+                                  ) [AssStatement]
+                                ) [DesignAssign]
+                              ) [DesignStatement]
+                            ) [OneStatement]
+                          ) [ManyStatements]
+                          OneStatement(
+                            DesignStatement(
+                              DesignAssign(
+                                AssStatement(
+                                  NamedDesignator(
+                                   b
+                                  ) [NamedDesignator]
+                                  Assignop(
+                                  ) [Assignop]
+                                  PositiveExpr(
+                                    ExprTerm(
+                                      TermFactor(
+                                        DesignOfVarFactor(
+                                          NamedDesignator(
+                                           null
+                                          ) [NamedDesignator]
+                                        ) [DesignOfVarFactor]
+                                      ) [TermFactor]
+                                    ) [ExprTerm]
+                                  ) [PositiveExpr]
+                                ) [AssStatement]
+                              ) [DesignAssign]
+                            ) [DesignStatement]
+                          ) [OneStatement]
+                        ) [ManyStatements]
+                        OneStatement(
+                          DesignStatement(
+                            DesignAssign(
+                              AssStatement(
+                                NamedDesignator(
+                                 a
+                                ) [NamedDesignator]
+                                Assignop(
+                                ) [Assignop]
+                                PositiveExpr(
+                                  ExprTerm(
+                                    TermFactor(
+                                      NewObjectFactor(
+                                        Type(
+                                         C
+                                        ) [Type]
+                                      ) [NewObjectFactor]
+                                    ) [TermFactor]
+                                  ) [ExprTerm]
+                                ) [PositiveExpr]
+                              ) [AssStatement]
+                            ) [DesignAssign]
+                          ) [DesignStatement]
+                        ) [OneStatement]
+                      ) [ManyStatements]
+                      OneStatement(
+                        DesignStatement(
+                          DesignAssign(
+                            AssStatement(
+                              NamedDesignator(
+                               a
+                              ) [NamedDesignator]
+                              Assignop(
+                              ) [Assignop]
+                              PositiveExpr(
+                                ExprTerm(
+                                  TermFactor(
+                                    NewObjectFactor(
+                                      Type(
+                                       B
+                                      ) [Type]
+                                    ) [NewObjectFactor]
+                                  ) [TermFactor]
+                                ) [ExprTerm]
+                              ) [PositiveExpr]
+                            ) [AssStatement]
+                          ) [DesignAssign]
+                        ) [DesignStatement]
+                      ) [OneStatement]
+                    ) [ManyStatements]
+                    OneStatement(
+                      DesignStatement(
+                        DesignAssign(
+                          AssStatement(
+                            NamedDesignator(
+                             a
+                            ) [NamedDesignator]
+                            Assignop(
+                            ) [Assignop]
+                            PositiveExpr(
+                              ExprTerm(
+                                TermFactor(
+                                  NewObjectFactor(
+                                    Type(
+                                     A
+                                    ) [Type]
+                                  ) [NewObjectFactor]
+                                ) [TermFactor]
+                              ) [ExprTerm]
+                            ) [PositiveExpr]
+                          ) [AssStatement]
+                        ) [DesignAssign]
+                      ) [DesignStatement]
+                    ) [OneStatement]
+                  ) [ManyStatements]
+                  OneStatement(
+                    DesignStatement(
+                      DesignAssign(
+                        AssStatement(
+                          NamedDesignator(
+                           b
+                          ) [NamedDesignator]
+                          Assignop(
+                          ) [Assignop]
+                          PositiveExpr(
+                            ExprTerm(
+                              TermFactor(
+                                DesignOfVarFactor(
+                                  NamedDesignator(
+                                   a
+                                  ) [NamedDesignator]
+                                ) [DesignOfVarFactor]
+                              ) [TermFactor]
+                            ) [ExprTerm]
+                          ) [PositiveExpr]
+                        ) [AssStatement]
+                      ) [DesignAssign]
+                    ) [DesignStatement]
+                  ) [OneStatement]
+                ) [ManyStatements]
+                OneStatement(
+                  DesignStatement(
+                    DesignAssign(
+                      AssStatement(
+                        NamedDesignator(
+                         c
+                        ) [NamedDesignator]
+                        Assignop(
+                        ) [Assignop]
+                        PositiveExpr(
+                          ExprTerm(
+                            TermFactor(
+                              DesignOfVarFactor(
+                                NamedDesignator(
+                                 a
+                                ) [NamedDesignator]
+                              ) [DesignOfVarFactor]
+                            ) [TermFactor]
+                          ) [ExprTerm]
+                        ) [PositiveExpr]
+                      ) [AssStatement]
+                    ) [DesignAssign]
+                  ) [DesignStatement]
+                ) [OneStatement]
+              ) [ManyStatements]
+              OneStatement(
+                DesignStatement(
+                  DesignAssign(
+                    AssStatement(
+                      NamedDesignator(
+                       A
+                      ) [NamedDesignator]
+                      Assignop(
+                      ) [Assignop]
+                      PositiveExpr(
+                        ExprTerm(
+                          TermFactor(
+                            DesignOfVarFactor(
+                              NamedDesignator(
+                               a
+                              ) [NamedDesignator]
+                            ) [DesignOfVarFactor]
+                          ) [TermFactor]
+                        ) [ExprTerm]
+                      ) [PositiveExpr]
+                    ) [AssStatement]
+                  ) [DesignAssign]
+                ) [DesignStatement]
+              ) [OneStatement]
+            ) [ManyStatements]
+            OneStatement(
+              DesignStatement(
+                DesignAssign(
+                  AssStatement(
+                    AddressingMember(
+                      NamedDesignator(
+                       a
+                      ) [NamedDesignator]
+                     i
+                    ) [AddressingMember]
+                    Assignop(
+                    ) [Assignop]
+                    PositiveExpr(
+                      ExprTerm(
+                        TermFactor(
+                          ConstFactor(
+                            IntConst(
+                             0
+                            ) [IntConst]
+                          ) [ConstFactor]
+                        ) [TermFactor]
+                      ) [ExprTerm]
+                    ) [PositiveExpr]
+                  ) [AssStatement]
+                ) [DesignAssign]
+              ) [DesignStatement]
+            ) [OneStatement]
+          ) [ManyStatements]
+          OneStatement(
+            DesignStatement(
+              DesignAssign(
+                AssStatement(
+                  AddressingMember(
+                    NamedDesignator(
+                     x
+                    ) [NamedDesignator]
+                   i
+                  ) [AddressingMember]
+                  Assignop(
+                  ) [Assignop]
+                  PositiveExpr(
+                    ExprTerm(
+                      TermFactor(
+                        ConstFactor(
+                          IntConst(
+                           0
+                          ) [IntConst]
+                        ) [ConstFactor]
+                      ) [TermFactor]
+                    ) [ExprTerm]
+                  ) [PositiveExpr]
+                ) [AssStatement]
+              ) [DesignAssign]
+            ) [DesignStatement]
+          ) [OneStatement]
+        ) [ManyStatements]
+        OneStatement(
+          DesignStatement(
+            DesignAssign(
+              AssStatement(
+                NamedDesignator(
+                 x
+                ) [NamedDesignator]
+                Assignop(
+                ) [Assignop]
+                PositiveExpr(
+                  ExprTerm(
+                    TermFactor(
+                      NewObjectFactor(
+                        Type(
+                         int
+                        ) [Type]
+                      ) [NewObjectFactor]
+                    ) [TermFactor]
+                  ) [ExprTerm]
+                ) [PositiveExpr]
+              ) [AssStatement]
+            ) [DesignAssign]
+          ) [DesignStatement]
+        ) [OneStatement]
+      ) [ManyStatements]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  17:26:44,140 - ===================================
+INFO  17:26:44,140 - Semanticka analiza:
+INFO  17:26:44,213 - Detektovan pristup globalnoj promenljivoj na liniji 27
+INFO  17:26:44,213 - 	Var x: int, 0, 0 
+INFO  17:26:44,213 - Detektovan pristup globalnoj promenljivoj na liniji 28
+INFO  17:26:44,214 - 	Var y: char, 1, 0 
+INFO  17:26:44,214 - Detektovan pristup globalnoj promenljivoj na liniji 28
+INFO  17:26:44,214 - 	Var x: int, 0, 0 
+INFO  17:26:44,214 - Detektovan pristup globalnoj promenljivoj na liniji 29
+INFO  17:26:44,214 - 	Var y: char, 1, 0 
+INFO  17:26:44,214 - Detektovan pristup globalnoj promenljivoj na liniji 29
+INFO  17:26:44,214 - 	Var x: int, 0, 0 
+INFO  17:26:44,214 - Detektovan pristup metodi klase na liniji 29
+INFO  17:26:44,214 - 	Meth chr: char, 0, 1 
+   Var i: int, 0, 1 
+
+INFO  17:26:44,214 - Detektovan pristup lokalnoj promenljivoj na liniji 31
+INFO  17:26:44,215 - 	Var a: Class [Fld i: int, 1, 1 ], 0, 1 
+INFO  17:26:44,215 - Detektovan pristup lokalnoj promenljivoj na liniji 32
+INFO  17:26:44,215 - 	Var b: Class [Fld i: int, 1, 1 ], 1, 1 
+INFO  17:26:44,215 - Detektovan pristup lokalnoj promenljivoj na liniji 33
+INFO  17:26:44,215 - 	Var a: Class [Fld i: int, 1, 1 ], 0, 1 
+INFO  17:26:44,215 - Detektovano kreiranje objekta klase na liniji 33
+INFO  17:26:44,215 - 	Type C: Class [], 0, 0 
+INFO  17:26:44,215 - Detektovan pristup lokalnoj promenljivoj na liniji 34
+INFO  17:26:44,215 - 	Var a: Class [Fld i: int, 1, 1 ], 0, 1 
+INFO  17:26:44,215 - Detektovano kreiranje objekta klase na liniji 34
+INFO  17:26:44,215 - 	Type B: Class [Fld i: int, 1, 1 ], 0, 0 
+INFO  17:26:44,215 - Detektovan pristup lokalnoj promenljivoj na liniji 35
+INFO  17:26:44,216 - 	Var a: Class [Fld i: int, 1, 1 ], 0, 1 
+INFO  17:26:44,216 - Detektovano kreiranje objekta klase na liniji 35
+INFO  17:26:44,216 - 	Type A: Class [Fld i: int, 1, 1 ], 0, 0 
+INFO  17:26:44,216 - Detektovan pristup lokalnoj promenljivoj na liniji 36
+INFO  17:26:44,216 - 	Var b: Class [Fld i: int, 1, 1 ], 1, 1 
+INFO  17:26:44,216 - Detektovan pristup lokalnoj promenljivoj na liniji 36
+INFO  17:26:44,216 - 	Var a: Class [Fld i: int, 1, 1 ], 0, 1 
+INFO  17:26:44,216 - Detektovan pristup lokalnoj promenljivoj na liniji 37
+INFO  17:26:44,216 - 	Var c: Class [], 2, 1 
+INFO  17:26:44,216 - Detektovan pristup lokalnoj promenljivoj na liniji 37
+INFO  17:26:44,217 - 	Var a: Class [Fld i: int, 1, 1 ], 0, 1 
+INFO  17:26:44,217 - Detektovan pristup lokalnoj promenljivoj na liniji 39
+INFO  17:26:44,217 - 	Var a: Class [Fld i: int, 1, 1 ], 0, 1 
+INFO  17:26:44,217 - Detektovan pristup lokalnoj promenljivoj na liniji 41
+INFO  17:26:44,217 - 	Var a: Class [Fld i: int, 1, 1 ], 0, 1 
+INFO  17:26:44,217 - Detektovan pristup polju klase na liniji 41
+INFO  17:26:44,218 - 	Fld i: int, 1, 1 
+INFO  17:26:44,218 - Detektovan pristup globalnoj promenljivoj na liniji 42
+INFO  17:26:44,218 - 	Var x: int, 0, 0 
+INFO  17:26:44,218 - Detektovan pristup globalnoj promenljivoj na liniji 44
+INFO  17:26:44,218 - 	Var x: int, 0, 0 

@@ -1,0 +1,136 @@
+INFO  16:56:39,306 - Kompajliranje fajla: D:\Faks\PP1\workspace\MJCompiler\test\sem_constructor.mj
+INFO  16:56:39,306 - ===================================
+INFO  16:56:39,307 - Leksicka analiza
+INFO  16:56:39,312 - ===================================
+INFO  16:56:39,312 - Sintaksna analiza
+INFO  16:56:39,404 - #2 program
+INFO  16:56:39,404 - #51 sem_return
+INFO  16:56:39,404 - #4 class
+INFO  16:56:39,407 - #51 A
+INFO  16:56:39,407 - #47 {
+INFO  16:56:39,408 - #47 {
+INFO  16:56:39,409 - #51 A
+INFO  16:56:39,410 - #43 (
+INFO  16:56:39,411 - #44 )
+INFO  16:56:39,411 - #47 {
+INFO  16:56:39,411 - #48 }
+INFO  16:56:39,413 - #48 }
+INFO  16:56:39,414 - #48 }
+INFO  16:56:39,414 - #4 class
+INFO  16:56:39,417 - #51 B
+INFO  16:56:39,418 - #47 {
+INFO  16:56:39,418 - #47 {
+INFO  16:56:39,418 - #51 X
+INFO  16:56:39,418 - #43 (
+INFO  16:56:39,418 - #44 )
+INFO  16:56:39,418 - #47 {
+INFO  16:56:39,418 - #48 }
+INFO  16:56:39,419 - #48 }
+INFO  16:56:39,419 - #48 }
+INFO  16:56:39,419 - #47 {
+INFO  16:56:39,419 - #15 void
+INFO  16:56:39,419 - #51 main
+INFO  16:56:39,421 - #43 (
+INFO  16:56:39,421 - #44 )
+INFO  16:56:39,422 - #47 {
+INFO  16:56:39,422 - #48 }
+INFO  16:56:39,422 - #48 }
+INFO  16:56:39,424 - Parsiranje uspesno zavrseno.
+INFO  16:56:39,425 - Program(
+  ProgramName(
+   sem_return
+  ) [ProgramName]
+  ProgDeclarations(
+    ProgDeclarations(
+      NoProgDecl(
+      ) [NoProgDecl]
+      ProgClassDecl(
+        ClassDecl(
+          ClassName(
+           A
+          ) [ClassName]
+          DoesNotExtend(
+          ) [DoesNotExtend]
+          ClassBody(
+            ClassBodyStart(
+            ) [ClassBodyStart]
+            NoFieldDecl(
+            ) [NoFieldDecl]
+            ClassHasMethods(
+              ClassMethodsStart(
+              ) [ClassMethodsStart]
+              ClassMethodDeclarations(
+                ClassFirstMethodConstr(
+                  ConstructorDecl(
+                    ConstructorName(
+                     A
+                    ) [ConstructorName]
+                    NoVarDecl(
+                    ) [NoVarDecl]
+                    NoStatement(
+                    ) [NoStatement]
+                  ) [ConstructorDecl]
+                ) [ClassFirstMethodConstr]
+                NoMethodDecl(
+                ) [NoMethodDecl]
+              ) [ClassMethodDeclarations]
+            ) [ClassHasMethods]
+          ) [ClassBody]
+        ) [ClassDecl]
+      ) [ProgClassDecl]
+    ) [ProgDeclarations]
+    ProgClassDecl(
+      ClassDecl(
+        ClassName(
+         B
+        ) [ClassName]
+        DoesNotExtend(
+        ) [DoesNotExtend]
+        ClassBody(
+          ClassBodyStart(
+          ) [ClassBodyStart]
+          NoFieldDecl(
+          ) [NoFieldDecl]
+          ClassHasMethods(
+            ClassMethodsStart(
+            ) [ClassMethodsStart]
+            ClassMethodDeclarations(
+              ClassFirstMethodConstr(
+                ConstructorDecl(
+                  ConstructorName(
+                   X
+                  ) [ConstructorName]
+                  NoVarDecl(
+                  ) [NoVarDecl]
+                  NoStatement(
+                  ) [NoStatement]
+                ) [ConstructorDecl]
+              ) [ClassFirstMethodConstr]
+              NoMethodDecl(
+              ) [NoMethodDecl]
+            ) [ClassMethodDeclarations]
+          ) [ClassHasMethods]
+        ) [ClassBody]
+      ) [ClassDecl]
+    ) [ProgClassDecl]
+  ) [ProgDeclarations]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodReturnsVoid(
+      ) [MethodReturnsVoid]
+      MethodSignature(
+       main
+        NoFormalParams(
+        ) [NoFormalParams]
+      ) [MethodSignature]
+      NoVarDecl(
+      ) [NoVarDecl]
+      NoStatement(
+      ) [NoStatement]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  16:56:39,426 - ===================================
+INFO  16:56:39,426 - Semanticka analiza:

@@ -1,0 +1,6 @@
+ERROR 17:02:56,684 - Tip C ne postoji. na liniji 18
+ERROR 17:02:56,684 - Ime z ne postoji. na liniji 21
+ERROR 17:02:56,684 - Tipovi moraju biti kompatibilni pri dodeli. na liniji 21
+ERROR 17:02:56,685 - Tip C ne postoji. na liniji 23
+ERROR 17:02:56,685 - Tip C ne predstavlja klasu. na liniji 23
+ERROR 17:02:56,685 - Semanticka analiza neuspesno zavrsena.

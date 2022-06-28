@@ -1,0 +1,319 @@
+INFO  17:22:55,549 - Kompajliranje fajla: D:\Faks\PP1\workspace\MJCompiler\test\sem_super.mj
+INFO  17:22:55,550 - ===================================
+INFO  17:22:55,550 - Leksicka analiza
+INFO  17:22:55,553 - ===================================
+INFO  17:22:55,553 - Sintaksna analiza
+INFO  17:22:55,601 - #2 program
+INFO  17:22:55,601 - #51 sem_super
+INFO  17:22:55,601 - #4 class
+INFO  17:22:55,602 - #51 A
+INFO  17:22:55,602 - #47 {
+INFO  17:22:55,603 - #47 {
+INFO  17:22:55,604 - #51 A
+INFO  17:22:55,604 - #43 (
+INFO  17:22:55,605 - #44 )
+INFO  17:22:55,605 - #47 {
+INFO  17:22:55,605 - #48 }
+INFO  17:22:55,605 - #15 void
+INFO  17:22:55,606 - #51 f
+INFO  17:22:55,607 - #43 (
+INFO  17:22:55,607 - #44 )
+INFO  17:22:55,608 - #47 {
+INFO  17:22:55,609 - #19 super
+INFO  17:22:55,609 - #43 (
+INFO  17:22:55,609 - #44 )
+INFO  17:22:55,609 - #39 ;
+INFO  17:22:55,609 - #48 }
+INFO  17:22:55,610 - #48 }
+INFO  17:22:55,611 - #48 }
+INFO  17:22:55,611 - #4 class
+INFO  17:22:55,612 - #51 B
+INFO  17:22:55,612 - #16 extends
+INFO  17:22:55,612 - #51 A
+INFO  17:22:55,612 - #47 {
+INFO  17:22:55,613 - #47 {
+INFO  17:22:55,613 - #51 B
+INFO  17:22:55,613 - #43 (
+INFO  17:22:55,613 - #44 )
+INFO  17:22:55,613 - #47 {
+INFO  17:22:55,613 - #19 super
+INFO  17:22:55,613 - #43 (
+INFO  17:22:55,613 - #44 )
+INFO  17:22:55,613 - #39 ;
+INFO  17:22:55,613 - #48 }
+INFO  17:22:55,613 - #15 void
+INFO  17:22:55,613 - #51 f
+INFO  17:22:55,613 - #43 (
+INFO  17:22:55,613 - #44 )
+INFO  17:22:55,613 - #47 {
+INFO  17:22:55,614 - #19 super
+INFO  17:22:55,614 - #43 (
+INFO  17:22:55,614 - #44 )
+INFO  17:22:55,614 - #39 ;
+INFO  17:22:55,614 - #48 }
+INFO  17:22:55,614 - #15 void
+INFO  17:22:55,614 - #51 ff
+INFO  17:22:55,614 - #43 (
+INFO  17:22:55,614 - #44 )
+INFO  17:22:55,614 - #47 {
+INFO  17:22:55,614 - #19 super
+INFO  17:22:55,614 - #43 (
+INFO  17:22:55,615 - #44 )
+INFO  17:22:55,615 - #39 ;
+INFO  17:22:55,615 - #48 }
+INFO  17:22:55,615 - #48 }
+INFO  17:22:55,615 - #48 }
+INFO  17:22:55,615 - #47 {
+INFO  17:22:55,615 - #15 void
+INFO  17:22:55,615 - #51 notsuper
+INFO  17:22:55,615 - #43 (
+INFO  17:22:55,616 - #44 )
+INFO  17:22:55,616 - #47 {
+INFO  17:22:55,616 - #19 super
+INFO  17:22:55,616 - #43 (
+INFO  17:22:55,616 - #44 )
+INFO  17:22:55,616 - #39 ;
+INFO  17:22:55,616 - #48 }
+INFO  17:22:55,616 - #15 void
+INFO  17:22:55,616 - #51 main
+INFO  17:22:55,616 - #43 (
+INFO  17:22:55,616 - #44 )
+INFO  17:22:55,616 - #47 {
+INFO  17:22:55,616 - #51 notsuper
+INFO  17:22:55,617 - #43 (
+INFO  17:22:55,617 - #44 )
+INFO  17:22:55,617 - #39 ;
+INFO  17:22:55,617 - #48 }
+INFO  17:22:55,617 - #48 }
+INFO  17:22:55,618 - Parsiranje uspesno zavrseno.
+INFO  17:22:55,619 - Program(
+  ProgramName(
+   sem_super
+  ) [ProgramName]
+  ProgDeclarations(
+    ProgDeclarations(
+      NoProgDecl(
+      ) [NoProgDecl]
+      ProgClassDecl(
+        ClassDecl(
+          ClassName(
+           A
+          ) [ClassName]
+          DoesNotExtend(
+          ) [DoesNotExtend]
+          ClassBody(
+            ClassBodyStart(
+            ) [ClassBodyStart]
+            NoFieldDecl(
+            ) [NoFieldDecl]
+            ClassHasMethods(
+              ClassMethodsStart(
+              ) [ClassMethodsStart]
+              ClassMethodDeclarations(
+                ClassFirstMethodConstr(
+                  ConstructorDecl(
+                    ConstructorName(
+                     A
+                    ) [ConstructorName]
+                    NoVarDecl(
+                    ) [NoVarDecl]
+                    NoStatement(
+                    ) [NoStatement]
+                  ) [ConstructorDecl]
+                ) [ClassFirstMethodConstr]
+                MethodDeclarations(
+                  NoMethodDecl(
+                  ) [NoMethodDecl]
+                  MethodDecl(
+                    MethodReturnsVoid(
+                    ) [MethodReturnsVoid]
+                    MethodSignature(
+                     f
+                      NoFormalParams(
+                      ) [NoFormalParams]
+                    ) [MethodSignature]
+                    NoVarDecl(
+                    ) [NoVarDecl]
+                    ManyStatements(
+                      NoStatement(
+                      ) [NoStatement]
+                      OneStatement(
+                        DesignStatement(
+                          SuperMethodCall(
+                            NoActualParams(
+                            ) [NoActualParams]
+                          ) [SuperMethodCall]
+                        ) [DesignStatement]
+                      ) [OneStatement]
+                    ) [ManyStatements]
+                  ) [MethodDecl]
+                ) [MethodDeclarations]
+              ) [ClassMethodDeclarations]
+            ) [ClassHasMethods]
+          ) [ClassBody]
+        ) [ClassDecl]
+      ) [ProgClassDecl]
+    ) [ProgDeclarations]
+    ProgClassDecl(
+      ClassDecl(
+        ClassName(
+         B
+        ) [ClassName]
+        DoesExtend(
+          Type(
+           A
+          ) [Type]
+        ) [DoesExtend]
+        ClassBody(
+          ClassBodyStart(
+          ) [ClassBodyStart]
+          NoFieldDecl(
+          ) [NoFieldDecl]
+          ClassHasMethods(
+            ClassMethodsStart(
+            ) [ClassMethodsStart]
+            ClassMethodDeclarations(
+              ClassFirstMethodConstr(
+                ConstructorDecl(
+                  ConstructorName(
+                   B
+                  ) [ConstructorName]
+                  NoVarDecl(
+                  ) [NoVarDecl]
+                  ManyStatements(
+                    NoStatement(
+                    ) [NoStatement]
+                    OneStatement(
+                      DesignStatement(
+                        SuperMethodCall(
+                          NoActualParams(
+                          ) [NoActualParams]
+                        ) [SuperMethodCall]
+                      ) [DesignStatement]
+                    ) [OneStatement]
+                  ) [ManyStatements]
+                ) [ConstructorDecl]
+              ) [ClassFirstMethodConstr]
+              MethodDeclarations(
+                MethodDeclarations(
+                  NoMethodDecl(
+                  ) [NoMethodDecl]
+                  MethodDecl(
+                    MethodReturnsVoid(
+                    ) [MethodReturnsVoid]
+                    MethodSignature(
+                     f
+                      NoFormalParams(
+                      ) [NoFormalParams]
+                    ) [MethodSignature]
+                    NoVarDecl(
+                    ) [NoVarDecl]
+                    ManyStatements(
+                      NoStatement(
+                      ) [NoStatement]
+                      OneStatement(
+                        DesignStatement(
+                          SuperMethodCall(
+                            NoActualParams(
+                            ) [NoActualParams]
+                          ) [SuperMethodCall]
+                        ) [DesignStatement]
+                      ) [OneStatement]
+                    ) [ManyStatements]
+                  ) [MethodDecl]
+                ) [MethodDeclarations]
+                MethodDecl(
+                  MethodReturnsVoid(
+                  ) [MethodReturnsVoid]
+                  MethodSignature(
+                   ff
+                    NoFormalParams(
+                    ) [NoFormalParams]
+                  ) [MethodSignature]
+                  NoVarDecl(
+                  ) [NoVarDecl]
+                  ManyStatements(
+                    NoStatement(
+                    ) [NoStatement]
+                    OneStatement(
+                      DesignStatement(
+                        SuperMethodCall(
+                          NoActualParams(
+                          ) [NoActualParams]
+                        ) [SuperMethodCall]
+                      ) [DesignStatement]
+                    ) [OneStatement]
+                  ) [ManyStatements]
+                ) [MethodDecl]
+              ) [MethodDeclarations]
+            ) [ClassMethodDeclarations]
+          ) [ClassHasMethods]
+        ) [ClassBody]
+      ) [ClassDecl]
+    ) [ProgClassDecl]
+  ) [ProgDeclarations]
+  MethodDeclarations(
+    MethodDeclarations(
+      NoMethodDecl(
+      ) [NoMethodDecl]
+      MethodDecl(
+        MethodReturnsVoid(
+        ) [MethodReturnsVoid]
+        MethodSignature(
+         notsuper
+          NoFormalParams(
+          ) [NoFormalParams]
+        ) [MethodSignature]
+        NoVarDecl(
+        ) [NoVarDecl]
+        ManyStatements(
+          NoStatement(
+          ) [NoStatement]
+          OneStatement(
+            DesignStatement(
+              SuperMethodCall(
+                NoActualParams(
+                ) [NoActualParams]
+              ) [SuperMethodCall]
+            ) [DesignStatement]
+          ) [OneStatement]
+        ) [ManyStatements]
+      ) [MethodDecl]
+    ) [MethodDeclarations]
+    MethodDecl(
+      MethodReturnsVoid(
+      ) [MethodReturnsVoid]
+      MethodSignature(
+       main
+        NoFormalParams(
+        ) [NoFormalParams]
+      ) [MethodSignature]
+      NoVarDecl(
+      ) [NoVarDecl]
+      ManyStatements(
+        NoStatement(
+        ) [NoStatement]
+        OneStatement(
+          DesignStatement(
+            MethodCall(
+              NamedDesignator(
+               notsuper
+              ) [NamedDesignator]
+              NoActualParams(
+              ) [NoActualParams]
+            ) [MethodCall]
+          ) [DesignStatement]
+        ) [OneStatement]
+      ) [ManyStatements]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  17:22:55,620 - ===================================
+INFO  17:22:55,620 - Semanticka analiza:
+INFO  17:22:55,690 - Detektovan pristup konstruktoru nadklase preko super na liniji 8
+INFO  17:22:55,690 - 	Meth A: notype, 0, 1 
+   Var this: , 0, 1 
+
+INFO  17:22:55,691 - Detektovan pristup globalnoj metodi na liniji 47
+INFO  17:22:55,691 - 	Meth notsuper: notype, 0, 0 
+

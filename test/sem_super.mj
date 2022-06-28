@@ -24,12 +24,12 @@ class B extends A
 			super();
 		}
 	
-		f()
+		void f()
 		{
 			super();
 		}
 		
-		ff()
+		void ff()
 		{
 			super();
 		}

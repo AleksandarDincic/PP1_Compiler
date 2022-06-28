@@ -1,0 +1,183 @@
+INFO  17:04:25,061 - Kompajliranje fajla: D:\Faks\PP1\workspace\MJCompiler\test\sem_return.mj
+INFO  17:04:25,062 - ===================================
+INFO  17:04:25,062 - Leksicka analiza
+INFO  17:04:25,064 - ===================================
+INFO  17:04:25,064 - Sintaksna analiza
+INFO  17:04:25,111 - #2 program
+INFO  17:04:25,111 - #51 sem_return
+INFO  17:04:25,112 - #47 {
+INFO  17:04:25,112 - #51 char
+INFO  17:04:25,113 - #51 ok
+INFO  17:04:25,113 - #43 (
+INFO  17:04:25,113 - #44 )
+INFO  17:04:25,114 - #47 {
+INFO  17:04:25,115 - #14 return
+INFO  17:04:25,115 - #49 !
+INFO  17:04:25,115 - #39 ;
+INFO  17:04:25,115 - #48 }
+INFO  17:04:25,116 - #51 int
+INFO  17:04:25,116 - #51 a
+INFO  17:04:25,117 - #43 (
+INFO  17:04:25,119 - #44 )
+INFO  17:04:25,119 - #47 {
+INFO  17:04:25,119 - #14 return
+INFO  17:04:25,119 - #39 ;
+INFO  17:04:25,119 - #48 }
+INFO  17:04:25,119 - #51 int
+INFO  17:04:25,119 - #51 b
+INFO  17:04:25,119 - #43 (
+INFO  17:04:25,120 - #44 )
+INFO  17:04:25,120 - #47 {
+INFO  17:04:25,120 - #48 }
+INFO  17:04:25,120 - #15 void
+INFO  17:04:25,120 - #51 c
+INFO  17:04:25,120 - #43 (
+INFO  17:04:25,120 - #44 )
+INFO  17:04:25,120 - #47 {
+INFO  17:04:25,120 - #14 return
+INFO  17:04:25,120 - #50 1
+INFO  17:04:25,120 - #39 ;
+INFO  17:04:25,121 - #48 }
+INFO  17:04:25,121 - #15 void
+INFO  17:04:25,121 - #51 main
+INFO  17:04:25,121 - #43 (
+INFO  17:04:25,121 - #44 )
+INFO  17:04:25,121 - #47 {
+INFO  17:04:25,121 - #48 }
+INFO  17:04:25,121 - #48 }
+INFO  17:04:25,122 - Parsiranje uspesno zavrseno.
+INFO  17:04:25,122 - Program(
+  ProgramName(
+   sem_return
+  ) [ProgramName]
+  NoProgDecl(
+  ) [NoProgDecl]
+  MethodDeclarations(
+    MethodDeclarations(
+      MethodDeclarations(
+        MethodDeclarations(
+          MethodDeclarations(
+            NoMethodDecl(
+            ) [NoMethodDecl]
+            MethodDecl(
+              MethodReturnsValue(
+                Type(
+                 char
+                ) [Type]
+              ) [MethodReturnsValue]
+              MethodSignature(
+               ok
+                NoFormalParams(
+                ) [NoFormalParams]
+              ) [MethodSignature]
+              NoVarDecl(
+              ) [NoVarDecl]
+              ManyStatements(
+                NoStatement(
+                ) [NoStatement]
+                OneStatement(
+                  ReturnValStatement(
+                    PositiveExpr(
+                      ExprTerm(
+                        TermFactor(
+                          ConstFactor(
+                            CharConst(
+                             !
+                            ) [CharConst]
+                          ) [ConstFactor]
+                        ) [TermFactor]
+                      ) [ExprTerm]
+                    ) [PositiveExpr]
+                  ) [ReturnValStatement]
+                ) [OneStatement]
+              ) [ManyStatements]
+            ) [MethodDecl]
+          ) [MethodDeclarations]
+          MethodDecl(
+            MethodReturnsValue(
+              Type(
+               int
+              ) [Type]
+            ) [MethodReturnsValue]
+            MethodSignature(
+             a
+              NoFormalParams(
+              ) [NoFormalParams]
+            ) [MethodSignature]
+            NoVarDecl(
+            ) [NoVarDecl]
+            ManyStatements(
+              NoStatement(
+              ) [NoStatement]
+              OneStatement(
+                ReturnVoidStatement(
+                ) [ReturnVoidStatement]
+              ) [OneStatement]
+            ) [ManyStatements]
+          ) [MethodDecl]
+        ) [MethodDeclarations]
+        MethodDecl(
+          MethodReturnsValue(
+            Type(
+             int
+            ) [Type]
+          ) [MethodReturnsValue]
+          MethodSignature(
+           b
+            NoFormalParams(
+            ) [NoFormalParams]
+          ) [MethodSignature]
+          NoVarDecl(
+          ) [NoVarDecl]
+          NoStatement(
+          ) [NoStatement]
+        ) [MethodDecl]
+      ) [MethodDeclarations]
+      MethodDecl(
+        MethodReturnsVoid(
+        ) [MethodReturnsVoid]
+        MethodSignature(
+         c
+          NoFormalParams(
+          ) [NoFormalParams]
+        ) [MethodSignature]
+        NoVarDecl(
+        ) [NoVarDecl]
+        ManyStatements(
+          NoStatement(
+          ) [NoStatement]
+          OneStatement(
+            ReturnValStatement(
+              PositiveExpr(
+                ExprTerm(
+                  TermFactor(
+                    ConstFactor(
+                      IntConst(
+                       1
+                      ) [IntConst]
+                    ) [ConstFactor]
+                  ) [TermFactor]
+                ) [ExprTerm]
+              ) [PositiveExpr]
+            ) [ReturnValStatement]
+          ) [OneStatement]
+        ) [ManyStatements]
+      ) [MethodDecl]
+    ) [MethodDeclarations]
+    MethodDecl(
+      MethodReturnsVoid(
+      ) [MethodReturnsVoid]
+      MethodSignature(
+       main
+        NoFormalParams(
+        ) [NoFormalParams]
+      ) [MethodSignature]
+      NoVarDecl(
+      ) [NoVarDecl]
+      NoStatement(
+      ) [NoStatement]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  17:04:25,123 - ===================================
+INFO  17:04:25,123 - Semanticka analiza:

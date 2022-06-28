@@ -406,8 +406,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 				currentSuperclass = Tab.find(doesExtend.getType().getTypeName());
 				currentSuperclassNode = classTree.find(currentSuperclass.getName());
 				if (currentClass != null) {
-					currentClassNode = currentSuperclassNode.insertChild(currentClass.getName(),
-							currentClass);
+					currentClassNode = currentSuperclassNode.insertChild(currentClass.getName(), currentClass);
 				}
 			}
 		} else {
@@ -537,7 +536,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(Type type) {
-		// TODO Pretraga samo tipova
 		Obj typeObj = Tab.find(type.getTypeName());
 		if (typeObj == Tab.noObj) {
 			report_error("Tip " + type.getTypeName() + " ne postoji.", type);
@@ -790,13 +788,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 						if (superMethodObj == null || superMethodObj.getKind() != Obj.Meth) {
 							report_error("Nadklasa ne sadrzi trenutnu metodu.", factor);
 							factor.struct = Tab.noType;
-						}
-
-						if (checkActParams(superMethodObj)) {
-							factor.struct = superMethodObj.getType();
 						} else {
-							report_error("Neispravni stvarni argumenti.", factor);
-							factor.struct = Tab.noType;
+							if (checkActParams(superMethodObj)) {
+								factor.struct = superMethodObj.getType();
+							} else {
+								report_error("Neispravni stvarni argumenti.", factor);
+								factor.struct = Tab.noType;
+							}
 						}
 					} else {
 						report_error("Nadklasa ne sadrzi trenutnu metodu.", factor);
@@ -971,9 +969,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
 						if (superMethodObj == null || superMethodObj.getKind() != Obj.Meth) {
 							report_error("Nadklasa ne sadrzi trenutnu metodu.", factor);
-						}
-
-						if (!checkActParams(superMethodObj)) {
+						} else if (!checkActParams(superMethodObj)) {
 							report_error("Neispravni stvarni argumenti.", factor);
 						}
 					} else {

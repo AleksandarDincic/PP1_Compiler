@@ -1,0 +1,1034 @@
+INFO  16:41:26,837 - Kompajliranje fajla: D:\Faks\PP1\workspace\MJCompiler\test\sem_actpars.mj
+INFO  16:41:26,839 - ===================================
+INFO  16:41:26,839 - Leksicka analiza
+INFO  16:41:26,841 - ===================================
+INFO  16:41:26,841 - Sintaksna analiza
+INFO  16:41:26,888 - #2 program
+INFO  16:41:26,889 - #51 sem_actpars
+INFO  16:41:26,889 - #4 class
+INFO  16:41:26,890 - #51 A
+INFO  16:41:26,890 - #47 {
+INFO  16:41:26,891 - #47 {
+INFO  16:41:26,892 - #51 A
+INFO  16:41:26,892 - #43 (
+INFO  16:41:26,892 - #44 )
+INFO  16:41:26,892 - #47 {
+INFO  16:41:26,893 - #48 }
+INFO  16:41:26,894 - #51 int
+INFO  16:41:26,894 - #51 x
+INFO  16:41:26,894 - #43 (
+INFO  16:41:26,895 - #51 int
+INFO  16:41:26,895 - #51 a
+INFO  16:41:26,896 - #41 ,
+INFO  16:41:26,896 - #51 char
+INFO  16:41:26,896 - #51 b
+INFO  16:41:26,896 - #44 )
+INFO  16:41:26,897 - #47 {
+INFO  16:41:26,897 - #14 return
+INFO  16:41:26,897 - #50 1
+INFO  16:41:26,897 - #39 ;
+INFO  16:41:26,897 - #48 }
+INFO  16:41:26,898 - #48 }
+INFO  16:41:26,899 - #48 }
+INFO  16:41:26,899 - #4 class
+INFO  16:41:26,900 - #51 B
+INFO  16:41:26,900 - #16 extends
+INFO  16:41:26,900 - #51 A
+INFO  16:41:26,900 - #47 {
+INFO  16:41:26,900 - #47 {
+INFO  16:41:26,900 - #51 B
+INFO  16:41:26,900 - #43 (
+INFO  16:41:26,900 - #44 )
+INFO  16:41:26,901 - #47 {
+INFO  16:41:26,901 - #19 super
+INFO  16:41:26,901 - #43 (
+INFO  16:41:26,901 - #44 )
+INFO  16:41:26,901 - #39 ;
+INFO  16:41:26,901 - #19 super
+INFO  16:41:26,902 - #43 (
+INFO  16:41:26,902 - #50 1
+INFO  16:41:26,902 - #44 )
+INFO  16:41:26,903 - #39 ;
+INFO  16:41:26,903 - #48 }
+INFO  16:41:26,903 - #51 int
+INFO  16:41:26,903 - #51 x
+INFO  16:41:26,903 - #43 (
+INFO  16:41:26,903 - #51 int
+INFO  16:41:26,903 - #51 aa
+INFO  16:41:26,903 - #41 ,
+INFO  16:41:26,903 - #51 char
+INFO  16:41:26,903 - #51 bb
+INFO  16:41:26,903 - #44 )
+INFO  16:41:26,903 - #47 {
+INFO  16:41:26,903 - #19 super
+INFO  16:41:26,904 - #43 (
+INFO  16:41:26,904 - #51 aa
+INFO  16:41:26,904 - #41 ,
+INFO  16:41:26,904 - #51 bb
+INFO  16:41:26,904 - #44 )
+INFO  16:41:26,904 - #39 ;
+INFO  16:41:26,904 - #19 super
+INFO  16:41:26,904 - #43 (
+INFO  16:41:26,904 - #51 aa
+INFO  16:41:26,904 - #44 )
+INFO  16:41:26,904 - #39 ;
+INFO  16:41:26,904 - #19 super
+INFO  16:41:26,904 - #43 (
+INFO  16:41:26,905 - #51 aa
+INFO  16:41:26,905 - #41 ,
+INFO  16:41:26,905 - #51 bb
+INFO  16:41:26,905 - #41 ,
+INFO  16:41:26,905 - #51 bb
+INFO  16:41:26,905 - #44 )
+INFO  16:41:26,905 - #39 ;
+INFO  16:41:26,905 - #48 }
+INFO  16:41:26,905 - #51 int
+INFO  16:41:26,905 - #51 comp
+INFO  16:41:26,905 - #43 (
+INFO  16:41:26,906 - #51 A
+INFO  16:41:26,906 - #51 a
+INFO  16:41:26,906 - #44 )
+INFO  16:41:26,906 - #47 {
+INFO  16:41:26,906 - #48 }
+INFO  16:41:26,906 - #48 }
+INFO  16:41:26,906 - #48 }
+INFO  16:41:26,906 - #4 class
+INFO  16:41:26,906 - #51 C
+INFO  16:41:26,906 - #47 {
+INFO  16:41:26,907 - #48 }
+INFO  16:41:26,907 - #47 {
+INFO  16:41:26,907 - #15 void
+INFO  16:41:26,907 - #51 main
+INFO  16:41:26,908 - #43 (
+INFO  16:41:26,908 - #44 )
+INFO  16:41:26,908 - #51 B
+INFO  16:41:26,908 - #51 b
+INFO  16:41:26,909 - #39 ;
+INFO  16:41:26,909 - #51 C
+INFO  16:41:26,910 - #51 c
+INFO  16:41:26,910 - #39 ;
+INFO  16:41:26,910 - #47 {
+INFO  16:41:26,910 - #51 b
+INFO  16:41:26,910 - #36 =
+INFO  16:41:26,911 - #11 new
+INFO  16:41:26,911 - #51 B
+INFO  16:41:26,911 - #39 ;
+INFO  16:41:26,911 - #51 b
+INFO  16:41:26,911 - #42 .
+INFO  16:41:26,911 - #51 x
+INFO  16:41:26,911 - #43 (
+INFO  16:41:26,911 - #44 )
+INFO  16:41:26,912 - #39 ;
+INFO  16:41:26,912 - #51 b
+INFO  16:41:26,912 - #42 .
+INFO  16:41:26,912 - #51 x
+INFO  16:41:26,912 - #43 (
+INFO  16:41:26,912 - #50 1
+INFO  16:41:26,912 - #41 ,
+INFO  16:41:26,912 - #49 c
+INFO  16:41:26,912 - #44 )
+INFO  16:41:26,912 - #39 ;
+INFO  16:41:26,912 - #51 b
+INFO  16:41:26,912 - #42 .
+INFO  16:41:26,913 - #51 x
+INFO  16:41:26,913 - #43 (
+INFO  16:41:26,913 - #50 1
+INFO  16:41:26,913 - #41 ,
+INFO  16:41:26,913 - #50 2
+INFO  16:41:26,913 - #41 ,
+INFO  16:41:26,913 - #52 false
+INFO  16:41:26,913 - #44 )
+INFO  16:41:26,913 - #39 ;
+INFO  16:41:26,913 - #51 b
+INFO  16:41:26,913 - #42 .
+INFO  16:41:26,913 - #51 comp
+INFO  16:41:26,913 - #43 (
+INFO  16:41:26,913 - #51 b
+INFO  16:41:26,913 - #44 )
+INFO  16:41:26,914 - #39 ;
+INFO  16:41:26,914 - #51 b
+INFO  16:41:26,914 - #42 .
+INFO  16:41:26,914 - #51 comp
+INFO  16:41:26,914 - #43 (
+INFO  16:41:26,914 - #51 null
+INFO  16:41:26,914 - #44 )
+INFO  16:41:26,914 - #39 ;
+INFO  16:41:26,914 - #51 b
+INFO  16:41:26,914 - #42 .
+INFO  16:41:26,914 - #51 comp
+INFO  16:41:26,914 - #43 (
+INFO  16:41:26,914 - #51 c
+INFO  16:41:26,914 - #44 )
+INFO  16:41:26,914 - #39 ;
+INFO  16:41:26,914 - #51 B
+INFO  16:41:26,914 - #43 (
+INFO  16:41:26,914 - #44 )
+INFO  16:41:26,914 - #39 ;
+INFO  16:41:26,914 - #48 }
+INFO  16:41:26,914 - #48 }
+INFO  16:41:26,915 - Parsiranje uspesno zavrseno.
+INFO  16:41:26,918 - Program(
+  ProgramName(
+   sem_actpars
+  ) [ProgramName]
+  ProgDeclarations(
+    ProgDeclarations(
+      ProgDeclarations(
+        NoProgDecl(
+        ) [NoProgDecl]
+        ProgClassDecl(
+          ClassDecl(
+            ClassName(
+             A
+            ) [ClassName]
+            DoesNotExtend(
+            ) [DoesNotExtend]
+            ClassBody(
+              ClassBodyStart(
+              ) [ClassBodyStart]
+              NoFieldDecl(
+              ) [NoFieldDecl]
+              ClassHasMethods(
+                ClassMethodsStart(
+                ) [ClassMethodsStart]
+                ClassMethodDeclarations(
+                  ClassFirstMethodConstr(
+                    ConstructorDecl(
+                      ConstructorName(
+                       A
+                      ) [ConstructorName]
+                      NoVarDecl(
+                      ) [NoVarDecl]
+                      NoStatement(
+                      ) [NoStatement]
+                    ) [ConstructorDecl]
+                  ) [ClassFirstMethodConstr]
+                  MethodDeclarations(
+                    NoMethodDecl(
+                    ) [NoMethodDecl]
+                    MethodDecl(
+                      MethodReturnsValue(
+                        Type(
+                         int
+                        ) [Type]
+                      ) [MethodReturnsValue]
+                      MethodSignature(
+                       x
+                        HasFormalParams(
+                          FormalParameters(
+                            SingleFormalParam(
+                              FormalParamOfSingle(
+                                Type(
+                                 int
+                                ) [Type]
+                               a
+                              ) [FormalParamOfSingle]
+                            ) [SingleFormalParam]
+                            FormalParamOfSingle(
+                              Type(
+                               char
+                              ) [Type]
+                             b
+                            ) [FormalParamOfSingle]
+                          ) [FormalParameters]
+                        ) [HasFormalParams]
+                      ) [MethodSignature]
+                      NoVarDecl(
+                      ) [NoVarDecl]
+                      ManyStatements(
+                        NoStatement(
+                        ) [NoStatement]
+                        OneStatement(
+                          ReturnValStatement(
+                            PositiveExpr(
+                              ExprTerm(
+                                TermFactor(
+                                  ConstFactor(
+                                    IntConst(
+                                     1
+                                    ) [IntConst]
+                                  ) [ConstFactor]
+                                ) [TermFactor]
+                              ) [ExprTerm]
+                            ) [PositiveExpr]
+                          ) [ReturnValStatement]
+                        ) [OneStatement]
+                      ) [ManyStatements]
+                    ) [MethodDecl]
+                  ) [MethodDeclarations]
+                ) [ClassMethodDeclarations]
+              ) [ClassHasMethods]
+            ) [ClassBody]
+          ) [ClassDecl]
+        ) [ProgClassDecl]
+      ) [ProgDeclarations]
+      ProgClassDecl(
+        ClassDecl(
+          ClassName(
+           B
+          ) [ClassName]
+          DoesExtend(
+            Type(
+             A
+            ) [Type]
+          ) [DoesExtend]
+          ClassBody(
+            ClassBodyStart(
+            ) [ClassBodyStart]
+            NoFieldDecl(
+            ) [NoFieldDecl]
+            ClassHasMethods(
+              ClassMethodsStart(
+              ) [ClassMethodsStart]
+              ClassMethodDeclarations(
+                ClassFirstMethodConstr(
+                  ConstructorDecl(
+                    ConstructorName(
+                     B
+                    ) [ConstructorName]
+                    NoVarDecl(
+                    ) [NoVarDecl]
+                    ManyStatements(
+                      ManyStatements(
+                        NoStatement(
+                        ) [NoStatement]
+                        OneStatement(
+                          DesignStatement(
+                            SuperMethodCall(
+                              NoActualParams(
+                              ) [NoActualParams]
+                            ) [SuperMethodCall]
+                          ) [DesignStatement]
+                        ) [OneStatement]
+                      ) [ManyStatements]
+                      OneStatement(
+                        DesignStatement(
+                          SuperMethodCall(
+                            HasActualParams(
+                              SingleActualParam(
+                                PositiveExpr(
+                                  ExprTerm(
+                                    TermFactor(
+                                      ConstFactor(
+                                        IntConst(
+                                         1
+                                        ) [IntConst]
+                                      ) [ConstFactor]
+                                    ) [TermFactor]
+                                  ) [ExprTerm]
+                                ) [PositiveExpr]
+                              ) [SingleActualParam]
+                            ) [HasActualParams]
+                          ) [SuperMethodCall]
+                        ) [DesignStatement]
+                      ) [OneStatement]
+                    ) [ManyStatements]
+                  ) [ConstructorDecl]
+                ) [ClassFirstMethodConstr]
+                MethodDeclarations(
+                  MethodDeclarations(
+                    NoMethodDecl(
+                    ) [NoMethodDecl]
+                    MethodDecl(
+                      MethodReturnsValue(
+                        Type(
+                         int
+                        ) [Type]
+                      ) [MethodReturnsValue]
+                      MethodSignature(
+                       x
+                        HasFormalParams(
+                          FormalParameters(
+                            SingleFormalParam(
+                              FormalParamOfSingle(
+                                Type(
+                                 int
+                                ) [Type]
+                               aa
+                              ) [FormalParamOfSingle]
+                            ) [SingleFormalParam]
+                            FormalParamOfSingle(
+                              Type(
+                               char
+                              ) [Type]
+                             bb
+                            ) [FormalParamOfSingle]
+                          ) [FormalParameters]
+                        ) [HasFormalParams]
+                      ) [MethodSignature]
+                      NoVarDecl(
+                      ) [NoVarDecl]
+                      ManyStatements(
+                        ManyStatements(
+                          ManyStatements(
+                            NoStatement(
+                            ) [NoStatement]
+                            OneStatement(
+                              DesignStatement(
+                                SuperMethodCall(
+                                  HasActualParams(
+                                    ActualParameters(
+                                      SingleActualParam(
+                                        PositiveExpr(
+                                          ExprTerm(
+                                            TermFactor(
+                                              DesignOfVarFactor(
+                                                NamedDesignator(
+                                                 aa
+                                                ) [NamedDesignator]
+                                              ) [DesignOfVarFactor]
+                                            ) [TermFactor]
+                                          ) [ExprTerm]
+                                        ) [PositiveExpr]
+                                      ) [SingleActualParam]
+                                      PositiveExpr(
+                                        ExprTerm(
+                                          TermFactor(
+                                            DesignOfVarFactor(
+                                              NamedDesignator(
+                                               bb
+                                              ) [NamedDesignator]
+                                            ) [DesignOfVarFactor]
+                                          ) [TermFactor]
+                                        ) [ExprTerm]
+                                      ) [PositiveExpr]
+                                    ) [ActualParameters]
+                                  ) [HasActualParams]
+                                ) [SuperMethodCall]
+                              ) [DesignStatement]
+                            ) [OneStatement]
+                          ) [ManyStatements]
+                          OneStatement(
+                            DesignStatement(
+                              SuperMethodCall(
+                                HasActualParams(
+                                  SingleActualParam(
+                                    PositiveExpr(
+                                      ExprTerm(
+                                        TermFactor(
+                                          DesignOfVarFactor(
+                                            NamedDesignator(
+                                             aa
+                                            ) [NamedDesignator]
+                                          ) [DesignOfVarFactor]
+                                        ) [TermFactor]
+                                      ) [ExprTerm]
+                                    ) [PositiveExpr]
+                                  ) [SingleActualParam]
+                                ) [HasActualParams]
+                              ) [SuperMethodCall]
+                            ) [DesignStatement]
+                          ) [OneStatement]
+                        ) [ManyStatements]
+                        OneStatement(
+                          DesignStatement(
+                            SuperMethodCall(
+                              HasActualParams(
+                                ActualParameters(
+                                  ActualParameters(
+                                    SingleActualParam(
+                                      PositiveExpr(
+                                        ExprTerm(
+                                          TermFactor(
+                                            DesignOfVarFactor(
+                                              NamedDesignator(
+                                               aa
+                                              ) [NamedDesignator]
+                                            ) [DesignOfVarFactor]
+                                          ) [TermFactor]
+                                        ) [ExprTerm]
+                                      ) [PositiveExpr]
+                                    ) [SingleActualParam]
+                                    PositiveExpr(
+                                      ExprTerm(
+                                        TermFactor(
+                                          DesignOfVarFactor(
+                                            NamedDesignator(
+                                             bb
+                                            ) [NamedDesignator]
+                                          ) [DesignOfVarFactor]
+                                        ) [TermFactor]
+                                      ) [ExprTerm]
+                                    ) [PositiveExpr]
+                                  ) [ActualParameters]
+                                  PositiveExpr(
+                                    ExprTerm(
+                                      TermFactor(
+                                        DesignOfVarFactor(
+                                          NamedDesignator(
+                                           bb
+                                          ) [NamedDesignator]
+                                        ) [DesignOfVarFactor]
+                                      ) [TermFactor]
+                                    ) [ExprTerm]
+                                  ) [PositiveExpr]
+                                ) [ActualParameters]
+                              ) [HasActualParams]
+                            ) [SuperMethodCall]
+                          ) [DesignStatement]
+                        ) [OneStatement]
+                      ) [ManyStatements]
+                    ) [MethodDecl]
+                  ) [MethodDeclarations]
+                  MethodDecl(
+                    MethodReturnsValue(
+                      Type(
+                       int
+                      ) [Type]
+                    ) [MethodReturnsValue]
+                    MethodSignature(
+                     comp
+                      HasFormalParams(
+                        SingleFormalParam(
+                          FormalParamOfSingle(
+                            Type(
+                             A
+                            ) [Type]
+                           a
+                          ) [FormalParamOfSingle]
+                        ) [SingleFormalParam]
+                      ) [HasFormalParams]
+                    ) [MethodSignature]
+                    NoVarDecl(
+                    ) [NoVarDecl]
+                    NoStatement(
+                    ) [NoStatement]
+                  ) [MethodDecl]
+                ) [MethodDeclarations]
+              ) [ClassMethodDeclarations]
+            ) [ClassHasMethods]
+          ) [ClassBody]
+        ) [ClassDecl]
+      ) [ProgClassDecl]
+    ) [ProgDeclarations]
+    ProgClassDecl(
+      ClassDecl(
+        ClassName(
+         C
+        ) [ClassName]
+        DoesNotExtend(
+        ) [DoesNotExtend]
+        ClassBody(
+          ClassBodyStart(
+          ) [ClassBodyStart]
+          NoFieldDecl(
+          ) [NoFieldDecl]
+          ClassNoMethods(
+          ) [ClassNoMethods]
+        ) [ClassBody]
+      ) [ClassDecl]
+    ) [ProgClassDecl]
+  ) [ProgDeclarations]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodReturnsVoid(
+      ) [MethodReturnsVoid]
+      MethodSignature(
+       main
+        NoFormalParams(
+        ) [NoFormalParams]
+      ) [MethodSignature]
+      VarDeclarations(
+        VarDeclarations(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            VarType(
+              Type(
+               B
+              ) [Type]
+            ) [VarType]
+            SingleVarName(
+              VarNameOfSingle(
+               b
+              ) [VarNameOfSingle]
+            ) [SingleVarName]
+          ) [VarDecl]
+        ) [VarDeclarations]
+        VarDecl(
+          VarType(
+            Type(
+             C
+            ) [Type]
+          ) [VarType]
+          SingleVarName(
+            VarNameOfSingle(
+             c
+            ) [VarNameOfSingle]
+          ) [SingleVarName]
+        ) [VarDecl]
+      ) [VarDeclarations]
+      ManyStatements(
+        ManyStatements(
+          ManyStatements(
+            ManyStatements(
+              ManyStatements(
+                ManyStatements(
+                  ManyStatements(
+                    ManyStatements(
+                      NoStatement(
+                      ) [NoStatement]
+                      OneStatement(
+                        DesignStatement(
+                          DesignAssign(
+                            AssStatement(
+                              NamedDesignator(
+                               b
+                              ) [NamedDesignator]
+                              Assignop(
+                              ) [Assignop]
+                              PositiveExpr(
+                                ExprTerm(
+                                  TermFactor(
+                                    NewObjectFactor(
+                                      Type(
+                                       B
+                                      ) [Type]
+                                    ) [NewObjectFactor]
+                                  ) [TermFactor]
+                                ) [ExprTerm]
+                              ) [PositiveExpr]
+                            ) [AssStatement]
+                          ) [DesignAssign]
+                        ) [DesignStatement]
+                      ) [OneStatement]
+                    ) [ManyStatements]
+                    OneStatement(
+                      DesignStatement(
+                        MethodCall(
+                          AddressingMember(
+                            NamedDesignator(
+                             b
+                            ) [NamedDesignator]
+                           x
+                          ) [AddressingMember]
+                          NoActualParams(
+                          ) [NoActualParams]
+                        ) [MethodCall]
+                      ) [DesignStatement]
+                    ) [OneStatement]
+                  ) [ManyStatements]
+                  OneStatement(
+                    DesignStatement(
+                      MethodCall(
+                        AddressingMember(
+                          NamedDesignator(
+                           b
+                          ) [NamedDesignator]
+                         x
+                        ) [AddressingMember]
+                        HasActualParams(
+                          ActualParameters(
+                            SingleActualParam(
+                              PositiveExpr(
+                                ExprTerm(
+                                  TermFactor(
+                                    ConstFactor(
+                                      IntConst(
+                                       1
+                                      ) [IntConst]
+                                    ) [ConstFactor]
+                                  ) [TermFactor]
+                                ) [ExprTerm]
+                              ) [PositiveExpr]
+                            ) [SingleActualParam]
+                            PositiveExpr(
+                              ExprTerm(
+                                TermFactor(
+                                  ConstFactor(
+                                    CharConst(
+                                     c
+                                    ) [CharConst]
+                                  ) [ConstFactor]
+                                ) [TermFactor]
+                              ) [ExprTerm]
+                            ) [PositiveExpr]
+                          ) [ActualParameters]
+                        ) [HasActualParams]
+                      ) [MethodCall]
+                    ) [DesignStatement]
+                  ) [OneStatement]
+                ) [ManyStatements]
+                OneStatement(
+                  DesignStatement(
+                    MethodCall(
+                      AddressingMember(
+                        NamedDesignator(
+                         b
+                        ) [NamedDesignator]
+                       x
+                      ) [AddressingMember]
+                      HasActualParams(
+                        ActualParameters(
+                          ActualParameters(
+                            SingleActualParam(
+                              PositiveExpr(
+                                ExprTerm(
+                                  TermFactor(
+                                    ConstFactor(
+                                      IntConst(
+                                       1
+                                      ) [IntConst]
+                                    ) [ConstFactor]
+                                  ) [TermFactor]
+                                ) [ExprTerm]
+                              ) [PositiveExpr]
+                            ) [SingleActualParam]
+                            PositiveExpr(
+                              ExprTerm(
+                                TermFactor(
+                                  ConstFactor(
+                                    IntConst(
+                                     2
+                                    ) [IntConst]
+                                  ) [ConstFactor]
+                                ) [TermFactor]
+                              ) [ExprTerm]
+                            ) [PositiveExpr]
+                          ) [ActualParameters]
+                          PositiveExpr(
+                            ExprTerm(
+                              TermFactor(
+                                ConstFactor(
+                                  BoolConst(
+                                   false
+                                  ) [BoolConst]
+                                ) [ConstFactor]
+                              ) [TermFactor]
+                            ) [ExprTerm]
+                          ) [PositiveExpr]
+                        ) [ActualParameters]
+                      ) [HasActualParams]
+                    ) [MethodCall]
+                  ) [DesignStatement]
+                ) [OneStatement]
+              ) [ManyStatements]
+              OneStatement(
+                DesignStatement(
+                  MethodCall(
+                    AddressingMember(
+                      NamedDesignator(
+                       b
+                      ) [NamedDesignator]
+                     comp
+                    ) [AddressingMember]
+                    HasActualParams(
+                      SingleActualParam(
+                        PositiveExpr(
+                          ExprTerm(
+                            TermFactor(
+                              DesignOfVarFactor(
+                                NamedDesignator(
+                                 b
+                                ) [NamedDesignator]
+                              ) [DesignOfVarFactor]
+                            ) [TermFactor]
+                          ) [ExprTerm]
+                        ) [PositiveExpr]
+                      ) [SingleActualParam]
+                    ) [HasActualParams]
+                  ) [MethodCall]
+                ) [DesignStatement]
+              ) [OneStatement]
+            ) [ManyStatements]
+            OneStatement(
+              DesignStatement(
+                MethodCall(
+                  AddressingMember(
+                    NamedDesignator(
+                     b
+                    ) [NamedDesignator]
+                   comp
+                  ) [AddressingMember]
+                  HasActualParams(
+                    SingleActualParam(
+                      PositiveExpr(
+                        ExprTerm(
+                          TermFactor(
+                            DesignOfVarFactor(
+                              NamedDesignator(
+                               null
+                              ) [NamedDesignator]
+                            ) [DesignOfVarFactor]
+                          ) [TermFactor]
+                        ) [ExprTerm]
+                      ) [PositiveExpr]
+                    ) [SingleActualParam]
+                  ) [HasActualParams]
+                ) [MethodCall]
+              ) [DesignStatement]
+            ) [OneStatement]
+          ) [ManyStatements]
+          OneStatement(
+            DesignStatement(
+              MethodCall(
+                AddressingMember(
+                  NamedDesignator(
+                   b
+                  ) [NamedDesignator]
+                 comp
+                ) [AddressingMember]
+                HasActualParams(
+                  SingleActualParam(
+                    PositiveExpr(
+                      ExprTerm(
+                        TermFactor(
+                          DesignOfVarFactor(
+                            NamedDesignator(
+                             c
+                            ) [NamedDesignator]
+                          ) [DesignOfVarFactor]
+                        ) [TermFactor]
+                      ) [ExprTerm]
+                    ) [PositiveExpr]
+                  ) [SingleActualParam]
+                ) [HasActualParams]
+              ) [MethodCall]
+            ) [DesignStatement]
+          ) [OneStatement]
+        ) [ManyStatements]
+        OneStatement(
+          DesignStatement(
+            MethodCall(
+              NamedDesignator(
+               B
+              ) [NamedDesignator]
+              NoActualParams(
+              ) [NoActualParams]
+            ) [MethodCall]
+          ) [DesignStatement]
+        ) [OneStatement]
+      ) [ManyStatements]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  16:41:26,919 - ===================================
+INFO  16:41:26,919 - Semanticka analiza:
+INFO  16:41:26,985 - Detektovan pristup konstruktoru nadklase preko super na liniji 8
+INFO  16:41:26,986 - 	Meth A: notype, 0, 1 
+   Var this: , 0, 1 
+
+INFO  16:41:26,986 - Detektovan pristup konstruktoru nadklase preko super na liniji 26
+INFO  16:41:26,986 - 	Meth A: notype, 0, 1 
+   Var this: , 0, 1 
+
+INFO  16:41:26,986 - Detektovan pristup formalnom parametru metode na liniji 31
+INFO  16:41:26,986 - 	Var aa: int, 1, 1 
+INFO  16:41:26,986 - Detektovan pristup formalnom parametru metode na liniji 31
+INFO  16:41:26,986 - 	Var bb: char, 2, 1 
+INFO  16:41:26,986 - Detektovan pristup formalnom parametru metode na liniji 32
+INFO  16:41:26,987 - 	Var aa: int, 1, 1 
+INFO  16:41:26,987 - Detektovan pristup formalnom parametru metode na liniji 33
+INFO  16:41:26,987 - 	Var aa: int, 1, 1 
+INFO  16:41:26,987 - Detektovan pristup formalnom parametru metode na liniji 33
+INFO  16:41:26,987 - 	Var bb: char, 2, 1 
+INFO  16:41:26,987 - Detektovan pristup formalnom parametru metode na liniji 33
+INFO  16:41:26,987 - 	Var bb: char, 2, 1 
+INFO  16:41:26,987 - Detektovan pristup lokalnoj promenljivoj na liniji 54
+INFO  16:41:26,987 - 	Var b: Class [Meth B: notype, 0, 1 
+   Var this: , 0, 1 
+Meth x: int, 0, 1 
+   Var this: , 0, 1 
+   Var aa: int, 1, 1 
+   Var bb: char, 2, 1 
+Meth comp: int, 0, 1 
+   Var this: , 0, 1 
+   Var a: Class [Meth A: notype, 0, 1 
+      Var this: , 0, 1 
+Meth x: int, 0, 1 
+      Var this: , 0, 1 
+      Var a: int, 1, 1 
+      Var b: char, 2, 1 
+], 1, 1 
+], 0, 1 
+INFO  16:41:26,988 - Detektovano kreiranje objekta klase na liniji 54
+INFO  16:41:26,992 - 	Type B: Class [Meth B: notype, 0, 1 
+   Var this: , 0, 1 
+Meth x: int, 0, 1 
+   Var this: , 0, 1 
+   Var aa: int, 1, 1 
+   Var bb: char, 2, 1 
+Meth comp: int, 0, 1 
+   Var this: , 0, 1 
+   Var a: Class [Meth A: notype, 0, 1 
+      Var this: , 0, 1 
+Meth x: int, 0, 1 
+      Var this: , 0, 1 
+      Var a: int, 1, 1 
+      Var b: char, 2, 1 
+], 1, 1 
+], 0, 0 
+INFO  16:41:26,992 - Detektovan pristup lokalnoj promenljivoj na liniji 56
+INFO  16:41:26,992 - 	Var b: Class [Meth B: notype, 0, 1 
+   Var this: , 0, 1 
+Meth x: int, 0, 1 
+   Var this: , 0, 1 
+   Var aa: int, 1, 1 
+   Var bb: char, 2, 1 
+Meth comp: int, 0, 1 
+   Var this: , 0, 1 
+   Var a: Class [Meth A: notype, 0, 1 
+      Var this: , 0, 1 
+Meth x: int, 0, 1 
+      Var this: , 0, 1 
+      Var a: int, 1, 1 
+      Var b: char, 2, 1 
+], 1, 1 
+], 0, 1 
+INFO  16:41:26,993 - Detektovan pristup metodi klase na liniji 56
+INFO  16:41:26,993 - 	Meth x: int, 0, 1 
+   Var this: , 0, 1 
+   Var aa: int, 1, 1 
+   Var bb: char, 2, 1 
+
+INFO  16:41:26,993 - Detektovan pristup lokalnoj promenljivoj na liniji 57
+INFO  16:41:26,993 - 	Var b: Class [Meth B: notype, 0, 1 
+   Var this: , 0, 1 
+Meth x: int, 0, 1 
+   Var this: , 0, 1 
+   Var aa: int, 1, 1 
+   Var bb: char, 2, 1 
+Meth comp: int, 0, 1 
+   Var this: , 0, 1 
+   Var a: Class [Meth A: notype, 0, 1 
+      Var this: , 0, 1 
+Meth x: int, 0, 1 
+      Var this: , 0, 1 
+      Var a: int, 1, 1 
+      Var b: char, 2, 1 
+], 1, 1 
+], 0, 1 
+INFO  16:41:26,993 - Detektovan pristup metodi klase na liniji 57
+INFO  16:41:26,993 - 	Meth x: int, 0, 1 
+   Var this: , 0, 1 
+   Var aa: int, 1, 1 
+   Var bb: char, 2, 1 
+
+INFO  16:41:26,993 - Detektovan pristup lokalnoj promenljivoj na liniji 58
+INFO  16:41:26,993 - 	Var b: Class [Meth B: notype, 0, 1 
+   Var this: , 0, 1 
+Meth x: int, 0, 1 
+   Var this: , 0, 1 
+   Var aa: int, 1, 1 
+   Var bb: char, 2, 1 
+Meth comp: int, 0, 1 
+   Var this: , 0, 1 
+   Var a: Class [Meth A: notype, 0, 1 
+      Var this: , 0, 1 
+Meth x: int, 0, 1 
+      Var this: , 0, 1 
+      Var a: int, 1, 1 
+      Var b: char, 2, 1 
+], 1, 1 
+], 0, 1 
+INFO  16:41:26,993 - Detektovan pristup metodi klase na liniji 58
+INFO  16:41:26,993 - 	Meth x: int, 0, 1 
+   Var this: , 0, 1 
+   Var aa: int, 1, 1 
+   Var bb: char, 2, 1 
+
+INFO  16:41:26,993 - Detektovan pristup lokalnoj promenljivoj na liniji 60
+INFO  16:41:26,993 - 	Var b: Class [Meth B: notype, 0, 1 
+   Var this: , 0, 1 
+Meth x: int, 0, 1 
+   Var this: , 0, 1 
+   Var aa: int, 1, 1 
+   Var bb: char, 2, 1 
+Meth comp: int, 0, 1 
+   Var this: , 0, 1 
+   Var a: Class [Meth A: notype, 0, 1 
+      Var this: , 0, 1 
+Meth x: int, 0, 1 
+      Var this: , 0, 1 
+      Var a: int, 1, 1 
+      Var b: char, 2, 1 
+], 1, 1 
+], 0, 1 
+INFO  16:41:26,994 - Detektovan pristup lokalnoj promenljivoj na liniji 60
+INFO  16:41:26,994 - 	Var b: Class [Meth B: notype, 0, 1 
+   Var this: , 0, 1 
+Meth x: int, 0, 1 
+   Var this: , 0, 1 
+   Var aa: int, 1, 1 
+   Var bb: char, 2, 1 
+Meth comp: int, 0, 1 
+   Var this: , 0, 1 
+   Var a: Class [Meth A: notype, 0, 1 
+      Var this: , 0, 1 
+Meth x: int, 0, 1 
+      Var this: , 0, 1 
+      Var a: int, 1, 1 
+      Var b: char, 2, 1 
+], 1, 1 
+], 0, 1 
+INFO  16:41:26,994 - Detektovan pristup metodi klase na liniji 60
+INFO  16:41:26,994 - 	Meth comp: int, 0, 1 
+   Var this: , 0, 1 
+   Var a: Class [Meth A: notype, 0, 1 
+      Var this: , 0, 1 
+Meth x: int, 0, 1 
+      Var this: , 0, 1 
+      Var a: int, 1, 1 
+      Var b: char, 2, 1 
+], 1, 1 
+
+INFO  16:41:26,994 - Detektovan pristup lokalnoj promenljivoj na liniji 61
+INFO  16:41:26,994 - 	Var b: Class [Meth B: notype, 0, 1 
+   Var this: , 0, 1 
+Meth x: int, 0, 1 
+   Var this: , 0, 1 
+   Var aa: int, 1, 1 
+   Var bb: char, 2, 1 
+Meth comp: int, 0, 1 
+   Var this: , 0, 1 
+   Var a: Class [Meth A: notype, 0, 1 
+      Var this: , 0, 1 
+Meth x: int, 0, 1 
+      Var this: , 0, 1 
+      Var a: int, 1, 1 
+      Var b: char, 2, 1 
+], 1, 1 
+], 0, 1 
+INFO  16:41:26,994 - Detektovan pristup metodi klase na liniji 61
+INFO  16:41:26,994 - 	Meth comp: int, 0, 1 
+   Var this: , 0, 1 
+   Var a: Class [Meth A: notype, 0, 1 
+      Var this: , 0, 1 
+Meth x: int, 0, 1 
+      Var this: , 0, 1 
+      Var a: int, 1, 1 
+      Var b: char, 2, 1 
+], 1, 1 
+
+INFO  16:41:26,994 - Detektovan pristup lokalnoj promenljivoj na liniji 62
+INFO  16:41:26,994 - 	Var b: Class [Meth B: notype, 0, 1 
+   Var this: , 0, 1 
+Meth x: int, 0, 1 
+   Var this: , 0, 1 
+   Var aa: int, 1, 1 
+   Var bb: char, 2, 1 
+Meth comp: int, 0, 1 
+   Var this: , 0, 1 
+   Var a: Class [Meth A: notype, 0, 1 
+      Var this: , 0, 1 
+Meth x: int, 0, 1 
+      Var this: , 0, 1 
+      Var a: int, 1, 1 
+      Var b: char, 2, 1 
+], 1, 1 
+], 0, 1 
+INFO  16:41:26,994 - Detektovan pristup lokalnoj promenljivoj na liniji 62
+INFO  16:41:26,994 - 	Var c: Class [], 1, 1 
+INFO  16:41:26,994 - Detektovan pristup metodi klase na liniji 62
+INFO  16:41:26,994 - 	Meth comp: int, 0, 1 
+   Var this: , 0, 1 
+   Var a: Class [Meth A: notype, 0, 1 
+      Var this: , 0, 1 
+Meth x: int, 0, 1 
+      Var this: , 0, 1 
+      Var a: int, 1, 1 
+      Var b: char, 2, 1 
+], 1, 1 
+

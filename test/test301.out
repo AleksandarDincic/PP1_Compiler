@@ -1,0 +1,1357 @@
+INFO  17:31:37,883 - Kompajliranje fajla: D:\Faks\PP1\workspace\MJCompiler\test\test301.mj
+INFO  17:31:37,884 - ===================================
+INFO  17:31:37,884 - Leksicka analiza
+INFO  17:31:37,977 - ===================================
+INFO  17:31:37,977 - Sintaksna analiza
+INFO  17:31:38,018 - #2 program
+INFO  17:31:38,018 - #51 test301
+INFO  17:31:38,018 - #7 const
+INFO  17:31:38,019 - #51 int
+INFO  17:31:38,019 - #51 nula
+INFO  17:31:38,020 - #36 =
+INFO  17:31:38,020 - #50 0
+INFO  17:31:38,020 - #39 ;
+INFO  17:31:38,021 - #7 const
+INFO  17:31:38,022 - #51 int
+INFO  17:31:38,022 - #51 jedan
+INFO  17:31:38,022 - #36 =
+INFO  17:31:38,022 - #50 1
+INFO  17:31:38,022 - #39 ;
+INFO  17:31:38,022 - #7 const
+INFO  17:31:38,024 - #51 int
+INFO  17:31:38,024 - #51 pet
+INFO  17:31:38,024 - #36 =
+INFO  17:31:38,024 - #50 5
+INFO  17:31:38,025 - #39 ;
+INFO  17:31:38,025 - #51 int
+INFO  17:31:38,025 - #51 niz
+INFO  17:31:38,025 - #45 [
+INFO  17:31:38,026 - #46 ]
+INFO  17:31:38,026 - #39 ;
+INFO  17:31:38,026 - #51 char
+INFO  17:31:38,026 - #51 nizch
+INFO  17:31:38,026 - #45 [
+INFO  17:31:38,026 - #46 ]
+INFO  17:31:38,026 - #39 ;
+INFO  17:31:38,026 - #47 {
+INFO  17:31:38,026 - #15 void
+INFO  17:31:38,027 - #51 main
+INFO  17:31:38,027 - #43 (
+INFO  17:31:38,027 - #44 )
+INFO  17:31:38,028 - #51 int
+INFO  17:31:38,028 - #51 bodovi
+INFO  17:31:38,028 - #39 ;
+INFO  17:31:38,029 - #51 bool
+INFO  17:31:38,029 - #51 bt
+INFO  17:31:38,029 - #39 ;
+INFO  17:31:38,029 - #47 {
+INFO  17:31:38,029 - #51 bodovi
+INFO  17:31:38,030 - #36 =
+INFO  17:31:38,030 - #50 0
+INFO  17:31:38,031 - #39 ;
+INFO  17:31:38,031 - #51 bodovi
+INFO  17:31:38,031 - #37 ++
+INFO  17:31:38,032 - #39 ;
+INFO  17:31:38,032 - #51 bodovi
+INFO  17:31:38,032 - #36 =
+INFO  17:31:38,032 - #51 bodovi
+INFO  17:31:38,032 - #23 +
+INFO  17:31:38,032 - #51 jedan
+INFO  17:31:38,033 - #39 ;
+INFO  17:31:38,034 - #51 bodovi
+INFO  17:31:38,034 - #36 =
+INFO  17:31:38,034 - #51 bodovi
+INFO  17:31:38,034 - #25 *
+INFO  17:31:38,034 - #51 pet
+INFO  17:31:38,035 - #39 ;
+INFO  17:31:38,035 - #51 bodovi
+INFO  17:31:38,035 - #38 --
+INFO  17:31:38,035 - #39 ;
+INFO  17:31:38,036 - #12 print
+INFO  17:31:38,036 - #43 (
+INFO  17:31:38,036 - #51 bodovi
+INFO  17:31:38,036 - #44 )
+INFO  17:31:38,036 - #39 ;
+INFO  17:31:38,036 - #51 niz
+INFO  17:31:38,036 - #36 =
+INFO  17:31:38,036 - #11 new
+INFO  17:31:38,036 - #51 int
+INFO  17:31:38,036 - #45 [
+INFO  17:31:38,036 - #50 3
+INFO  17:31:38,036 - #46 ]
+INFO  17:31:38,037 - #39 ;
+INFO  17:31:38,037 - #51 niz
+INFO  17:31:38,037 - #45 [
+INFO  17:31:38,037 - #51 nula
+INFO  17:31:38,037 - #46 ]
+INFO  17:31:38,037 - #36 =
+INFO  17:31:38,037 - #51 jedan
+INFO  17:31:38,037 - #39 ;
+INFO  17:31:38,037 - #51 niz
+INFO  17:31:38,038 - #45 [
+INFO  17:31:38,038 - #50 1
+INFO  17:31:38,038 - #46 ]
+INFO  17:31:38,038 - #36 =
+INFO  17:31:38,038 - #50 2
+INFO  17:31:38,038 - #39 ;
+INFO  17:31:38,038 - #51 niz
+INFO  17:31:38,038 - #45 [
+INFO  17:31:38,038 - #51 niz
+INFO  17:31:38,038 - #45 [
+INFO  17:31:38,038 - #51 jedan
+INFO  17:31:38,038 - #46 ]
+INFO  17:31:38,038 - #46 ]
+INFO  17:31:38,038 - #36 =
+INFO  17:31:38,038 - #51 niz
+INFO  17:31:38,039 - #45 [
+INFO  17:31:38,039 - #51 niz
+INFO  17:31:38,039 - #45 [
+INFO  17:31:38,039 - #50 0
+INFO  17:31:38,039 - #46 ]
+INFO  17:31:38,039 - #46 ]
+INFO  17:31:38,039 - #25 *
+INFO  17:31:38,039 - #50 3
+INFO  17:31:38,039 - #39 ;
+INFO  17:31:38,039 - #51 bodovi
+INFO  17:31:38,039 - #36 =
+INFO  17:31:38,039 - #51 niz
+INFO  17:31:38,039 - #45 [
+INFO  17:31:38,039 - #50 2
+INFO  17:31:38,039 - #46 ]
+INFO  17:31:38,040 - #26 /
+INFO  17:31:38,040 - #51 niz
+INFO  17:31:38,040 - #45 [
+INFO  17:31:38,040 - #50 0
+INFO  17:31:38,041 - #46 ]
+INFO  17:31:38,041 - #39 ;
+INFO  17:31:38,041 - #12 print
+INFO  17:31:38,041 - #43 (
+INFO  17:31:38,041 - #51 bodovi
+INFO  17:31:38,041 - #44 )
+INFO  17:31:38,041 - #39 ;
+INFO  17:31:38,041 - #12 print
+INFO  17:31:38,041 - #43 (
+INFO  17:31:38,041 - #51 niz
+INFO  17:31:38,041 - #45 [
+INFO  17:31:38,041 - #50 2
+INFO  17:31:38,041 - #46 ]
+INFO  17:31:38,041 - #44 )
+INFO  17:31:38,041 - #39 ;
+INFO  17:31:38,042 - #51 nizch
+INFO  17:31:38,042 - #36 =
+INFO  17:31:38,042 - #11 new
+INFO  17:31:38,042 - #51 char
+INFO  17:31:38,042 - #45 [
+INFO  17:31:38,042 - #50 3
+INFO  17:31:38,042 - #46 ]
+INFO  17:31:38,042 - #39 ;
+INFO  17:31:38,042 - #51 nizch
+INFO  17:31:38,042 - #45 [
+INFO  17:31:38,042 - #50 0
+INFO  17:31:38,042 - #46 ]
+INFO  17:31:38,042 - #36 =
+INFO  17:31:38,042 - #49 a
+INFO  17:31:38,042 - #39 ;
+INFO  17:31:38,042 - #51 nizch
+INFO  17:31:38,042 - #45 [
+INFO  17:31:38,042 - #51 jedan
+INFO  17:31:38,042 - #46 ]
+INFO  17:31:38,042 - #36 =
+INFO  17:31:38,043 - #49 b
+INFO  17:31:38,043 - #39 ;
+INFO  17:31:38,043 - #51 nizch
+INFO  17:31:38,043 - #45 [
+INFO  17:31:38,043 - #51 pet
+INFO  17:31:38,043 - #24 -
+INFO  17:31:38,043 - #50 3
+INFO  17:31:38,043 - #46 ]
+INFO  17:31:38,044 - #36 =
+INFO  17:31:38,044 - #49 c
+INFO  17:31:38,044 - #39 ;
+INFO  17:31:38,044 - #12 print
+INFO  17:31:38,044 - #43 (
+INFO  17:31:38,044 - #51 nizch
+INFO  17:31:38,044 - #45 [
+INFO  17:31:38,044 - #50 1
+INFO  17:31:38,044 - #46 ]
+INFO  17:31:38,044 - #44 )
+INFO  17:31:38,044 - #39 ;
+INFO  17:31:38,044 - #12 print
+INFO  17:31:38,044 - #43 (
+INFO  17:31:38,044 - #51 nizch
+INFO  17:31:38,044 - #45 [
+INFO  17:31:38,044 - #51 jedan
+INFO  17:31:38,044 - #25 *
+INFO  17:31:38,044 - #50 2
+INFO  17:31:38,044 - #46 ]
+INFO  17:31:38,045 - #44 )
+INFO  17:31:38,045 - #39 ;
+INFO  17:31:38,045 - #51 bodovi
+INFO  17:31:38,045 - #36 =
+INFO  17:31:38,045 - #51 bodovi
+INFO  17:31:38,045 - #23 +
+INFO  17:31:38,045 - #43 (
+INFO  17:31:38,045 - #51 pet
+INFO  17:31:38,048 - #25 *
+INFO  17:31:38,049 - #51 jedan
+INFO  17:31:38,049 - #24 -
+INFO  17:31:38,049 - #50 1
+INFO  17:31:38,049 - #44 )
+INFO  17:31:38,049 - #25 *
+INFO  17:31:38,049 - #51 bodovi
+INFO  17:31:38,049 - #24 -
+INFO  17:31:38,049 - #43 (
+INFO  17:31:38,049 - #50 3
+INFO  17:31:38,049 - #27 %
+INFO  17:31:38,049 - #50 2
+INFO  17:31:38,050 - #23 +
+INFO  17:31:38,050 - #50 3
+INFO  17:31:38,050 - #25 *
+INFO  17:31:38,050 - #50 2
+INFO  17:31:38,050 - #24 -
+INFO  17:31:38,050 - #50 3
+INFO  17:31:38,050 - #44 )
+INFO  17:31:38,050 - #39 ;
+INFO  17:31:38,050 - #12 print
+INFO  17:31:38,050 - #43 (
+INFO  17:31:38,050 - #51 bodovi
+INFO  17:31:38,050 - #44 )
+INFO  17:31:38,050 - #39 ;
+INFO  17:31:38,050 - #13 read
+INFO  17:31:38,050 - #43 (
+INFO  17:31:38,050 - #51 bodovi
+INFO  17:31:38,050 - #44 )
+INFO  17:31:38,050 - #39 ;
+INFO  17:31:38,050 - #12 print
+INFO  17:31:38,050 - #43 (
+INFO  17:31:38,050 - #51 bodovi
+INFO  17:31:38,050 - #44 )
+INFO  17:31:38,050 - #39 ;
+INFO  17:31:38,051 - #48 }
+INFO  17:31:38,051 - #48 }
+INFO  17:31:38,052 - Parsiranje uspesno zavrseno.
+INFO  17:31:38,059 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ProgDeclarations(
+    ProgDeclarations(
+      ProgDeclarations(
+        ProgDeclarations(
+          ProgDeclarations(
+            NoProgDecl(
+            ) [NoProgDecl]
+            ProgConstDecl(
+              ConstDecl(
+                ConstType(
+                  Type(
+                   int
+                  ) [Type]
+                ) [ConstType]
+                SingleConstNameVal(
+                  ConstNameVal(
+                   nula
+                    IntConst(
+                     0
+                    ) [IntConst]
+                  ) [ConstNameVal]
+                ) [SingleConstNameVal]
+              ) [ConstDecl]
+            ) [ProgConstDecl]
+          ) [ProgDeclarations]
+          ProgConstDecl(
+            ConstDecl(
+              ConstType(
+                Type(
+                 int
+                ) [Type]
+              ) [ConstType]
+              SingleConstNameVal(
+                ConstNameVal(
+                 jedan
+                  IntConst(
+                   1
+                  ) [IntConst]
+                ) [ConstNameVal]
+              ) [SingleConstNameVal]
+            ) [ConstDecl]
+          ) [ProgConstDecl]
+        ) [ProgDeclarations]
+        ProgConstDecl(
+          ConstDecl(
+            ConstType(
+              Type(
+               int
+              ) [Type]
+            ) [ConstType]
+            SingleConstNameVal(
+              ConstNameVal(
+               pet
+                IntConst(
+                 5
+                ) [IntConst]
+              ) [ConstNameVal]
+            ) [SingleConstNameVal]
+          ) [ConstDecl]
+        ) [ProgConstDecl]
+      ) [ProgDeclarations]
+      ProgVarDecl(
+        GlobalVarDeclaration(
+          VarType(
+            Type(
+             int
+            ) [Type]
+          ) [VarType]
+          SingleGlobalVarName(
+            GlobalVarNameOfArray(
+             niz
+            ) [GlobalVarNameOfArray]
+          ) [SingleGlobalVarName]
+        ) [GlobalVarDeclaration]
+      ) [ProgVarDecl]
+    ) [ProgDeclarations]
+    ProgVarDecl(
+      GlobalVarDeclaration(
+        VarType(
+          Type(
+           char
+          ) [Type]
+        ) [VarType]
+        SingleGlobalVarName(
+          GlobalVarNameOfArray(
+           nizch
+          ) [GlobalVarNameOfArray]
+        ) [SingleGlobalVarName]
+      ) [GlobalVarDeclaration]
+    ) [ProgVarDecl]
+  ) [ProgDeclarations]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodReturnsVoid(
+      ) [MethodReturnsVoid]
+      MethodSignature(
+       main
+        NoFormalParams(
+        ) [NoFormalParams]
+      ) [MethodSignature]
+      VarDeclarations(
+        VarDeclarations(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            VarType(
+              Type(
+               int
+              ) [Type]
+            ) [VarType]
+            SingleVarName(
+              VarNameOfSingle(
+               bodovi
+              ) [VarNameOfSingle]
+            ) [SingleVarName]
+          ) [VarDecl]
+        ) [VarDeclarations]
+        VarDecl(
+          VarType(
+            Type(
+             bool
+            ) [Type]
+          ) [VarType]
+          SingleVarName(
+            VarNameOfSingle(
+             bt
+            ) [VarNameOfSingle]
+          ) [SingleVarName]
+        ) [VarDecl]
+      ) [VarDeclarations]
+      ManyStatements(
+        ManyStatements(
+          ManyStatements(
+            ManyStatements(
+              ManyStatements(
+                ManyStatements(
+                  ManyStatements(
+                    ManyStatements(
+                      ManyStatements(
+                        ManyStatements(
+                          ManyStatements(
+                            ManyStatements(
+                              ManyStatements(
+                                ManyStatements(
+                                  ManyStatements(
+                                    ManyStatements(
+                                      ManyStatements(
+                                        ManyStatements(
+                                          ManyStatements(
+                                            ManyStatements(
+                                              ManyStatements(
+                                                ManyStatements(
+                                                  ManyStatements(
+                                                    NoStatement(
+                                                    ) [NoStatement]
+                                                    OneStatement(
+                                                      DesignStatement(
+                                                        DesignAssign(
+                                                          AssStatement(
+                                                            NamedDesignator(
+                                                             bodovi
+                                                            ) [NamedDesignator]
+                                                            Assignop(
+                                                            ) [Assignop]
+                                                            PositiveExpr(
+                                                              ExprTerm(
+                                                                TermFactor(
+                                                                  ConstFactor(
+                                                                    IntConst(
+                                                                     0
+                                                                    ) [IntConst]
+                                                                  ) [ConstFactor]
+                                                                ) [TermFactor]
+                                                              ) [ExprTerm]
+                                                            ) [PositiveExpr]
+                                                          ) [AssStatement]
+                                                        ) [DesignAssign]
+                                                      ) [DesignStatement]
+                                                    ) [OneStatement]
+                                                  ) [ManyStatements]
+                                                  OneStatement(
+                                                    DesignStatement(
+                                                      IncStatement(
+                                                        NamedDesignator(
+                                                         bodovi
+                                                        ) [NamedDesignator]
+                                                      ) [IncStatement]
+                                                    ) [DesignStatement]
+                                                  ) [OneStatement]
+                                                ) [ManyStatements]
+                                                OneStatement(
+                                                  DesignStatement(
+                                                    DesignAssign(
+                                                      AssStatement(
+                                                        NamedDesignator(
+                                                         bodovi
+                                                        ) [NamedDesignator]
+                                                        Assignop(
+                                                        ) [Assignop]
+                                                        PositiveExpr(
+                                                          ExprWithAddop(
+                                                            ExprTerm(
+                                                              TermFactor(
+                                                                DesignOfVarFactor(
+                                                                  NamedDesignator(
+                                                                   bodovi
+                                                                  ) [NamedDesignator]
+                                                                ) [DesignOfVarFactor]
+                                                              ) [TermFactor]
+                                                            ) [ExprTerm]
+                                                            AddopPlus(
+                                                            ) [AddopPlus]
+                                                            TermFactor(
+                                                              DesignOfVarFactor(
+                                                                NamedDesignator(
+                                                                 jedan
+                                                                ) [NamedDesignator]
+                                                              ) [DesignOfVarFactor]
+                                                            ) [TermFactor]
+                                                          ) [ExprWithAddop]
+                                                        ) [PositiveExpr]
+                                                      ) [AssStatement]
+                                                    ) [DesignAssign]
+                                                  ) [DesignStatement]
+                                                ) [OneStatement]
+                                              ) [ManyStatements]
+                                              OneStatement(
+                                                DesignStatement(
+                                                  DesignAssign(
+                                                    AssStatement(
+                                                      NamedDesignator(
+                                                       bodovi
+                                                      ) [NamedDesignator]
+                                                      Assignop(
+                                                      ) [Assignop]
+                                                      PositiveExpr(
+                                                        ExprTerm(
+                                                          TermWithMulop(
+                                                            TermFactor(
+                                                              DesignOfVarFactor(
+                                                                NamedDesignator(
+                                                                 bodovi
+                                                                ) [NamedDesignator]
+                                                              ) [DesignOfVarFactor]
+                                                            ) [TermFactor]
+                                                            MulopMul(
+                                                            ) [MulopMul]
+                                                            DesignOfVarFactor(
+                                                              NamedDesignator(
+                                                               pet
+                                                              ) [NamedDesignator]
+                                                            ) [DesignOfVarFactor]
+                                                          ) [TermWithMulop]
+                                                        ) [ExprTerm]
+                                                      ) [PositiveExpr]
+                                                    ) [AssStatement]
+                                                  ) [DesignAssign]
+                                                ) [DesignStatement]
+                                              ) [OneStatement]
+                                            ) [ManyStatements]
+                                            OneStatement(
+                                              DesignStatement(
+                                                DecStatement(
+                                                  NamedDesignator(
+                                                   bodovi
+                                                  ) [NamedDesignator]
+                                                ) [DecStatement]
+                                              ) [DesignStatement]
+                                            ) [OneStatement]
+                                          ) [ManyStatements]
+                                          OneStatement(
+                                            PrintStatement(
+                                              PositiveExpr(
+                                                ExprTerm(
+                                                  TermFactor(
+                                                    DesignOfVarFactor(
+                                                      NamedDesignator(
+                                                       bodovi
+                                                      ) [NamedDesignator]
+                                                    ) [DesignOfVarFactor]
+                                                  ) [TermFactor]
+                                                ) [ExprTerm]
+                                              ) [PositiveExpr]
+                                            ) [PrintStatement]
+                                          ) [OneStatement]
+                                        ) [ManyStatements]
+                                        OneStatement(
+                                          DesignStatement(
+                                            DesignAssign(
+                                              AssStatement(
+                                                NamedDesignator(
+                                                 niz
+                                                ) [NamedDesignator]
+                                                Assignop(
+                                                ) [Assignop]
+                                                PositiveExpr(
+                                                  ExprTerm(
+                                                    TermFactor(
+                                                      NewArrayFactor(
+                                                        Type(
+                                                         int
+                                                        ) [Type]
+                                                        PositiveExpr(
+                                                          ExprTerm(
+                                                            TermFactor(
+                                                              ConstFactor(
+                                                                IntConst(
+                                                                 3
+                                                                ) [IntConst]
+                                                              ) [ConstFactor]
+                                                            ) [TermFactor]
+                                                          ) [ExprTerm]
+                                                        ) [PositiveExpr]
+                                                      ) [NewArrayFactor]
+                                                    ) [TermFactor]
+                                                  ) [ExprTerm]
+                                                ) [PositiveExpr]
+                                              ) [AssStatement]
+                                            ) [DesignAssign]
+                                          ) [DesignStatement]
+                                        ) [OneStatement]
+                                      ) [ManyStatements]
+                                      OneStatement(
+                                        DesignStatement(
+                                          DesignAssign(
+                                            AssStatement(
+                                              AddressingElem(
+                                                NamedDesignator(
+                                                 niz
+                                                ) [NamedDesignator]
+                                                PositiveExpr(
+                                                  ExprTerm(
+                                                    TermFactor(
+                                                      DesignOfVarFactor(
+                                                        NamedDesignator(
+                                                         nula
+                                                        ) [NamedDesignator]
+                                                      ) [DesignOfVarFactor]
+                                                    ) [TermFactor]
+                                                  ) [ExprTerm]
+                                                ) [PositiveExpr]
+                                              ) [AddressingElem]
+                                              Assignop(
+                                              ) [Assignop]
+                                              PositiveExpr(
+                                                ExprTerm(
+                                                  TermFactor(
+                                                    DesignOfVarFactor(
+                                                      NamedDesignator(
+                                                       jedan
+                                                      ) [NamedDesignator]
+                                                    ) [DesignOfVarFactor]
+                                                  ) [TermFactor]
+                                                ) [ExprTerm]
+                                              ) [PositiveExpr]
+                                            ) [AssStatement]
+                                          ) [DesignAssign]
+                                        ) [DesignStatement]
+                                      ) [OneStatement]
+                                    ) [ManyStatements]
+                                    OneStatement(
+                                      DesignStatement(
+                                        DesignAssign(
+                                          AssStatement(
+                                            AddressingElem(
+                                              NamedDesignator(
+                                               niz
+                                              ) [NamedDesignator]
+                                              PositiveExpr(
+                                                ExprTerm(
+                                                  TermFactor(
+                                                    ConstFactor(
+                                                      IntConst(
+                                                       1
+                                                      ) [IntConst]
+                                                    ) [ConstFactor]
+                                                  ) [TermFactor]
+                                                ) [ExprTerm]
+                                              ) [PositiveExpr]
+                                            ) [AddressingElem]
+                                            Assignop(
+                                            ) [Assignop]
+                                            PositiveExpr(
+                                              ExprTerm(
+                                                TermFactor(
+                                                  ConstFactor(
+                                                    IntConst(
+                                                     2
+                                                    ) [IntConst]
+                                                  ) [ConstFactor]
+                                                ) [TermFactor]
+                                              ) [ExprTerm]
+                                            ) [PositiveExpr]
+                                          ) [AssStatement]
+                                        ) [DesignAssign]
+                                      ) [DesignStatement]
+                                    ) [OneStatement]
+                                  ) [ManyStatements]
+                                  OneStatement(
+                                    DesignStatement(
+                                      DesignAssign(
+                                        AssStatement(
+                                          AddressingElem(
+                                            NamedDesignator(
+                                             niz
+                                            ) [NamedDesignator]
+                                            PositiveExpr(
+                                              ExprTerm(
+                                                TermFactor(
+                                                  DesignOfVarFactor(
+                                                    AddressingElem(
+                                                      NamedDesignator(
+                                                       niz
+                                                      ) [NamedDesignator]
+                                                      PositiveExpr(
+                                                        ExprTerm(
+                                                          TermFactor(
+                                                            DesignOfVarFactor(
+                                                              NamedDesignator(
+                                                               jedan
+                                                              ) [NamedDesignator]
+                                                            ) [DesignOfVarFactor]
+                                                          ) [TermFactor]
+                                                        ) [ExprTerm]
+                                                      ) [PositiveExpr]
+                                                    ) [AddressingElem]
+                                                  ) [DesignOfVarFactor]
+                                                ) [TermFactor]
+                                              ) [ExprTerm]
+                                            ) [PositiveExpr]
+                                          ) [AddressingElem]
+                                          Assignop(
+                                          ) [Assignop]
+                                          PositiveExpr(
+                                            ExprTerm(
+                                              TermWithMulop(
+                                                TermFactor(
+                                                  DesignOfVarFactor(
+                                                    AddressingElem(
+                                                      NamedDesignator(
+                                                       niz
+                                                      ) [NamedDesignator]
+                                                      PositiveExpr(
+                                                        ExprTerm(
+                                                          TermFactor(
+                                                            DesignOfVarFactor(
+                                                              AddressingElem(
+                                                                NamedDesignator(
+                                                                 niz
+                                                                ) [NamedDesignator]
+                                                                PositiveExpr(
+                                                                  ExprTerm(
+                                                                    TermFactor(
+                                                                      ConstFactor(
+                                                                        IntConst(
+                                                                         0
+                                                                        ) [IntConst]
+                                                                      ) [ConstFactor]
+                                                                    ) [TermFactor]
+                                                                  ) [ExprTerm]
+                                                                ) [PositiveExpr]
+                                                              ) [AddressingElem]
+                                                            ) [DesignOfVarFactor]
+                                                          ) [TermFactor]
+                                                        ) [ExprTerm]
+                                                      ) [PositiveExpr]
+                                                    ) [AddressingElem]
+                                                  ) [DesignOfVarFactor]
+                                                ) [TermFactor]
+                                                MulopMul(
+                                                ) [MulopMul]
+                                                ConstFactor(
+                                                  IntConst(
+                                                   3
+                                                  ) [IntConst]
+                                                ) [ConstFactor]
+                                              ) [TermWithMulop]
+                                            ) [ExprTerm]
+                                          ) [PositiveExpr]
+                                        ) [AssStatement]
+                                      ) [DesignAssign]
+                                    ) [DesignStatement]
+                                  ) [OneStatement]
+                                ) [ManyStatements]
+                                OneStatement(
+                                  DesignStatement(
+                                    DesignAssign(
+                                      AssStatement(
+                                        NamedDesignator(
+                                         bodovi
+                                        ) [NamedDesignator]
+                                        Assignop(
+                                        ) [Assignop]
+                                        PositiveExpr(
+                                          ExprTerm(
+                                            TermWithMulop(
+                                              TermFactor(
+                                                DesignOfVarFactor(
+                                                  AddressingElem(
+                                                    NamedDesignator(
+                                                     niz
+                                                    ) [NamedDesignator]
+                                                    PositiveExpr(
+                                                      ExprTerm(
+                                                        TermFactor(
+                                                          ConstFactor(
+                                                            IntConst(
+                                                             2
+                                                            ) [IntConst]
+                                                          ) [ConstFactor]
+                                                        ) [TermFactor]
+                                                      ) [ExprTerm]
+                                                    ) [PositiveExpr]
+                                                  ) [AddressingElem]
+                                                ) [DesignOfVarFactor]
+                                              ) [TermFactor]
+                                              MulopDiv(
+                                              ) [MulopDiv]
+                                              DesignOfVarFactor(
+                                                AddressingElem(
+                                                  NamedDesignator(
+                                                   niz
+                                                  ) [NamedDesignator]
+                                                  PositiveExpr(
+                                                    ExprTerm(
+                                                      TermFactor(
+                                                        ConstFactor(
+                                                          IntConst(
+                                                           0
+                                                          ) [IntConst]
+                                                        ) [ConstFactor]
+                                                      ) [TermFactor]
+                                                    ) [ExprTerm]
+                                                  ) [PositiveExpr]
+                                                ) [AddressingElem]
+                                              ) [DesignOfVarFactor]
+                                            ) [TermWithMulop]
+                                          ) [ExprTerm]
+                                        ) [PositiveExpr]
+                                      ) [AssStatement]
+                                    ) [DesignAssign]
+                                  ) [DesignStatement]
+                                ) [OneStatement]
+                              ) [ManyStatements]
+                              OneStatement(
+                                PrintStatement(
+                                  PositiveExpr(
+                                    ExprTerm(
+                                      TermFactor(
+                                        DesignOfVarFactor(
+                                          NamedDesignator(
+                                           bodovi
+                                          ) [NamedDesignator]
+                                        ) [DesignOfVarFactor]
+                                      ) [TermFactor]
+                                    ) [ExprTerm]
+                                  ) [PositiveExpr]
+                                ) [PrintStatement]
+                              ) [OneStatement]
+                            ) [ManyStatements]
+                            OneStatement(
+                              PrintStatement(
+                                PositiveExpr(
+                                  ExprTerm(
+                                    TermFactor(
+                                      DesignOfVarFactor(
+                                        AddressingElem(
+                                          NamedDesignator(
+                                           niz
+                                          ) [NamedDesignator]
+                                          PositiveExpr(
+                                            ExprTerm(
+                                              TermFactor(
+                                                ConstFactor(
+                                                  IntConst(
+                                                   2
+                                                  ) [IntConst]
+                                                ) [ConstFactor]
+                                              ) [TermFactor]
+                                            ) [ExprTerm]
+                                          ) [PositiveExpr]
+                                        ) [AddressingElem]
+                                      ) [DesignOfVarFactor]
+                                    ) [TermFactor]
+                                  ) [ExprTerm]
+                                ) [PositiveExpr]
+                              ) [PrintStatement]
+                            ) [OneStatement]
+                          ) [ManyStatements]
+                          OneStatement(
+                            DesignStatement(
+                              DesignAssign(
+                                AssStatement(
+                                  NamedDesignator(
+                                   nizch
+                                  ) [NamedDesignator]
+                                  Assignop(
+                                  ) [Assignop]
+                                  PositiveExpr(
+                                    ExprTerm(
+                                      TermFactor(
+                                        NewArrayFactor(
+                                          Type(
+                                           char
+                                          ) [Type]
+                                          PositiveExpr(
+                                            ExprTerm(
+                                              TermFactor(
+                                                ConstFactor(
+                                                  IntConst(
+                                                   3
+                                                  ) [IntConst]
+                                                ) [ConstFactor]
+                                              ) [TermFactor]
+                                            ) [ExprTerm]
+                                          ) [PositiveExpr]
+                                        ) [NewArrayFactor]
+                                      ) [TermFactor]
+                                    ) [ExprTerm]
+                                  ) [PositiveExpr]
+                                ) [AssStatement]
+                              ) [DesignAssign]
+                            ) [DesignStatement]
+                          ) [OneStatement]
+                        ) [ManyStatements]
+                        OneStatement(
+                          DesignStatement(
+                            DesignAssign(
+                              AssStatement(
+                                AddressingElem(
+                                  NamedDesignator(
+                                   nizch
+                                  ) [NamedDesignator]
+                                  PositiveExpr(
+                                    ExprTerm(
+                                      TermFactor(
+                                        ConstFactor(
+                                          IntConst(
+                                           0
+                                          ) [IntConst]
+                                        ) [ConstFactor]
+                                      ) [TermFactor]
+                                    ) [ExprTerm]
+                                  ) [PositiveExpr]
+                                ) [AddressingElem]
+                                Assignop(
+                                ) [Assignop]
+                                PositiveExpr(
+                                  ExprTerm(
+                                    TermFactor(
+                                      ConstFactor(
+                                        CharConst(
+                                         a
+                                        ) [CharConst]
+                                      ) [ConstFactor]
+                                    ) [TermFactor]
+                                  ) [ExprTerm]
+                                ) [PositiveExpr]
+                              ) [AssStatement]
+                            ) [DesignAssign]
+                          ) [DesignStatement]
+                        ) [OneStatement]
+                      ) [ManyStatements]
+                      OneStatement(
+                        DesignStatement(
+                          DesignAssign(
+                            AssStatement(
+                              AddressingElem(
+                                NamedDesignator(
+                                 nizch
+                                ) [NamedDesignator]
+                                PositiveExpr(
+                                  ExprTerm(
+                                    TermFactor(
+                                      DesignOfVarFactor(
+                                        NamedDesignator(
+                                         jedan
+                                        ) [NamedDesignator]
+                                      ) [DesignOfVarFactor]
+                                    ) [TermFactor]
+                                  ) [ExprTerm]
+                                ) [PositiveExpr]
+                              ) [AddressingElem]
+                              Assignop(
+                              ) [Assignop]
+                              PositiveExpr(
+                                ExprTerm(
+                                  TermFactor(
+                                    ConstFactor(
+                                      CharConst(
+                                       b
+                                      ) [CharConst]
+                                    ) [ConstFactor]
+                                  ) [TermFactor]
+                                ) [ExprTerm]
+                              ) [PositiveExpr]
+                            ) [AssStatement]
+                          ) [DesignAssign]
+                        ) [DesignStatement]
+                      ) [OneStatement]
+                    ) [ManyStatements]
+                    OneStatement(
+                      DesignStatement(
+                        DesignAssign(
+                          AssStatement(
+                            AddressingElem(
+                              NamedDesignator(
+                               nizch
+                              ) [NamedDesignator]
+                              PositiveExpr(
+                                ExprWithAddop(
+                                  ExprTerm(
+                                    TermFactor(
+                                      DesignOfVarFactor(
+                                        NamedDesignator(
+                                         pet
+                                        ) [NamedDesignator]
+                                      ) [DesignOfVarFactor]
+                                    ) [TermFactor]
+                                  ) [ExprTerm]
+                                  AddopMinus(
+                                  ) [AddopMinus]
+                                  TermFactor(
+                                    ConstFactor(
+                                      IntConst(
+                                       3
+                                      ) [IntConst]
+                                    ) [ConstFactor]
+                                  ) [TermFactor]
+                                ) [ExprWithAddop]
+                              ) [PositiveExpr]
+                            ) [AddressingElem]
+                            Assignop(
+                            ) [Assignop]
+                            PositiveExpr(
+                              ExprTerm(
+                                TermFactor(
+                                  ConstFactor(
+                                    CharConst(
+                                     c
+                                    ) [CharConst]
+                                  ) [ConstFactor]
+                                ) [TermFactor]
+                              ) [ExprTerm]
+                            ) [PositiveExpr]
+                          ) [AssStatement]
+                        ) [DesignAssign]
+                      ) [DesignStatement]
+                    ) [OneStatement]
+                  ) [ManyStatements]
+                  OneStatement(
+                    PrintStatement(
+                      PositiveExpr(
+                        ExprTerm(
+                          TermFactor(
+                            DesignOfVarFactor(
+                              AddressingElem(
+                                NamedDesignator(
+                                 nizch
+                                ) [NamedDesignator]
+                                PositiveExpr(
+                                  ExprTerm(
+                                    TermFactor(
+                                      ConstFactor(
+                                        IntConst(
+                                         1
+                                        ) [IntConst]
+                                      ) [ConstFactor]
+                                    ) [TermFactor]
+                                  ) [ExprTerm]
+                                ) [PositiveExpr]
+                              ) [AddressingElem]
+                            ) [DesignOfVarFactor]
+                          ) [TermFactor]
+                        ) [ExprTerm]
+                      ) [PositiveExpr]
+                    ) [PrintStatement]
+                  ) [OneStatement]
+                ) [ManyStatements]
+                OneStatement(
+                  PrintStatement(
+                    PositiveExpr(
+                      ExprTerm(
+                        TermFactor(
+                          DesignOfVarFactor(
+                            AddressingElem(
+                              NamedDesignator(
+                               nizch
+                              ) [NamedDesignator]
+                              PositiveExpr(
+                                ExprTerm(
+                                  TermWithMulop(
+                                    TermFactor(
+                                      DesignOfVarFactor(
+                                        NamedDesignator(
+                                         jedan
+                                        ) [NamedDesignator]
+                                      ) [DesignOfVarFactor]
+                                    ) [TermFactor]
+                                    MulopMul(
+                                    ) [MulopMul]
+                                    ConstFactor(
+                                      IntConst(
+                                       2
+                                      ) [IntConst]
+                                    ) [ConstFactor]
+                                  ) [TermWithMulop]
+                                ) [ExprTerm]
+                              ) [PositiveExpr]
+                            ) [AddressingElem]
+                          ) [DesignOfVarFactor]
+                        ) [TermFactor]
+                      ) [ExprTerm]
+                    ) [PositiveExpr]
+                  ) [PrintStatement]
+                ) [OneStatement]
+              ) [ManyStatements]
+              OneStatement(
+                DesignStatement(
+                  DesignAssign(
+                    AssStatement(
+                      NamedDesignator(
+                       bodovi
+                      ) [NamedDesignator]
+                      Assignop(
+                      ) [Assignop]
+                      PositiveExpr(
+                        ExprWithAddop(
+                          ExprWithAddop(
+                            ExprTerm(
+                              TermFactor(
+                                DesignOfVarFactor(
+                                  NamedDesignator(
+                                   bodovi
+                                  ) [NamedDesignator]
+                                ) [DesignOfVarFactor]
+                              ) [TermFactor]
+                            ) [ExprTerm]
+                            AddopPlus(
+                            ) [AddopPlus]
+                            TermWithMulop(
+                              TermFactor(
+                                ParenFactor(
+                                  PositiveExpr(
+                                    ExprWithAddop(
+                                      ExprTerm(
+                                        TermWithMulop(
+                                          TermFactor(
+                                            DesignOfVarFactor(
+                                              NamedDesignator(
+                                               pet
+                                              ) [NamedDesignator]
+                                            ) [DesignOfVarFactor]
+                                          ) [TermFactor]
+                                          MulopMul(
+                                          ) [MulopMul]
+                                          DesignOfVarFactor(
+                                            NamedDesignator(
+                                             jedan
+                                            ) [NamedDesignator]
+                                          ) [DesignOfVarFactor]
+                                        ) [TermWithMulop]
+                                      ) [ExprTerm]
+                                      AddopMinus(
+                                      ) [AddopMinus]
+                                      TermFactor(
+                                        ConstFactor(
+                                          IntConst(
+                                           1
+                                          ) [IntConst]
+                                        ) [ConstFactor]
+                                      ) [TermFactor]
+                                    ) [ExprWithAddop]
+                                  ) [PositiveExpr]
+                                ) [ParenFactor]
+                              ) [TermFactor]
+                              MulopMul(
+                              ) [MulopMul]
+                              DesignOfVarFactor(
+                                NamedDesignator(
+                                 bodovi
+                                ) [NamedDesignator]
+                              ) [DesignOfVarFactor]
+                            ) [TermWithMulop]
+                          ) [ExprWithAddop]
+                          AddopMinus(
+                          ) [AddopMinus]
+                          TermFactor(
+                            ParenFactor(
+                              PositiveExpr(
+                                ExprWithAddop(
+                                  ExprWithAddop(
+                                    ExprTerm(
+                                      TermWithMulop(
+                                        TermFactor(
+                                          ConstFactor(
+                                            IntConst(
+                                             3
+                                            ) [IntConst]
+                                          ) [ConstFactor]
+                                        ) [TermFactor]
+                                        MulopMod(
+                                        ) [MulopMod]
+                                        ConstFactor(
+                                          IntConst(
+                                           2
+                                          ) [IntConst]
+                                        ) [ConstFactor]
+                                      ) [TermWithMulop]
+                                    ) [ExprTerm]
+                                    AddopPlus(
+                                    ) [AddopPlus]
+                                    TermWithMulop(
+                                      TermFactor(
+                                        ConstFactor(
+                                          IntConst(
+                                           3
+                                          ) [IntConst]
+                                        ) [ConstFactor]
+                                      ) [TermFactor]
+                                      MulopMul(
+                                      ) [MulopMul]
+                                      ConstFactor(
+                                        IntConst(
+                                         2
+                                        ) [IntConst]
+                                      ) [ConstFactor]
+                                    ) [TermWithMulop]
+                                  ) [ExprWithAddop]
+                                  AddopMinus(
+                                  ) [AddopMinus]
+                                  TermFactor(
+                                    ConstFactor(
+                                      IntConst(
+                                       3
+                                      ) [IntConst]
+                                    ) [ConstFactor]
+                                  ) [TermFactor]
+                                ) [ExprWithAddop]
+                              ) [PositiveExpr]
+                            ) [ParenFactor]
+                          ) [TermFactor]
+                        ) [ExprWithAddop]
+                      ) [PositiveExpr]
+                    ) [AssStatement]
+                  ) [DesignAssign]
+                ) [DesignStatement]
+              ) [OneStatement]
+            ) [ManyStatements]
+            OneStatement(
+              PrintStatement(
+                PositiveExpr(
+                  ExprTerm(
+                    TermFactor(
+                      DesignOfVarFactor(
+                        NamedDesignator(
+                         bodovi
+                        ) [NamedDesignator]
+                      ) [DesignOfVarFactor]
+                    ) [TermFactor]
+                  ) [ExprTerm]
+                ) [PositiveExpr]
+              ) [PrintStatement]
+            ) [OneStatement]
+          ) [ManyStatements]
+          OneStatement(
+            ReadStatement(
+              NamedDesignator(
+               bodovi
+              ) [NamedDesignator]
+            ) [ReadStatement]
+          ) [OneStatement]
+        ) [ManyStatements]
+        OneStatement(
+          PrintStatement(
+            PositiveExpr(
+              ExprTerm(
+                TermFactor(
+                  DesignOfVarFactor(
+                    NamedDesignator(
+                     bodovi
+                    ) [NamedDesignator]
+                  ) [DesignOfVarFactor]
+                ) [TermFactor]
+              ) [ExprTerm]
+            ) [PositiveExpr]
+          ) [PrintStatement]
+        ) [OneStatement]
+      ) [ManyStatements]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  17:31:38,061 - ===================================
+INFO  17:31:38,061 - Semanticka analiza:
+INFO  17:31:38,130 - Detektovan pristup lokalnoj promenljivoj na liniji 17
+INFO  17:31:38,130 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,130 - Detektovan pristup lokalnoj promenljivoj na liniji 18
+INFO  17:31:38,130 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,130 - Detektovan pristup lokalnoj promenljivoj na liniji 19
+INFO  17:31:38,130 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,130 - Detektovan pristup lokalnoj promenljivoj na liniji 19
+INFO  17:31:38,130 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,130 - Detektovan pristup lokalnoj promenljivoj na liniji 20
+INFO  17:31:38,130 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,130 - Detektovan pristup lokalnoj promenljivoj na liniji 20
+INFO  17:31:38,130 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,131 - Detektovan pristup lokalnoj promenljivoj na liniji 21
+INFO  17:31:38,131 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,131 - Detektovan pristup lokalnoj promenljivoj na liniji 22
+INFO  17:31:38,131 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,131 - Detektovan pristup globalnoj promenljivoj na liniji 25
+INFO  17:31:38,131 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,131 - Detektovan pristup globalnoj promenljivoj na liniji 26
+INFO  17:31:38,131 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,131 - Detektovan pristup elementu niza na liniji 26
+INFO  17:31:38,132 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,132 - Detektovan pristup globalnoj promenljivoj na liniji 27
+INFO  17:31:38,132 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,132 - Detektovan pristup elementu niza na liniji 27
+INFO  17:31:38,132 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,132 - Detektovan pristup globalnoj promenljivoj na liniji 28
+INFO  17:31:38,132 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,132 - Detektovan pristup globalnoj promenljivoj na liniji 28
+INFO  17:31:38,132 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,132 - Detektovan pristup elementu niza na liniji 28
+INFO  17:31:38,132 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,132 - Detektovan pristup elementu niza na liniji 28
+INFO  17:31:38,132 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,132 - Detektovan pristup globalnoj promenljivoj na liniji 28
+INFO  17:31:38,132 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,132 - Detektovan pristup globalnoj promenljivoj na liniji 28
+INFO  17:31:38,132 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,132 - Detektovan pristup elementu niza na liniji 28
+INFO  17:31:38,133 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,133 - Detektovan pristup elementu niza na liniji 28
+INFO  17:31:38,133 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,133 - Detektovan pristup lokalnoj promenljivoj na liniji 29
+INFO  17:31:38,133 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,133 - Detektovan pristup globalnoj promenljivoj na liniji 29
+INFO  17:31:38,133 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,133 - Detektovan pristup elementu niza na liniji 29
+INFO  17:31:38,133 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,133 - Detektovan pristup globalnoj promenljivoj na liniji 29
+INFO  17:31:38,133 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,133 - Detektovan pristup elementu niza na liniji 29
+INFO  17:31:38,133 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,133 - Detektovan pristup lokalnoj promenljivoj na liniji 30
+INFO  17:31:38,133 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,133 - Detektovan pristup globalnoj promenljivoj na liniji 31
+INFO  17:31:38,133 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,133 - Detektovan pristup elementu niza na liniji 31
+INFO  17:31:38,133 - 	Var niz: Arr of int, 0, 0 
+INFO  17:31:38,133 - Detektovan pristup globalnoj promenljivoj na liniji 34
+INFO  17:31:38,133 - 	Var nizch: Arr of char, 1, 0 
+INFO  17:31:38,133 - Detektovan pristup globalnoj promenljivoj na liniji 35
+INFO  17:31:38,133 - 	Var nizch: Arr of char, 1, 0 
+INFO  17:31:38,133 - Detektovan pristup elementu niza na liniji 35
+INFO  17:31:38,133 - 	Var nizch: Arr of char, 1, 0 
+INFO  17:31:38,133 - Detektovan pristup globalnoj promenljivoj na liniji 36
+INFO  17:31:38,133 - 	Var nizch: Arr of char, 1, 0 
+INFO  17:31:38,133 - Detektovan pristup elementu niza na liniji 36
+INFO  17:31:38,133 - 	Var nizch: Arr of char, 1, 0 
+INFO  17:31:38,134 - Detektovan pristup globalnoj promenljivoj na liniji 37
+INFO  17:31:38,134 - 	Var nizch: Arr of char, 1, 0 
+INFO  17:31:38,134 - Detektovan pristup elementu niza na liniji 37
+INFO  17:31:38,134 - 	Var nizch: Arr of char, 1, 0 
+INFO  17:31:38,134 - Detektovan pristup globalnoj promenljivoj na liniji 38
+INFO  17:31:38,134 - 	Var nizch: Arr of char, 1, 0 
+INFO  17:31:38,134 - Detektovan pristup elementu niza na liniji 38
+INFO  17:31:38,134 - 	Var nizch: Arr of char, 1, 0 
+INFO  17:31:38,134 - Detektovan pristup globalnoj promenljivoj na liniji 39
+INFO  17:31:38,134 - 	Var nizch: Arr of char, 1, 0 
+INFO  17:31:38,134 - Detektovan pristup elementu niza na liniji 39
+INFO  17:31:38,134 - 	Var nizch: Arr of char, 1, 0 
+INFO  17:31:38,134 - Detektovan pristup lokalnoj promenljivoj na liniji 42
+INFO  17:31:38,134 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,134 - Detektovan pristup lokalnoj promenljivoj na liniji 42
+INFO  17:31:38,134 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,134 - Detektovan pristup lokalnoj promenljivoj na liniji 42
+INFO  17:31:38,134 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,134 - Detektovan pristup lokalnoj promenljivoj na liniji 43
+INFO  17:31:38,134 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,134 - Detektovan pristup lokalnoj promenljivoj na liniji 45
+INFO  17:31:38,134 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,135 - Detektovan pristup lokalnoj promenljivoj na liniji 46
+INFO  17:31:38,135 - 	Var bodovi: int, 0, 1 
+INFO  17:31:38,135 - Semanticka analiza uspesno zavrsena.
+INFO  17:31:38,135 - ===================================
+INFO  17:31:38,135 - Tabela simbola:
+=====================SYMBOL TABLE DUMP=========================
+Type int: int, -1, -1 
+Type char: char, -1, -1 
+Con eol: char, 10, 0 
+Con null: Class [], 0, 0 
+Meth chr: char, 0, 1 
+   Var i: int, 0, 1 
+
+Meth ord: int, 0, 1 
+   Var ch: char, 0, 1 
+
+Meth len: int, 0, 1 
+   Var arr: Arr of notype, 0, 1 
+
+Type bool: bool, -1, -1 
+Prog test301: notype, 0, 1 
+   Con nula: int, 0, 0 
+   Con jedan: int, 1, 0 
+   Con pet: int, 5, 0 
+   Var niz: Arr of int, 0, 0 
+   Var nizch: Arr of char, 1, 0 
+   Meth main: notype, 0, 0 
+      Var bodovi: int, 0, 1 
+      Var bt: bool, 1, 1 
+
+
+
+INFO  17:31:38,135 - ===================================
+INFO  17:31:38,136 - Generisanje koda: D:\Faks\PP1\workspace\MJCompiler\test\program.obj
+INFO  17:31:38,145 - Kompajliranje uspesno zavrseno.

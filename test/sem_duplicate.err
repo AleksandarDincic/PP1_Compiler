@@ -1,0 +1,4 @@
+ERROR 16:57:14,554 - Ime x se vec koristi u trenutnom opsegu. na liniji 4
+ERROR 16:57:14,555 - Ime a se vec koristi u trenutnom opsegu. na liniji 15
+ERROR 16:57:14,555 - Tipovi moraju biti kompatibilni pri dodeli. na liniji 25
+ERROR 16:57:14,555 - Semanticka analiza neuspesno zavrsena.

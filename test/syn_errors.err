@@ -1,0 +1,13 @@
+ERROR 17:31:14,875 - Sintaksna greska na liniji 31
+ERROR 17:31:14,876 - Sintaksna greska pri definisanju prosirenja klase na liniji 31
+ERROR 17:31:14,886 - Sintaksna greska na liniji 59
+ERROR 17:31:14,886 - Sintaksna greska pri definisanju polja klase na liniji 0
+ERROR 17:31:14,894 - Sintaksna greska na liniji 83
+ERROR 17:31:14,894 - Sintaksna greska pri definisanju globalne promenljive na liniji 83
+ERROR 17:31:14,895 - Sintaksna greska na liniji 87
+ERROR 17:31:14,895 - Sintaksna greska pri definisanju formalnog parametra metode na liniji 87
+ERROR 17:31:14,899 - Sintaksna greska na liniji 101
+ERROR 17:31:14,899 - Sintaksna greska pri dodeli na liniji 1
+ERROR 17:31:14,906 - Sintaksna greska na liniji 125
+ERROR 17:31:14,907 - Sintaksna greska pri definisanju uslova u if konstrukciji na liniji 125
+ERROR 17:31:14,922 - Parsiranje neuspesno zavrseno.

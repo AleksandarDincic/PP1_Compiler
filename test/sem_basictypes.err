@@ -1,0 +1,19 @@
+ERROR 16:45:57,234 - Operandi za + i - moraju biti int. na liniji 19
+ERROR 16:45:57,234 - Tipovi moraju biti kompatibilni pri dodeli. na liniji 19
+ERROR 16:45:57,234 - Operandi za + i - moraju biti int. na liniji 20
+ERROR 16:45:57,234 - Tipovi moraju biti kompatibilni pri dodeli. na liniji 20
+ERROR 16:45:57,235 - Operandi za *, /, i % moraju biti int. na liniji 21
+ERROR 16:45:57,235 - Tipovi moraju biti kompatibilni pri dodeli. na liniji 21
+ERROR 16:45:57,235 - Negacija se moze raditi samo nad int. na liniji 22
+ERROR 16:45:57,235 - Tipovi moraju biti kompatibilni pri dodeli. na liniji 22
+ERROR 16:45:57,235 - Tip pri inkrementiranju mora biti int. na liniji 23
+ERROR 16:45:57,236 - Tip pri dekrementiranju mora biti int. na liniji 25
+ERROR 16:45:57,237 - Mogu se citati samo int, char i bool. na liniji 30
+ERROR 16:45:57,237 - Mogu se citati samo int, char i bool. na liniji 31
+ERROR 16:45:57,238 - Mogu se ispisivati samo int, char i bool. na liniji 35
+ERROR 16:45:57,238 - Mogu se ispisivati samo int, char i bool. na liniji 36
+ERROR 16:45:57,239 - Velicina niza pri kreiranju mora biti int. na liniji 40
+ERROR 16:45:57,239 - Tipovi moraju biti kompatibilni pri dodeli. na liniji 40
+ERROR 16:45:57,240 - Indeks pri pristupu elementima mora biti int. na liniji 44
+ERROR 16:45:57,240 - Tipovi moraju biti kompatibilni pri dodeli. na liniji 44
+ERROR 16:45:57,240 - Semanticka analiza neuspesno zavrsena.

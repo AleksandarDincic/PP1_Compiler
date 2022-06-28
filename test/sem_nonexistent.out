@@ -1,0 +1,272 @@
+INFO  17:02:56,552 - Kompajliranje fajla: D:\Faks\PP1\workspace\MJCompiler\test\sem_nonexistent.mj
+INFO  17:02:56,552 - ===================================
+INFO  17:02:56,553 - Leksicka analiza
+INFO  17:02:56,556 - ===================================
+INFO  17:02:56,556 - Sintaksna analiza
+INFO  17:02:56,594 - #2 program
+INFO  17:02:56,595 - #51 sem_nonexistent
+INFO  17:02:56,595 - #51 int
+INFO  17:02:56,596 - #51 x
+INFO  17:02:56,597 - #39 ;
+INFO  17:02:56,597 - #51 char
+INFO  17:02:56,598 - #51 y
+INFO  17:02:56,598 - #39 ;
+INFO  17:02:56,598 - #4 class
+INFO  17:02:56,598 - #51 A
+INFO  17:02:56,599 - #47 {
+INFO  17:02:56,599 - #48 }
+INFO  17:02:56,600 - #4 class
+INFO  17:02:56,601 - #51 B
+INFO  17:02:56,602 - #47 {
+INFO  17:02:56,602 - #48 }
+INFO  17:02:56,602 - #47 {
+INFO  17:02:56,602 - #15 void
+INFO  17:02:56,603 - #51 main
+INFO  17:02:56,603 - #43 (
+INFO  17:02:56,603 - #44 )
+INFO  17:02:56,604 - #51 A
+INFO  17:02:56,604 - #51 a
+INFO  17:02:56,605 - #39 ;
+INFO  17:02:56,605 - #51 B
+INFO  17:02:56,605 - #51 b
+INFO  17:02:56,605 - #39 ;
+INFO  17:02:56,606 - #51 C
+INFO  17:02:56,606 - #51 c
+INFO  17:02:56,606 - #39 ;
+INFO  17:02:56,606 - #47 {
+INFO  17:02:56,606 - #51 x
+INFO  17:02:56,606 - #36 =
+INFO  17:02:56,606 - #50 1
+INFO  17:02:56,607 - #39 ;
+INFO  17:02:56,607 - #51 z
+INFO  17:02:56,608 - #36 =
+INFO  17:02:56,608 - #50 2
+INFO  17:02:56,609 - #39 ;
+INFO  17:02:56,609 - #51 c
+INFO  17:02:56,609 - #36 =
+INFO  17:02:56,609 - #11 new
+INFO  17:02:56,609 - #51 C
+INFO  17:02:56,609 - #39 ;
+INFO  17:02:56,609 - #48 }
+INFO  17:02:56,609 - #48 }
+INFO  17:02:56,610 - Parsiranje uspesno zavrseno.
+INFO  17:02:56,611 - Program(
+  ProgramName(
+   sem_nonexistent
+  ) [ProgramName]
+  ProgDeclarations(
+    ProgDeclarations(
+      ProgDeclarations(
+        ProgDeclarations(
+          NoProgDecl(
+          ) [NoProgDecl]
+          ProgVarDecl(
+            GlobalVarDeclaration(
+              VarType(
+                Type(
+                 int
+                ) [Type]
+              ) [VarType]
+              SingleGlobalVarName(
+                GlobalVarNameOfSingle(
+                 x
+                ) [GlobalVarNameOfSingle]
+              ) [SingleGlobalVarName]
+            ) [GlobalVarDeclaration]
+          ) [ProgVarDecl]
+        ) [ProgDeclarations]
+        ProgVarDecl(
+          GlobalVarDeclaration(
+            VarType(
+              Type(
+               char
+              ) [Type]
+            ) [VarType]
+            SingleGlobalVarName(
+              GlobalVarNameOfSingle(
+               y
+              ) [GlobalVarNameOfSingle]
+            ) [SingleGlobalVarName]
+          ) [GlobalVarDeclaration]
+        ) [ProgVarDecl]
+      ) [ProgDeclarations]
+      ProgClassDecl(
+        ClassDecl(
+          ClassName(
+           A
+          ) [ClassName]
+          DoesNotExtend(
+          ) [DoesNotExtend]
+          ClassBody(
+            ClassBodyStart(
+            ) [ClassBodyStart]
+            NoFieldDecl(
+            ) [NoFieldDecl]
+            ClassNoMethods(
+            ) [ClassNoMethods]
+          ) [ClassBody]
+        ) [ClassDecl]
+      ) [ProgClassDecl]
+    ) [ProgDeclarations]
+    ProgClassDecl(
+      ClassDecl(
+        ClassName(
+         B
+        ) [ClassName]
+        DoesNotExtend(
+        ) [DoesNotExtend]
+        ClassBody(
+          ClassBodyStart(
+          ) [ClassBodyStart]
+          NoFieldDecl(
+          ) [NoFieldDecl]
+          ClassNoMethods(
+          ) [ClassNoMethods]
+        ) [ClassBody]
+      ) [ClassDecl]
+    ) [ProgClassDecl]
+  ) [ProgDeclarations]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodReturnsVoid(
+      ) [MethodReturnsVoid]
+      MethodSignature(
+       main
+        NoFormalParams(
+        ) [NoFormalParams]
+      ) [MethodSignature]
+      VarDeclarations(
+        VarDeclarations(
+          VarDeclarations(
+            NoVarDecl(
+            ) [NoVarDecl]
+            VarDecl(
+              VarType(
+                Type(
+                 A
+                ) [Type]
+              ) [VarType]
+              SingleVarName(
+                VarNameOfSingle(
+                 a
+                ) [VarNameOfSingle]
+              ) [SingleVarName]
+            ) [VarDecl]
+          ) [VarDeclarations]
+          VarDecl(
+            VarType(
+              Type(
+               B
+              ) [Type]
+            ) [VarType]
+            SingleVarName(
+              VarNameOfSingle(
+               b
+              ) [VarNameOfSingle]
+            ) [SingleVarName]
+          ) [VarDecl]
+        ) [VarDeclarations]
+        VarDecl(
+          VarType(
+            Type(
+             C
+            ) [Type]
+          ) [VarType]
+          SingleVarName(
+            VarNameOfSingle(
+             c
+            ) [VarNameOfSingle]
+          ) [SingleVarName]
+        ) [VarDecl]
+      ) [VarDeclarations]
+      ManyStatements(
+        ManyStatements(
+          ManyStatements(
+            NoStatement(
+            ) [NoStatement]
+            OneStatement(
+              DesignStatement(
+                DesignAssign(
+                  AssStatement(
+                    NamedDesignator(
+                     x
+                    ) [NamedDesignator]
+                    Assignop(
+                    ) [Assignop]
+                    PositiveExpr(
+                      ExprTerm(
+                        TermFactor(
+                          ConstFactor(
+                            IntConst(
+                             1
+                            ) [IntConst]
+                          ) [ConstFactor]
+                        ) [TermFactor]
+                      ) [ExprTerm]
+                    ) [PositiveExpr]
+                  ) [AssStatement]
+                ) [DesignAssign]
+              ) [DesignStatement]
+            ) [OneStatement]
+          ) [ManyStatements]
+          OneStatement(
+            DesignStatement(
+              DesignAssign(
+                AssStatement(
+                  NamedDesignator(
+                   z
+                  ) [NamedDesignator]
+                  Assignop(
+                  ) [Assignop]
+                  PositiveExpr(
+                    ExprTerm(
+                      TermFactor(
+                        ConstFactor(
+                          IntConst(
+                           2
+                          ) [IntConst]
+                        ) [ConstFactor]
+                      ) [TermFactor]
+                    ) [ExprTerm]
+                  ) [PositiveExpr]
+                ) [AssStatement]
+              ) [DesignAssign]
+            ) [DesignStatement]
+          ) [OneStatement]
+        ) [ManyStatements]
+        OneStatement(
+          DesignStatement(
+            DesignAssign(
+              AssStatement(
+                NamedDesignator(
+                 c
+                ) [NamedDesignator]
+                Assignop(
+                ) [Assignop]
+                PositiveExpr(
+                  ExprTerm(
+                    TermFactor(
+                      NewObjectFactor(
+                        Type(
+                         C
+                        ) [Type]
+                      ) [NewObjectFactor]
+                    ) [TermFactor]
+                  ) [ExprTerm]
+                ) [PositiveExpr]
+              ) [AssStatement]
+            ) [DesignAssign]
+          ) [DesignStatement]
+        ) [OneStatement]
+      ) [ManyStatements]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  17:02:56,612 - ===================================
+INFO  17:02:56,612 - Semanticka analiza:
+INFO  17:02:56,684 - Detektovan pristup globalnoj promenljivoj na liniji 20
+INFO  17:02:56,684 - 	Var x: int, 0, 0 
+INFO  17:02:56,684 - Detektovan pristup lokalnoj promenljivoj na liniji 23
+INFO  17:02:56,685 - 	Var c: notype, 2, 1 

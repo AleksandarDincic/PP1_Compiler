@@ -1,0 +1,709 @@
+INFO  16:47:47,913 - Kompajliranje fajla: D:\Faks\PP1\workspace\MJCompiler\test\sem_cond.mj
+INFO  16:47:47,914 - ===================================
+INFO  16:47:47,914 - Leksicka analiza
+INFO  16:47:47,916 - ===================================
+INFO  16:47:47,916 - Sintaksna analiza
+INFO  16:47:47,960 - #2 program
+INFO  16:47:47,960 - #51 sem_cond
+INFO  16:47:47,960 - #4 class
+INFO  16:47:47,961 - #51 A
+INFO  16:47:47,961 - #47 {
+INFO  16:47:47,962 - #48 }
+INFO  16:47:47,963 - #47 {
+INFO  16:47:47,964 - #15 void
+INFO  16:47:47,964 - #51 main
+INFO  16:47:47,965 - #43 (
+INFO  16:47:47,965 - #44 )
+INFO  16:47:47,966 - #51 int
+INFO  16:47:47,966 - #51 a
+INFO  16:47:47,967 - #41 ,
+INFO  16:47:47,968 - #51 b
+INFO  16:47:47,969 - #41 ,
+INFO  16:47:47,969 - #51 c
+INFO  16:47:47,969 - #41 ,
+INFO  16:47:47,969 - #51 d
+INFO  16:47:47,969 - #39 ;
+INFO  16:47:47,969 - #51 char
+INFO  16:47:47,970 - #51 x
+INFO  16:47:47,970 - #41 ,
+INFO  16:47:47,970 - #51 y
+INFO  16:47:47,970 - #39 ;
+INFO  16:47:47,970 - #51 A
+INFO  16:47:47,970 - #51 obj
+INFO  16:47:47,970 - #41 ,
+INFO  16:47:47,971 - #51 obj2
+INFO  16:47:47,971 - #39 ;
+INFO  16:47:47,971 - #47 {
+INFO  16:47:47,971 - #8 if
+INFO  16:47:47,971 - #43 (
+INFO  16:47:47,972 - #51 a
+INFO  16:47:47,972 - #31 >=
+INFO  16:47:47,972 - #51 b
+INFO  16:47:47,973 - #34 &&
+INFO  16:47:47,973 - #51 a
+INFO  16:47:47,973 - #28 ==
+INFO  16:47:47,973 - #51 c
+INFO  16:47:47,974 - #35 ||
+INFO  16:47:47,974 - #51 c
+INFO  16:47:47,974 - #33 <=
+INFO  16:47:47,975 - #51 d
+INFO  16:47:47,975 - #44 )
+INFO  16:47:47,975 - #47 {
+INFO  16:47:47,975 - #48 }
+INFO  16:47:47,975 - #6 else
+INFO  16:47:47,976 - #8 if
+INFO  16:47:47,976 - #43 (
+INFO  16:47:47,977 - #51 c
+INFO  16:47:47,977 - #29 !=
+INFO  16:47:47,977 - #51 d
+INFO  16:47:47,977 - #35 ||
+INFO  16:47:47,978 - #51 a
+INFO  16:47:47,978 - #30 >
+INFO  16:47:47,978 - #51 a
+INFO  16:47:47,978 - #44 )
+INFO  16:47:47,979 - #47 {
+INFO  16:47:47,979 - #48 }
+INFO  16:47:47,979 - #8 if
+INFO  16:47:47,980 - #43 (
+INFO  16:47:47,980 - #51 a
+INFO  16:47:47,980 - #44 )
+INFO  16:47:47,980 - #47 {
+INFO  16:47:47,980 - #48 }
+INFO  16:47:47,980 - #8 if
+INFO  16:47:47,980 - #43 (
+INFO  16:47:47,980 - #51 a
+INFO  16:47:47,980 - #29 !=
+INFO  16:47:47,981 - #51 x
+INFO  16:47:47,981 - #35 ||
+INFO  16:47:47,981 - #51 c
+INFO  16:47:47,981 - #30 >
+INFO  16:47:47,981 - #51 y
+INFO  16:47:47,981 - #44 )
+INFO  16:47:47,981 - #47 {
+INFO  16:47:47,981 - #48 }
+INFO  16:47:47,981 - #8 if
+INFO  16:47:47,982 - #43 (
+INFO  16:47:47,982 - #51 obj
+INFO  16:47:47,982 - #29 !=
+INFO  16:47:47,982 - #51 obj2
+INFO  16:47:47,982 - #44 )
+INFO  16:47:47,982 - #47 {
+INFO  16:47:47,983 - #48 }
+INFO  16:47:47,983 - #8 if
+INFO  16:47:47,983 - #43 (
+INFO  16:47:47,983 - #51 obj
+INFO  16:47:47,983 - #31 >=
+INFO  16:47:47,983 - #51 obj2
+INFO  16:47:47,983 - #44 )
+INFO  16:47:47,983 - #47 {
+INFO  16:47:47,983 - #48 }
+INFO  16:47:47,983 - #8 if
+INFO  16:47:47,983 - #43 (
+INFO  16:47:47,983 - #51 obj
+INFO  16:47:47,983 - #22 instanceof
+INFO  16:47:47,983 - #51 A
+INFO  16:47:47,983 - #44 )
+INFO  16:47:47,983 - #47 {
+INFO  16:47:47,983 - #48 }
+INFO  16:47:47,983 - #8 if
+INFO  16:47:47,983 - #43 (
+INFO  16:47:47,983 - #51 obj
+INFO  16:47:47,983 - #22 instanceof
+INFO  16:47:47,983 - #51 int
+INFO  16:47:47,983 - #44 )
+INFO  16:47:47,983 - #47 {
+INFO  16:47:47,983 - #48 }
+INFO  16:47:47,984 - #48 }
+INFO  16:47:47,984 - #48 }
+INFO  16:47:47,985 - Parsiranje uspesno zavrseno.
+INFO  16:47:47,989 - Program(
+  ProgramName(
+   sem_cond
+  ) [ProgramName]
+  ProgDeclarations(
+    NoProgDecl(
+    ) [NoProgDecl]
+    ProgClassDecl(
+      ClassDecl(
+        ClassName(
+         A
+        ) [ClassName]
+        DoesNotExtend(
+        ) [DoesNotExtend]
+        ClassBody(
+          ClassBodyStart(
+          ) [ClassBodyStart]
+          NoFieldDecl(
+          ) [NoFieldDecl]
+          ClassNoMethods(
+          ) [ClassNoMethods]
+        ) [ClassBody]
+      ) [ClassDecl]
+    ) [ProgClassDecl]
+  ) [ProgDeclarations]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodReturnsVoid(
+      ) [MethodReturnsVoid]
+      MethodSignature(
+       main
+        NoFormalParams(
+        ) [NoFormalParams]
+      ) [MethodSignature]
+      VarDeclarations(
+        VarDeclarations(
+          VarDeclarations(
+            NoVarDecl(
+            ) [NoVarDecl]
+            VarDecl(
+              VarType(
+                Type(
+                 int
+                ) [Type]
+              ) [VarType]
+              VarNames(
+                VarNames(
+                  VarNames(
+                    SingleVarName(
+                      VarNameOfSingle(
+                       a
+                      ) [VarNameOfSingle]
+                    ) [SingleVarName]
+                    VarNameOfSingle(
+                     b
+                    ) [VarNameOfSingle]
+                  ) [VarNames]
+                  VarNameOfSingle(
+                   c
+                  ) [VarNameOfSingle]
+                ) [VarNames]
+                VarNameOfSingle(
+                 d
+                ) [VarNameOfSingle]
+              ) [VarNames]
+            ) [VarDecl]
+          ) [VarDeclarations]
+          VarDecl(
+            VarType(
+              Type(
+               char
+              ) [Type]
+            ) [VarType]
+            VarNames(
+              SingleVarName(
+                VarNameOfSingle(
+                 x
+                ) [VarNameOfSingle]
+              ) [SingleVarName]
+              VarNameOfSingle(
+               y
+              ) [VarNameOfSingle]
+            ) [VarNames]
+          ) [VarDecl]
+        ) [VarDeclarations]
+        VarDecl(
+          VarType(
+            Type(
+             A
+            ) [Type]
+          ) [VarType]
+          VarNames(
+            SingleVarName(
+              VarNameOfSingle(
+               obj
+              ) [VarNameOfSingle]
+            ) [SingleVarName]
+            VarNameOfSingle(
+             obj2
+            ) [VarNameOfSingle]
+          ) [VarNames]
+        ) [VarDecl]
+      ) [VarDeclarations]
+      ManyStatements(
+        ManyStatements(
+          ManyStatements(
+            ManyStatements(
+              ManyStatements(
+                ManyStatements(
+                  ManyStatements(
+                    NoStatement(
+                    ) [NoStatement]
+                    OneStatement(
+                      IfElseStatement(
+                        IfStart(
+                        ) [IfStart]
+                        IfCondition(
+                          OrCondition(
+                            ConditionTerm(
+                              AndCondTerm(
+                                CondTermFact(
+                                  RelopCondFact(
+                                    PositiveExpr(
+                                      ExprTerm(
+                                        TermFactor(
+                                          DesignOfVarFactor(
+                                            NamedDesignator(
+                                             a
+                                            ) [NamedDesignator]
+                                          ) [DesignOfVarFactor]
+                                        ) [TermFactor]
+                                      ) [ExprTerm]
+                                    ) [PositiveExpr]
+                                    RelopGe(
+                                    ) [RelopGe]
+                                    PositiveExpr(
+                                      ExprTerm(
+                                        TermFactor(
+                                          DesignOfVarFactor(
+                                            NamedDesignator(
+                                             b
+                                            ) [NamedDesignator]
+                                          ) [DesignOfVarFactor]
+                                        ) [TermFactor]
+                                      ) [ExprTerm]
+                                    ) [PositiveExpr]
+                                  ) [RelopCondFact]
+                                ) [CondTermFact]
+                                RelopCondFact(
+                                  PositiveExpr(
+                                    ExprTerm(
+                                      TermFactor(
+                                        DesignOfVarFactor(
+                                          NamedDesignator(
+                                           a
+                                          ) [NamedDesignator]
+                                        ) [DesignOfVarFactor]
+                                      ) [TermFactor]
+                                    ) [ExprTerm]
+                                  ) [PositiveExpr]
+                                  RelopEq(
+                                  ) [RelopEq]
+                                  PositiveExpr(
+                                    ExprTerm(
+                                      TermFactor(
+                                        DesignOfVarFactor(
+                                          NamedDesignator(
+                                           c
+                                          ) [NamedDesignator]
+                                        ) [DesignOfVarFactor]
+                                      ) [TermFactor]
+                                    ) [ExprTerm]
+                                  ) [PositiveExpr]
+                                ) [RelopCondFact]
+                              ) [AndCondTerm]
+                            ) [ConditionTerm]
+                            CondTermFact(
+                              RelopCondFact(
+                                PositiveExpr(
+                                  ExprTerm(
+                                    TermFactor(
+                                      DesignOfVarFactor(
+                                        NamedDesignator(
+                                         c
+                                        ) [NamedDesignator]
+                                      ) [DesignOfVarFactor]
+                                    ) [TermFactor]
+                                  ) [ExprTerm]
+                                ) [PositiveExpr]
+                                RelopLe(
+                                ) [RelopLe]
+                                PositiveExpr(
+                                  ExprTerm(
+                                    TermFactor(
+                                      DesignOfVarFactor(
+                                        NamedDesignator(
+                                         d
+                                        ) [NamedDesignator]
+                                      ) [DesignOfVarFactor]
+                                    ) [TermFactor]
+                                  ) [ExprTerm]
+                                ) [PositiveExpr]
+                              ) [RelopCondFact]
+                            ) [CondTermFact]
+                          ) [OrCondition]
+                        ) [IfCondition]
+                        BlockStatement(
+                          Statements(
+                            NoStatement(
+                            ) [NoStatement]
+                          ) [Statements]
+                        ) [BlockStatement]
+                        ElseStart(
+                        ) [ElseStart]
+                        OneStatement(
+                          IfStatement(
+                            IfStart(
+                            ) [IfStart]
+                            IfCondition(
+                              OrCondition(
+                                ConditionTerm(
+                                  CondTermFact(
+                                    RelopCondFact(
+                                      PositiveExpr(
+                                        ExprTerm(
+                                          TermFactor(
+                                            DesignOfVarFactor(
+                                              NamedDesignator(
+                                               c
+                                              ) [NamedDesignator]
+                                            ) [DesignOfVarFactor]
+                                          ) [TermFactor]
+                                        ) [ExprTerm]
+                                      ) [PositiveExpr]
+                                      RelopNeq(
+                                      ) [RelopNeq]
+                                      PositiveExpr(
+                                        ExprTerm(
+                                          TermFactor(
+                                            DesignOfVarFactor(
+                                              NamedDesignator(
+                                               d
+                                              ) [NamedDesignator]
+                                            ) [DesignOfVarFactor]
+                                          ) [TermFactor]
+                                        ) [ExprTerm]
+                                      ) [PositiveExpr]
+                                    ) [RelopCondFact]
+                                  ) [CondTermFact]
+                                ) [ConditionTerm]
+                                CondTermFact(
+                                  RelopCondFact(
+                                    PositiveExpr(
+                                      ExprTerm(
+                                        TermFactor(
+                                          DesignOfVarFactor(
+                                            NamedDesignator(
+                                             a
+                                            ) [NamedDesignator]
+                                          ) [DesignOfVarFactor]
+                                        ) [TermFactor]
+                                      ) [ExprTerm]
+                                    ) [PositiveExpr]
+                                    RelopGt(
+                                    ) [RelopGt]
+                                    PositiveExpr(
+                                      ExprTerm(
+                                        TermFactor(
+                                          DesignOfVarFactor(
+                                            NamedDesignator(
+                                             a
+                                            ) [NamedDesignator]
+                                          ) [DesignOfVarFactor]
+                                        ) [TermFactor]
+                                      ) [ExprTerm]
+                                    ) [PositiveExpr]
+                                  ) [RelopCondFact]
+                                ) [CondTermFact]
+                              ) [OrCondition]
+                            ) [IfCondition]
+                            BlockStatement(
+                              Statements(
+                                NoStatement(
+                                ) [NoStatement]
+                              ) [Statements]
+                            ) [BlockStatement]
+                          ) [IfStatement]
+                        ) [OneStatement]
+                      ) [IfElseStatement]
+                    ) [OneStatement]
+                  ) [ManyStatements]
+                  OneStatement(
+                    IfStatement(
+                      IfStart(
+                      ) [IfStart]
+                      IfCondition(
+                        ConditionTerm(
+                          CondTermFact(
+                            CondFactExpr(
+                              PositiveExpr(
+                                ExprTerm(
+                                  TermFactor(
+                                    DesignOfVarFactor(
+                                      NamedDesignator(
+                                       a
+                                      ) [NamedDesignator]
+                                    ) [DesignOfVarFactor]
+                                  ) [TermFactor]
+                                ) [ExprTerm]
+                              ) [PositiveExpr]
+                            ) [CondFactExpr]
+                          ) [CondTermFact]
+                        ) [ConditionTerm]
+                      ) [IfCondition]
+                      BlockStatement(
+                        Statements(
+                          NoStatement(
+                          ) [NoStatement]
+                        ) [Statements]
+                      ) [BlockStatement]
+                    ) [IfStatement]
+                  ) [OneStatement]
+                ) [ManyStatements]
+                OneStatement(
+                  IfStatement(
+                    IfStart(
+                    ) [IfStart]
+                    IfCondition(
+                      OrCondition(
+                        ConditionTerm(
+                          CondTermFact(
+                            RelopCondFact(
+                              PositiveExpr(
+                                ExprTerm(
+                                  TermFactor(
+                                    DesignOfVarFactor(
+                                      NamedDesignator(
+                                       a
+                                      ) [NamedDesignator]
+                                    ) [DesignOfVarFactor]
+                                  ) [TermFactor]
+                                ) [ExprTerm]
+                              ) [PositiveExpr]
+                              RelopNeq(
+                              ) [RelopNeq]
+                              PositiveExpr(
+                                ExprTerm(
+                                  TermFactor(
+                                    DesignOfVarFactor(
+                                      NamedDesignator(
+                                       x
+                                      ) [NamedDesignator]
+                                    ) [DesignOfVarFactor]
+                                  ) [TermFactor]
+                                ) [ExprTerm]
+                              ) [PositiveExpr]
+                            ) [RelopCondFact]
+                          ) [CondTermFact]
+                        ) [ConditionTerm]
+                        CondTermFact(
+                          RelopCondFact(
+                            PositiveExpr(
+                              ExprTerm(
+                                TermFactor(
+                                  DesignOfVarFactor(
+                                    NamedDesignator(
+                                     c
+                                    ) [NamedDesignator]
+                                  ) [DesignOfVarFactor]
+                                ) [TermFactor]
+                              ) [ExprTerm]
+                            ) [PositiveExpr]
+                            RelopGt(
+                            ) [RelopGt]
+                            PositiveExpr(
+                              ExprTerm(
+                                TermFactor(
+                                  DesignOfVarFactor(
+                                    NamedDesignator(
+                                     y
+                                    ) [NamedDesignator]
+                                  ) [DesignOfVarFactor]
+                                ) [TermFactor]
+                              ) [ExprTerm]
+                            ) [PositiveExpr]
+                          ) [RelopCondFact]
+                        ) [CondTermFact]
+                      ) [OrCondition]
+                    ) [IfCondition]
+                    BlockStatement(
+                      Statements(
+                        NoStatement(
+                        ) [NoStatement]
+                      ) [Statements]
+                    ) [BlockStatement]
+                  ) [IfStatement]
+                ) [OneStatement]
+              ) [ManyStatements]
+              OneStatement(
+                IfStatement(
+                  IfStart(
+                  ) [IfStart]
+                  IfCondition(
+                    ConditionTerm(
+                      CondTermFact(
+                        RelopCondFact(
+                          PositiveExpr(
+                            ExprTerm(
+                              TermFactor(
+                                DesignOfVarFactor(
+                                  NamedDesignator(
+                                   obj
+                                  ) [NamedDesignator]
+                                ) [DesignOfVarFactor]
+                              ) [TermFactor]
+                            ) [ExprTerm]
+                          ) [PositiveExpr]
+                          RelopNeq(
+                          ) [RelopNeq]
+                          PositiveExpr(
+                            ExprTerm(
+                              TermFactor(
+                                DesignOfVarFactor(
+                                  NamedDesignator(
+                                   obj2
+                                  ) [NamedDesignator]
+                                ) [DesignOfVarFactor]
+                              ) [TermFactor]
+                            ) [ExprTerm]
+                          ) [PositiveExpr]
+                        ) [RelopCondFact]
+                      ) [CondTermFact]
+                    ) [ConditionTerm]
+                  ) [IfCondition]
+                  BlockStatement(
+                    Statements(
+                      NoStatement(
+                      ) [NoStatement]
+                    ) [Statements]
+                  ) [BlockStatement]
+                ) [IfStatement]
+              ) [OneStatement]
+            ) [ManyStatements]
+            OneStatement(
+              IfStatement(
+                IfStart(
+                ) [IfStart]
+                IfCondition(
+                  ConditionTerm(
+                    CondTermFact(
+                      RelopCondFact(
+                        PositiveExpr(
+                          ExprTerm(
+                            TermFactor(
+                              DesignOfVarFactor(
+                                NamedDesignator(
+                                 obj
+                                ) [NamedDesignator]
+                              ) [DesignOfVarFactor]
+                            ) [TermFactor]
+                          ) [ExprTerm]
+                        ) [PositiveExpr]
+                        RelopGe(
+                        ) [RelopGe]
+                        PositiveExpr(
+                          ExprTerm(
+                            TermFactor(
+                              DesignOfVarFactor(
+                                NamedDesignator(
+                                 obj2
+                                ) [NamedDesignator]
+                              ) [DesignOfVarFactor]
+                            ) [TermFactor]
+                          ) [ExprTerm]
+                        ) [PositiveExpr]
+                      ) [RelopCondFact]
+                    ) [CondTermFact]
+                  ) [ConditionTerm]
+                ) [IfCondition]
+                BlockStatement(
+                  Statements(
+                    NoStatement(
+                    ) [NoStatement]
+                  ) [Statements]
+                ) [BlockStatement]
+              ) [IfStatement]
+            ) [OneStatement]
+          ) [ManyStatements]
+          OneStatement(
+            IfStatement(
+              IfStart(
+              ) [IfStart]
+              IfCondition(
+                ConditionTerm(
+                  CondTermFact(
+                    InstanceofCondFact(
+                      NamedDesignator(
+                       obj
+                      ) [NamedDesignator]
+                      Type(
+                       A
+                      ) [Type]
+                    ) [InstanceofCondFact]
+                  ) [CondTermFact]
+                ) [ConditionTerm]
+              ) [IfCondition]
+              BlockStatement(
+                Statements(
+                  NoStatement(
+                  ) [NoStatement]
+                ) [Statements]
+              ) [BlockStatement]
+            ) [IfStatement]
+          ) [OneStatement]
+        ) [ManyStatements]
+        OneStatement(
+          IfStatement(
+            IfStart(
+            ) [IfStart]
+            IfCondition(
+              ConditionTerm(
+                CondTermFact(
+                  InstanceofCondFact(
+                    NamedDesignator(
+                     obj
+                    ) [NamedDesignator]
+                    Type(
+                     int
+                    ) [Type]
+                  ) [InstanceofCondFact]
+                ) [CondTermFact]
+              ) [ConditionTerm]
+            ) [IfCondition]
+            BlockStatement(
+              Statements(
+                NoStatement(
+                ) [NoStatement]
+              ) [Statements]
+            ) [BlockStatement]
+          ) [IfStatement]
+        ) [OneStatement]
+      ) [ManyStatements]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  16:47:47,990 - ===================================
+INFO  16:47:47,991 - Semanticka analiza:
+INFO  16:47:48,059 - Detektovan pristup lokalnoj promenljivoj na liniji 14
+INFO  16:47:48,059 - 	Var a: int, 0, 1 
+INFO  16:47:48,059 - Detektovan pristup lokalnoj promenljivoj na liniji 14
+INFO  16:47:48,059 - 	Var b: int, 1, 1 
+INFO  16:47:48,060 - Detektovan pristup lokalnoj promenljivoj na liniji 14
+INFO  16:47:48,060 - 	Var a: int, 0, 1 
+INFO  16:47:48,060 - Detektovan pristup lokalnoj promenljivoj na liniji 14
+INFO  16:47:48,060 - 	Var c: int, 2, 1 
+INFO  16:47:48,060 - Detektovan pristup lokalnoj promenljivoj na liniji 14
+INFO  16:47:48,064 - 	Var c: int, 2, 1 
+INFO  16:47:48,064 - Detektovan pristup lokalnoj promenljivoj na liniji 14
+INFO  16:47:48,064 - 	Var d: int, 3, 1 
+INFO  16:47:48,064 - Detektovan pristup lokalnoj promenljivoj na liniji 18
+INFO  16:47:48,064 - 	Var c: int, 2, 1 
+INFO  16:47:48,064 - Detektovan pristup lokalnoj promenljivoj na liniji 18
+INFO  16:47:48,064 - 	Var d: int, 3, 1 
+INFO  16:47:48,064 - Detektovan pristup lokalnoj promenljivoj na liniji 18
+INFO  16:47:48,064 - 	Var a: int, 0, 1 
+INFO  16:47:48,064 - Detektovan pristup lokalnoj promenljivoj na liniji 18
+INFO  16:47:48,064 - 	Var a: int, 0, 1 
+INFO  16:47:48,064 - Detektovan pristup lokalnoj promenljivoj na liniji 23
+INFO  16:47:48,064 - 	Var a: int, 0, 1 
+INFO  16:47:48,065 - Detektovan pristup lokalnoj promenljivoj na liniji 28
+INFO  16:47:48,065 - 	Var a: int, 0, 1 
+INFO  16:47:48,065 - Detektovan pristup lokalnoj promenljivoj na liniji 28
+INFO  16:47:48,065 - 	Var x: char, 4, 1 
+INFO  16:47:48,065 - Detektovan pristup lokalnoj promenljivoj na liniji 28
+INFO  16:47:48,065 - 	Var c: int, 2, 1 
+INFO  16:47:48,065 - Detektovan pristup lokalnoj promenljivoj na liniji 28
+INFO  16:47:48,065 - 	Var y: char, 5, 1 
+INFO  16:47:48,065 - Detektovan pristup lokalnoj promenljivoj na liniji 33
+INFO  16:47:48,065 - 	Var obj: Class [], 6, 1 
+INFO  16:47:48,065 - Detektovan pristup lokalnoj promenljivoj na liniji 33
+INFO  16:47:48,065 - 	Var obj2: Class [], 7, 1 
+INFO  16:47:48,065 - Detektovan pristup lokalnoj promenljivoj na liniji 38
+INFO  16:47:48,065 - 	Var obj: Class [], 6, 1 
+INFO  16:47:48,065 - Detektovan pristup lokalnoj promenljivoj na liniji 38
+INFO  16:47:48,065 - 	Var obj2: Class [], 7, 1 
+INFO  16:47:48,066 - Detektovan pristup lokalnoj promenljivoj na liniji 43
+INFO  16:47:48,066 - 	Var obj: Class [], 6, 1 
+INFO  16:47:48,066 - Detektovan pristup lokalnoj promenljivoj na liniji 48
+INFO  16:47:48,066 - 	Var obj: Class [], 6, 1 
