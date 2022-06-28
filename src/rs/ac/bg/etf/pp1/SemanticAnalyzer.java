@@ -389,7 +389,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
 	public void visit(DoesNotExtend e) {
 		if (currentClass != null) {
-			currentClassNode = classTree.insertChild(currentClass.getName(), currentClass.getType());
+			currentClassNode = classTree.insertChild(currentClass.getName(), currentClass);
 		}
 	}
 
@@ -407,7 +407,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 				currentSuperclassNode = classTree.find(currentSuperclass.getName());
 				if (currentClass != null) {
 					currentClassNode = currentSuperclassNode.insertChild(currentClass.getName(),
-							currentClass.getType());
+							currentClass);
 				}
 			}
 		} else {

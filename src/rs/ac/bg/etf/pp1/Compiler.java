@@ -85,6 +85,7 @@ public class Compiler {
 					codeGen.nVars = semanticAnalyzer.nVars;
 					codeGen.vftStart = codeGen.nVars;
 					codeGen.classConstructors = semanticAnalyzer.classConstructors;
+					codeGen.classTree = semanticAnalyzer.classTree;
 					prog.traverseBottomUp(codeGen);
 					Code.dataSize = codeGen.nVars;
 					Code.mainPc = codeGen.mainPc;

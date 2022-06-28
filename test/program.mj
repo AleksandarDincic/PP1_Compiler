@@ -2,25 +2,35 @@ program p
 
 class A
 {
-{	
-	void a()
-	{
-	}
-}
 }
 
 class B extends A
 {
-{	
-	void a()
-	{
-	}
 }
+
+class C extends A
+{
+}
+
+class D extends C
+{
+}
+
+class E
+{
+}
+
+class F extends E
+{
 }
 
 {
 	void main()
+	B b;
 	{
-	
+		do{
+			print('!');
+		}
+		while(1 == 3 || 1 >2 && 1 < 2 || b instanceof A );
 	}
 }

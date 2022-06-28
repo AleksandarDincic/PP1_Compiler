@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Stack;
 
 import rs.ac.bg.etf.pp1.CounterVisitor.FormParamCounter;
@@ -111,6 +112,8 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	Obj currentSuperclass;
 
+	ClassTree classTree = null;
+	
 	Stack<CondControl> condControlStack = new Stack<>();
 	Stack<LoopControl> loopControlStack = new Stack<>();
 
@@ -674,6 +677,45 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.load(fact.getDesignator().obj);
 		Code.loadConst(0);
 		Code.putFalseJump(Code.ne, 0);
+		condControlStack.peek().condFactJumps.add(Code.pc - 2);
+		
+		ClassTree classNode = classTree.find(fact.getType().obj);
+		Queue<ClassTree> classQueue =  new LinkedList<>();
+		classQueue.offer(classNode);
+		
+		LinkedList<Integer> jumps = new LinkedList<>();
+		
+		while(!classQueue.isEmpty()) {
+			ClassTree cur = classQueue.poll();
+			for(ClassTree c : cur.getChildren()) {
+				classQueue.offer(c);
+			}
+			
+			fact.getDesignator().traverseBottomUp(new CodeGenerator());
+			Code.load(fact.getDesignator().obj);
+			Code.put(Code.getfield);
+			Code.put2(0);
+			Code.loadConst(cur.getType().getAdr());
+			
+			
+			if(classQueue.isEmpty()) {
+				Code.putFalseJump(Code.eq, 0);
+				condControlStack.peek().condFactJumps.add(Code.pc - 2);
+			}
+			else {
+				Code.putFalseJump(Code.ne, 0);
+				jumps.add(Code.pc - 2);	
+			}
+		}
+
+		
+		for(int j : jumps) {
+			Code.fixup(j);
+		}
+		
+		/*Code.load(fact.getDesignator().obj);
+		Code.loadConst(0);
+		Code.putFalseJump(Code.ne, 0);
 		int nullJump = Code.pc - 2;
 		
 		fact.getDesignator().traverseBottomUp(new CodeGenerator());
@@ -684,7 +726,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.putFalseJump(Code.eq, 0);
 		condControlStack.peek().condFactJumps.add(Code.pc - 2);
 		
-		Code.fixup(nullJump);
+		Code.fixup(nullJump);*/
 	}
 
 	public void visit(CondFactExpr fact) {
